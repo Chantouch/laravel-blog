@@ -139,7 +139,7 @@ class Post extends Model
         } else {
             $name = $this->thumbnail()->filename;
             if (File::exists(storage_path('app/public/uploads/posts'))) {
-                Storage::delete('public/uploads/posts/'.$name);
+                Storage::delete('public/uploads/posts/' . $name);
             }
             $this->thumbnail()->update([
                 'filename' => str_replace('public/uploads/posts/', '', $thumbnail_name),
