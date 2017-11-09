@@ -31,8 +31,8 @@ class PostCommentsController extends Controller
     *
     * @param  CommentsRequest $request
     * @param  Post $post
-    * @return \Illuminate\Http\Response
-    */
+    * @return CommentResource|\Illuminate\Http\Response
+     */
     public function store(CommentsRequest $request, Post $post)
     {
         $comment = new CommentResource(

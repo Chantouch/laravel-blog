@@ -12,7 +12,8 @@
     <script>
         window.Laravel = {!! json_encode([
             'pusherKey' => config('broadcasting.connections.pusher.key'),
-            'pusherCluster' => config('broadcasting.connections.pusher.options.cluster')
+            'pusherCluster' => config('broadcasting.connections.pusher.options.cluster'),
+            'csrfToken' => csrf_token(),
         ]) !!};
     </script>
 

@@ -12,6 +12,7 @@
     "dependencies": {
         "axios": "^0.16.2",
         "bootstrap": "^4.0.0-beta.2",
+        "bootstrap-vue": "^1.0.2",
         "cross-env": "^5.0.1",
         "font-awesome": "^4.7.0",
         "jquery": "^3.1.1",
@@ -20,6 +21,7 @@
         "popper.js": "^1.11.0",
         "pusher-js": "^4.2.1",
         "trumbowyg": "^2.8.0",
-        "vue": "^2.4.4"
+        "vue": "^2.4.4",
+        "vue2-dropzone": "^3.0.0"
     }
 }

@@ -2,10 +2,16 @@
 
 namespace App;
 
+use App\Concern\Mediable;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Http\UploadedFile;
 
 class Media extends Model
 {
+
+    use Mediable;
     /**
      * The attributes that are mass assignable.
      *
@@ -37,5 +43,21 @@ class Media extends Model
     public function getPath(): string
     {
         return storage_path('app/public/uploads/posts/') . $this->filename;
+    }
+
+    /**
+     * Store and set the post's thumbnail
+     *
+     * @param UploadedFile $thumbnail
+     * @return void
+     */
+    public function storeAndSetThumbnail(UploadedFile $thumbnail)
+    {
+        $thumbnail_name = $thumbnail->store('public/uploads/media');
+        $this->media()->create([
+            'filename' => str_replace('public/uploads/media/', '', $thumbnail_name),
+            'original_filename' => $thumbnail->getClientOriginalName(),
+            'mime_type' => $thumbnail->getMimeType()
+        ]);
     }
 }

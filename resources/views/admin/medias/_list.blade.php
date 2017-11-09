@@ -11,3 +11,5 @@
 <div class="d-flex justify-content-center">
     {{ $medias->links() }}
 </div>
+
+<media csrf="{{ csrf_token() }}" action="/api/v1/medias"></media>

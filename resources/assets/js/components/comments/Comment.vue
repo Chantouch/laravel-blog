@@ -20,25 +20,25 @@
 </template>
 
 <script>
-export default {
-    props: [
-        'comment',
-        'data_confirm'
-    ],
+    export default {
+        props: [
+            'comment',
+            'data_confirm'
+        ],
 
-    methods: {
-        deleteComment() {
-            if (confirm(this.data_confirm)) {
-                axios.delete('/api/v1/comments/' + this.comment.id)
-                    .then(response => {
-                        this.$emit('deleted', this)
-                    })
-                    .catch(error => {
-                        console.log(error)
-                    })
+        methods: {
+            deleteComment() {
+                if (confirm(this.data_confirm)) {
+                    axios.delete('/api/v1/comments/' + this.comment.id)
+                        .then(response => {
+                            this.$emit('deleted', this)
+                        })
+                        .catch(error => {
+                            console.log(error)
+                        })
+                }
             }
         }
     }
-}
 </script>
 
