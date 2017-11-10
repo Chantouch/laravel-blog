@@ -1,7 +1,8 @@
 <template>
     <b-tabs>
         <b-tab title="Media Library" active>
-            <br>I'm the first fading tab
+            <br>
+            <media-list loading_medias="Loading" data_confirm="Delete"></media-list>
         </b-tab>
         <b-tab title="Uploads">
             <br>

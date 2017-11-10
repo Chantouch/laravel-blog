@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Post;
 
-class PostsController extends Controller
+class PostsController extends BaseController
 {
     /**
     * Show the application dashboard.

@@ -20,7 +20,8 @@ class Media extends Resource
             'original_filename' => $this->original_filename,
             'mime_type' => $this->mime_type,
             'mediable_id' => $this->mediable_id,
-            'mediable_type' => $this->mediable_type
+            'mediable_type' => $this->mediable_type,
+            'url' => asset('storage/uploads/media/' . $this->filename)
         ];
     }
 }

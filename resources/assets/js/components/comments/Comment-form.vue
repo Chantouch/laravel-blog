@@ -38,20 +38,20 @@
 
         methods: {
             sendComment() {
-                this.isLoading = true
+                this.isLoading = true;
 
                 axios.post('/api/v1/posts/' + this.post_id + '/comments', {
                     content: this.content
                 })
                     .then(response => {
-                        Event.$emit('added', response.data.data)
+                        Event.$emit('added', response.data.data);
 
-                        this.content = ''
-                        this.isLoading = false
+                        this.content = '';
+                        this.isLoading = false;
                         this.errors = []
                     })
                     .catch(error => {
-                        this.isLoading = false
+                        this.isLoading = false;
                         this.errors = error.response.data.errors
                     })
             }

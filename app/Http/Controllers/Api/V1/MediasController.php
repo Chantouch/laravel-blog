@@ -15,7 +15,7 @@ class MediasController extends Controller
      *
      * @param  Request $request
      * @param  Media $media
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\Resources\Json\AnonymousResourceCollection|\Illuminate\Http\Response
      */
     public function index(Request $request, Media $media)
     {

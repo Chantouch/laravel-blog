@@ -55,7 +55,7 @@ import Echo from "laravel-echo";
 
 window.Pusher = require('pusher-js');
 
-if (Laravel.pusherKey != null) {
+if (Laravel.pusherKey !== null) {
     window.Echo = new Echo({
         broadcaster: 'pusher',
         key: Laravel.pusherKey,

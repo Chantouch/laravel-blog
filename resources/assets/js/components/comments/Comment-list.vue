@@ -31,7 +31,7 @@
         },
 
         mounted() {
-            this.retrieveComments()
+            this.retrieveComments();
 
             if (window.Echo) {
                 Echo.channel('post.' + this.post_id)
@@ -47,11 +47,11 @@
 
         methods: {
             retrieveComments() {
-                this.isLoading = true
+                this.isLoading = true;
 
                 axios.get(this.endpoint).then(response => {
-                    this.comments.push(...response.data.data)
-                    this.isLoading = false
+                    this.comments.push(...response.data.data);
+                    this.isLoading = false;
                     this.endpoint = response.data.links.next
                 });
             },

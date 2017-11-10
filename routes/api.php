@@ -26,6 +26,7 @@ Route::prefix('v1')->namespace('Api\V1')->group(function () {
     });
 
     // Medias
+    Route::get('medias', 'MediasController@index');
     Route::post('medias', 'MediasController@store');
 
     Route::post('/authenticate', 'Auth\AuthenticateController@authenticate')->name('authenticate');

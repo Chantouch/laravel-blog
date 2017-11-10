@@ -17,8 +17,8 @@ class PostCommentsController extends Controller
     *
     * @param  Request $request
     * @param  Post $post
-    * @return \Illuminate\Http\Response
-    */
+    * @return \Illuminate\Http\Resources\Json\AnonymousResourceCollection|\Illuminate\Http\Response
+     */
     public function index(Request $request, Post $post)
     {
         return CommentResource::collection(
@@ -42,7 +42,7 @@ class PostCommentsController extends Controller
             ])
         );
 
-        broadcast(new CommentPosted($comment, $post))->toOthers();
+        //broadcast(new CommentPosted($comment, $post))->toOthers();
 
         return $comment;
     }
