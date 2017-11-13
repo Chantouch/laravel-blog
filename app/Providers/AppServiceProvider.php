@@ -14,10 +14,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        if (env('APP_ENV') == 'local') {
-            // Because travis-ci is still not compatible with mysql 5.7 ...
-            Schema::defaultStringLength(191);
-        }
+        Schema::defaultStringLength(191);
     }
 
     /**

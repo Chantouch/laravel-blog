@@ -20,9 +20,40 @@ body > #app > .container-fluid {
 }
 
 .pt-50 {
-    padding-top: 4%;
+    padding-top: 30px;
 }
 
 .right-sidebar .card-body {
     padding: 0.7rem;
+}
+
+.entry-colors {
+    left: 0;
+    margin: 10px 0 12px 0;
+    display: block;
+    width: 100%;
+}
+
+.entry-colors .color_col_1, .entry-colors .color_col_2, .entry-colors .color_col_3 {
+    float: left;
+    height: 5px;
+    width: 33.33%;
+}
+.color_col_1 {
+    background: #ec3233 none repeat scroll 0 0;
+    height: 5px;
+}
+
+.color_col_2 {
+    background: #1eb2b2 none repeat scroll 0 0;
+    height: 5px;
+}
+
+.color_col_3 {
+    background: #e0e0e0 none repeat scroll 0 0;
+    height: 5px;
+}
+
+.post-content {
+    padding-top: 15px;
 }

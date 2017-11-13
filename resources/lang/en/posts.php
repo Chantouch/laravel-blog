@@ -14,6 +14,8 @@ return [
     'new_posts' => 'New article new articles',
     'count' => ':count article|:count articles',
     'show' => "See article",
+    'view_count' => 'Viewer',
+    'category' => 'Category:',
 
     'attributes' => [
         'title' => 'Title',

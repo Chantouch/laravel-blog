@@ -17,7 +17,7 @@ class CreateCategoriesTable extends Migration
             $table->increments('id');
             $table->string('slug')->unique()->nullable();
             $table->string('name')->unique()->nullable();
-            $table->string('description', 255)->nullable();
+            $table->text('description')->nullable();
             $table->tinyInteger('active')->default(1);
             $table->integer('media_id')->nullable();
             $table->foreign('media_id')->references('id')->on('media');
