@@ -3,5 +3,6 @@
     "/css/app.css": "/css/app.css",
     "/css/admin.css": "/css/admin.css",
     "/js/admin.js": "/js/admin.js",
-    "/js/ui/icons.svg": "/js/ui/icons.svg"
+    "/js/ui/icons.svg": "/js/ui/icons.svg",
+    "/plugins/trumbowyg/base64/trumbowyg.base64.min.js": "/plugins/trumbowyg/base64/trumbowyg.base64.min.js"
 }

@@ -25,6 +25,8 @@ Route::prefix('admin')->middleware(['auth', 'role:admin'])->namespace('Admin')->
     Route::resource('users', 'UsersController', ['only' => ['index', 'edit', 'update']]);
     Route::resource('comments', 'CommentsController', ['only' => ['index', 'edit', 'update', 'destroy']]);
     Route::resource('medias', 'MediaController');
+    Route::resource('categories', 'CategoryController');
+    Route::resource('tags', 'TagController');
 });
 
 Route::middleware('auth')->group(function () {

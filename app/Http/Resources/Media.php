@@ -21,7 +21,8 @@ class Media extends Resource
             'mime_type' => $this->mime_type,
             'mediable_id' => $this->mediable_id,
             'mediable_type' => $this->mediable_type,
-            'url' => asset('storage/uploads/media/' . $this->filename)
+            'url' => asset('storage/uploads/media/' . $this->filename),
+            'updated' => humanize_date($this->updated_at)
         ];
     }
 }

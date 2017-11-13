@@ -21,6 +21,11 @@ return [
         'author' => 'Author',
         'thumbnail' => 'Image in the picture',
         'posted_at' => 'Posted at',
+        'categories' => 'Categories',
+        'source_title' => 'Title',
+        'source_url' => 'Url',
+        'source_translator' => 'Translator',
+        'references' => 'References:'
     ],
 
     'placeholder' => [

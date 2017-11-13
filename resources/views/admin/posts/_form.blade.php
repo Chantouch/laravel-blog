@@ -23,12 +23,36 @@
 
     <div class="form-group col-md-6">
         {!! Form::label('posted_at', __('posts.attributes.posted_at')) !!}
-        <input type="datetime-local" name="posted_at" class="form-control {{ ($errors->has('posted_at') ? ' is-invalid' : '') }}" required value="{{ $posted_at }}">
+        <input type="datetime-local" name="posted_at" value="{{ $posted_at }}"
+               class="form-control {{ ($errors->has('posted_at') ? ' is-invalid' : '') }}" required>
 
         @if ($errors->has('posted_at'))
             <span class="invalid-feedback">{{ $errors->first('posted_at') }}</span>
         @endif
     </div>
+</div>
+
+<div class="form-group has-success{{ $errors->has('categories') ? ' has-error' : '' }}">
+    {!! Form::label('categories', __('posts.attributes.categories')) !!}<br>
+
+    <post-categories :category_list="{!! isset($post->categories) ? $post->categories->pluck('id') : '[]' !!}">
+    </post-categories>
+
+    @if ($errors->has('categories'))
+        <span class="help-block">
+            <small>{{ $errors->first('categories') }}</small>
+        </span>
+    @endif
+</div>
+
+<div class="form-group has-success{{ $errors->has('tags') ? ' has-error' : '' }}">
+    {!! Form::label('tags', __('tags.attributes.title')) !!}<br>
+    <post-tags :tag_list="{!! isset($post->tags) ? $post->tags->pluck('id') : '[]' !!}"></post-tags>
+    @if ($errors->has('tags'))
+        <span class="help-block">
+            <small>{{ $errors->first('tags') }}</small>
+        </span>
+    @endif
 </div>
 
 <div class="form-group">
@@ -47,4 +71,34 @@
     @if ($errors->has('content'))
         <span class="invalid-feedback">{{ $errors->first('content') }}</span>
     @endif
+</div>
+
+<div class="form-row">
+    <div class="form-group col-md-12">
+        <h4>{!! __('posts.attributes.references') !!}</h4>
+    </div>
+    <div class="form-group col-md-4">
+        {!! Form::label('source_title', __('posts.attributes.source_title')) !!}
+        {!! Form::text('source_title', null, ['class' => 'form-control' . ($errors->has('title') ? ' is-invalid' : '')]) !!}
+
+        @if ($errors->has('source_title'))
+            <span class="invalid-feedback">{{ $errors->first('source_title') }}</span>
+        @endif
+    </div>
+    <div class="form-group col-md-4">
+        {!! Form::label('source_url', __('posts.attributes.source_url')) !!}
+        {!! Form::text('source_url', null, ['class' => 'form-control' . ($errors->has('title') ? ' is-invalid' : '')]) !!}
+
+        @if ($errors->has('source_url'))
+            <span class="invalid-feedback">{{ $errors->first('source_title') }}</span>
+        @endif
+    </div>
+    <div class="form-group col-md-4">
+        {!! Form::label('source_translator', __('posts.attributes.source_translator')) !!}
+        {!! Form::text('source_translator', null, ['class' => 'form-control' . ($errors->has('title') ? ' is-invalid' : '')]) !!}
+
+        @if ($errors->has('source_translator'))
+            <span class="invalid-feedback">{{ $errors->first('source_translator') }}</span>
+        @endif
+    </div>
 </div>

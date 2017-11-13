@@ -17,12 +17,25 @@ class PostsController extends Controller
      * Return the posts.
      *
      * @param  Request $request
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\Resources\Json\AnonymousResourceCollection
      */
     public function index(Request $request)
     {
         return PostResource::collection(
             Post::withCount('comments')->latest()->paginate($request->input('limit', 20))
+        );
+    }
+
+   /**
+     * Return the posts.
+     *
+     * @param  Request $request
+     * @return \Illuminate\Http\Resources\Json\AnonymousResourceCollection
+     */
+    public function latest(Request $request)
+    {
+        return PostResource::collection(
+            Post::withCount('comments')->latest()->paginate($request->input('limit', 6))
         );
     }
 
@@ -68,8 +81,9 @@ class PostsController extends Controller
     /**
      * Return the specified resource.
      *
-     * @param  int $id
-     * @return \Illuminate\Http\Response
+     * @param Post $post
+     * @return PostResource|\Illuminate\Http\Response
+     * @internal param int $id
      */
     public function show(Post $post)
     {

@@ -28,6 +28,7 @@ Route::prefix('v1')->namespace('Api\V1')->group(function () {
     // Medias
     Route::get('medias', 'MediasController@index');
     Route::post('medias', 'MediasController@store');
+    Route::delete('medias/{id}', 'MediasController@destroy');
 
     Route::post('/authenticate', 'Auth\AuthenticateController@authenticate')->name('authenticate');
 
@@ -38,8 +39,15 @@ Route::prefix('v1')->namespace('Api\V1')->group(function () {
 
     // Posts
     Route::resource('posts', 'PostsController', ['only' => ['index', 'show']]);
+    Route::resource('popular-posts', 'PopularPostController', ['only' => ['index']]);
     Route::resource('users.posts', 'UserPostsController', ['only' => 'index']);
+    Route::get('latest-posts', 'PostsController@latest')->name('posts.latest');
 
     // Users
     Route::resource('users', 'UsersController', ['only' => ['index', 'show']]);
+
+    //Categories
+    Route::resource('categories', 'CategoryController', ['only' => 'index']);
+    //Tag
+    Route::resource('tags', 'TagController', ['only' => 'index']);
 });

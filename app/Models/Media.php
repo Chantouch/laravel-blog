@@ -42,7 +42,7 @@ class Media extends Model
      */
     public function getPath(): string
     {
-        return storage_path('app/public/uploads/posts/') . $this->filename;
+        return storage_path('app/public/uploads/media/') . $this->filename;
     }
 
     /**
@@ -59,5 +59,23 @@ class Media extends Model
             'original_filename' => $thumbnail->getClientOriginalName(),
             'mime_type' => $thumbnail->getMimeType()
         ]);
+    }
+
+    /**
+     * Store and set the media library
+     *
+     * @param $filename
+     * @param $mimetype
+     * @param $originalname
+     * @return $this
+     */
+    public function storeMediaLibraryByPost($filename, $mimetype, $originalname = null)
+    {
+        $this->media()->create([
+            'filename'          => $filename,
+            'original_filename' => $originalname,
+            'mime_type'         => $mimetype,
+        ]);
+        return $this;
     }
 }

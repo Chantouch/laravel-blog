@@ -6,7 +6,7 @@
 
 window.$ = window.jQuery = require('jquery');
 window.Popper = require('popper.js').default;
-
+window.Tether = require('tether');
 require('bootstrap');
 
 require('bootstrap-vue');

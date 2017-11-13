@@ -2,6 +2,8 @@
 
 namespace App;
 
+use App\Models\Category;
+use App\Models\Tag;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Storage;
@@ -26,6 +28,7 @@ class Post extends Model
         'posted_at',
         'thumbnail_id',
         'slug',
+        'view_count',
     ];
 
     /**
@@ -127,10 +130,10 @@ class Post extends Model
      */
     public function storeAndSetThumbnail(UploadedFile $thumbnail)
     {
-        $thumbnail_name = $thumbnail->store('public/uploads/posts');
+        $thumbnail_name = $thumbnail->store('public/uploads/media');
         if (!$this->hasThumbnail()) {
             $media = $this->media()->create([
-                'filename' => str_replace('public/uploads/posts/', '', $thumbnail_name),
+                'filename' => str_replace('public/uploads/media/', '', $thumbnail_name),
                 'original_filename' => $thumbnail->getClientOriginalName(),
                 'mime_type' => $thumbnail->getMimeType()
             ]);
@@ -138,11 +141,11 @@ class Post extends Model
             $this->update(['thumbnail_id' => $media->id]);
         } else {
             $name = $this->thumbnail()->filename;
-            if (File::exists(storage_path('app/public/uploads/posts'))) {
-                Storage::delete('public/uploads/posts/' . $name);
+            if (File::exists(storage_path('app/public/uploads/media'))) {
+                Storage::delete('public/uploads/media/posts/' . $name);
             }
             $this->thumbnail()->update([
-                'filename' => str_replace('public/uploads/posts/', '', $thumbnail_name),
+                'filename' => str_replace('public/uploads/media/', '', $thumbnail_name),
                 'original_filename' => $thumbnail->getClientOriginalName(),
                 'mime_type' => $thumbnail->getMimeType()
             ]);
@@ -178,5 +181,21 @@ class Post extends Model
     public function excerpt($length = 50): string
     {
         return str_limit($this->content, $length);
+    }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
+     */
+    public function categories()
+    {
+        return $this->belongsToMany(Category::class, 'post_category', 'post_id', 'category_id')->withPivot('post_id', 'category_id')->withTimestamps();
+    }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
+     */
+    public function tags()
+    {
+        return $this->belongsToMany(Tag::class, 'tag_post', 'post_id', 'tag_id')->withPivot('post_id', 'tag_id')->withTimestamps();
     }
 }

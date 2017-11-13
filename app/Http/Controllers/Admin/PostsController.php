@@ -4,17 +4,22 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Admin\PostsRequest;
+use App\Media;
+use App\Models\Category;
+use App\Models\Source;
 use Illuminate\Http\Request;
 use App\Post;
 use App\User;
+use DOMDocument;
+use Intervention\Image\ImageManagerStatic as Image;
 
 class PostsController extends Controller
 {
     /**
-    * Show the application posts index.
-    *
-    * @return \Illuminate\Http\Response
-    */
+     * Show the application posts index.
+     *
+     * @return \Illuminate\Http\Response
+     */
     public function index()
     {
         return view('admin.posts.index', [
@@ -31,18 +36,20 @@ class PostsController extends Controller
     {
         return view('admin.posts.edit', [
             'post' => $post,
-            'users' => User::authors()->pluck('name', 'id')
+            'users' => User::authors()->pluck('name', 'id'),
+            'categories' => Category::select('name', 'id')->get()
         ]);
     }
 
     /**
-    * Show the form for creating a new resource.
-    *
-    */
+     * Show the form for creating a new resource.
+     *
+     */
     public function create()
     {
         return view('admin.posts.create', [
-            'users' => User::authors()->pluck('name', 'id')
+            'users' => User::authors()->pluck('name', 'id'),
+            'categories' => Category::select('id', 'name')->get()
         ]);
     }
 
@@ -53,8 +60,48 @@ class PostsController extends Controller
      */
     public function store(PostsRequest $request)
     {
-        $post = Post::create($request->only(['title', 'content', 'posted_at', 'author_id']));
-
+        $data = $request->all();
+        $storage_path = storage_path("app/public/uploads/media/");
+        if (!file_exists($storage_path)) {
+            mkdir($storage_path, 0777, true);
+        }
+        $dom = new DOMDocument();
+        libxml_use_internal_errors(true);
+        $dom->loadHtml(mb_convert_encoding($data['content'], 'HTML-ENTITIES', 'UTF-8'), LIBXML_HTML_NOIMPLIED | LIBXML_HTML_NODEFDTD);
+        $images = $dom->getElementsByTagName('img');
+        // foreach <img> in the submitted message
+        foreach ($images as $img) {
+            $src = $img->getAttribute('src');
+            // if the img source is 'data-url'
+            if (preg_match('/data:image/', $src)) {
+                // get the mimetype
+                preg_match('/data:image\/(?<mime>.*?)\;/', $src, $groups);
+                $mimetype = $groups['mime'];
+                // Generating a random filename
+                $filename = uniqid() . str_random(10);
+                $filename_mime = $filename . '.' . $mimetype;
+                $filepath = "/media/$filename_mime";
+                // @see http://image.intervention.io/api/
+                $image = Image::make($src)// resize if required	/* ->resize(300, 200) */
+                ->encode($mimetype, 100)// encode file to the specified mimetype
+                ->save($storage_path . $filename_mime);
+                $medialibrary = new Media();
+                $medialibrary->storeMediaLibraryByPost($filename_mime, $mimetype, $filename_mime);
+                $new_src = asset($filepath);
+                $img->removeAttribute('src');
+                $img->setAttribute('src', $new_src);
+            } // <!--endif -->
+        } // <!--Check-->
+        libxml_clear_errors();
+        //<!--Save the description content to db-->
+        $data['content'] = $dom->saveHTML();
+        $post = Post::create($data);
+        if ($request->has('categories')) {
+            $post->categories()->attach(explode(',', $request->categories));
+        }
+        if ($request->has('tags')) {
+            $post->tags()->attach(explode(',', $request->tags));
+        }
         if ($request->hasFile('thumbnail')) {
             $post->storeAndSetThumbnail($request->file('thumbnail'));
         }
@@ -70,7 +117,59 @@ class PostsController extends Controller
      */
     public function update(PostsRequest $request, Post $post)
     {
-        $post->update($request->only(['title', 'content', 'posted_at', 'author_id']));
+        $data = $request->all();
+        $storage_path = storage_path("app/public/uploads/media/");
+        if (!file_exists($storage_path)) {
+            mkdir($storage_path, 0777, true);
+        }
+        $dom = new DOMDocument();
+        libxml_use_internal_errors(true);
+        $dom->loadHtml(mb_convert_encoding($data['content'], 'HTML-ENTITIES', 'UTF-8'), LIBXML_HTML_NOIMPLIED | LIBXML_HTML_NODEFDTD);
+        $images = $dom->getElementsByTagName('img');
+        // foreach <img> in the submitted message
+        foreach ($images as $img) {
+            $src = $img->getAttribute('src');
+            // if the img source is 'data-url'
+            if (preg_match('/data:image/', $src)) {
+                // get the mimetype
+                preg_match('/data:image\/(?<mime>.*?)\;/', $src, $groups);
+                $mimetype = $groups['mime'];
+                // Generating a random filename
+                $filename = uniqid() . str_random(10);
+                $filename_mime = $filename . '.' . $mimetype;
+                $filepath = "/media/$filename_mime";
+                // @see http://image.intervention.io/api/
+                $image = Image::make($src)// resize if required	/* ->resize(300, 200) */
+                ->encode($mimetype, 100)// encode file to the specified mimetype
+                ->save($storage_path . $filename_mime);
+                $medialibrary = new Media();
+                $medialibrary->storeMediaLibraryByPost($filename_mime, $mimetype, $filename_mime);
+                $new_src = asset($filepath);
+                $img->removeAttribute('src');
+                $img->setAttribute('src', $new_src);
+            } // <!--endif -->
+        } // <!--Check-->
+        libxml_clear_errors();
+        //<!--Save the description content to db-->
+        $data['content'] = $dom->saveHTML();
+        if ($request->has('categories')) {
+            $post->categories()->sync(explode(',', $request->categories));
+        } else {
+            $post->categories()->sync(array());
+        }
+        if ($request->has('tags')) {
+            $post->tags()->sync(explode(',', $request->tags));
+        } else {
+            $post->tags()->sync(array());
+        }
+        if ($request->has('source_title')) {
+            $data['source_title'] = $request->source_title;
+            $data['source_url'] = $request->source_url;
+            $data['source_translator'] = $request->source_translator;
+            $data['post_id'] = $post->id;
+            Source::create($data);
+        }
+        $post->update($data);
 
         if ($request->hasFile('thumbnail')) {
             $post->storeAndSetThumbnail($request->file('thumbnail'));
@@ -80,12 +179,12 @@ class PostsController extends Controller
     }
 
     /**
-    * Remove the specified resource from storage.
-    *
-    * @param  Post  $post
-    * @return \Illuminate\Http\Response
-    */
-    public function destroy(Post  $post)
+     * Remove the specified resource from storage.
+     *
+     * @param  Post $post
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy(Post $post)
     {
         $post->delete();
 

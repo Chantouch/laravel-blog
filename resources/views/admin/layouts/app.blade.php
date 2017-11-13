@@ -24,24 +24,25 @@
     <link href="{!! asset('css/admin.css') !!}" rel="stylesheet">
 </head>
 <body class="admin-body">
-    <div id="app">
-        @include('shared/navbar')
-
-        <div class="container-fluid {{ Request::is('admin/dashboard') ? '' : 'bg-white' }}">
-            <div class="row">
-                @include('admin/shared/sidebar')
-
-                <main class="col-lg-10 ml-md-auto">
-                    @include('shared/alerts')
-
-                    @yield('content')
-                </main>
+<div id="app">
+    @include('shared/navbar')
+    <div class="container-fluid">
+        <div class="row d-flex d-md-block flex-nowrap wrapper">
+            <div class="col-md-2 float-left col-1 pl-0 pr-0 collapse width show" id="sidebar">
+                @include('admin/shared/menu')
             </div>
+            <main class="col-md-10 float-left col px-5 pl-md-2 pt-2 main">
+                @include('shared/alerts')
+
+                @yield('content')
+            </main>
         </div>
     </div>
+</div>
 
-    <!-- Scripts -->
-    <script src="{!! asset('js/app.js') !!}"></script>
-    <script src="{!! asset('js/admin.js') !!}"></script>
+<!-- Scripts -->
+<script src="{!! asset('js/app.js') !!}"></script>
+<script src="{!! asset('js/admin.js') !!}"></script>
+@yield('js')
 </body>
 </html>

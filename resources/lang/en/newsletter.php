@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'subscribre' => 'Subscribe',
+    'subscribre' => 'Subscr',
     'placeholder' => 'Your email',
     'created' => "Email added to the newsletter successfully",
     'unsubscribed' => 'The request for unsubscription has been taken into account.',

@@ -7,6 +7,8 @@ use App\Media;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Resources\Media as MediaResource;
+use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Storage;
 
 class MediasController extends Controller
 {
@@ -38,7 +40,7 @@ class MediasController extends Controller
      * Store a newly created resource in storage.
      *
      * @param  MediaRequest $request
-     * @return MediaResource|\Illuminate\Http\Response
+     * @return Media
      */
     public function store(MediaRequest $request)
     {
@@ -47,7 +49,7 @@ class MediasController extends Controller
         if ($request->hasFile('file')) {
             $media->storeAndSetThumbnail($request->file('file'));
         }
-        return new MediaResource($media);
+        return $media;
     }
 
     /**
@@ -87,11 +89,18 @@ class MediasController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int $id
+     * @param $id
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
     {
-        //
+        //$this->authorize('delete', $media);
+        $media = Media::find($id);
+        $name = $media->filename;
+        if (File::exists(storage_path('app/public/uploads/media'))) {
+            Storage::delete('public/uploads/media/' . $name);
+        }
+        $media->delete();
+        return response()->json(['status' => 'Media deleted!']);
     }
 }
