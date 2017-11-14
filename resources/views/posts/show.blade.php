@@ -48,6 +48,6 @@
             {!! $post->content !!}
         </div>
     </div>
-
+    @include('posts/tag')
     @include ('comments/_list')
 @endsection

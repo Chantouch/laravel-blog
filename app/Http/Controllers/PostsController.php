@@ -8,15 +8,21 @@ use App\Post;
 
 class PostsController extends BaseController
 {
+
     /**
-    * Show the application dashboard.
-    *
-    * @return \Illuminate\Http\Response
-    */
-    public function index()
+     * Show the application dashboard.
+     *
+     * @param Request $request
+     * @return \Illuminate\Http\Response
+     */
+    public function index(Request $request)
     {
         return view('posts.index', [
-            'posts' => Post::with('author', 'media')->latest()->paginate(20)
+            'posts' => Post::search($request->input('q'))
+                ->with('author', 'media')
+                ->withCount('comments')
+                ->latest()
+                ->paginate(20)
         ]);
     }
 

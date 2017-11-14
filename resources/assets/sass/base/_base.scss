@@ -1,59 +1,71 @@
 html {
-    position: relative;
-    min-height: 100%;
-  }
+  position: relative;
+  min-height: 100%;
+}
 
 .huge {
-    font-size: 40px;
+  font-size: 40px;
 }
 
 body > #app > .container {
-    margin-top: 100px;
-    margin-bottom: 100px;
-    padding-top: 15px;
-    padding-bottom: 15px;
+  margin-top: 100px;
+  margin-bottom: 220px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+@include media-breakpoint-down(xs) {
+  body > #app > .container {
+    margin-bottom: 320px;
+  }
 }
 
 body > #app > .container-fluid {
-    padding-bottom: 15px;
-    padding-top: 15px;
+  padding-bottom: 15px;
+  padding-top: 15px;
+  margin-bottom: 220px;
 }
 
 .pt-50 {
-    padding-top: 30px;
+  padding-top: 30px;
 }
 
 .right-sidebar .card-body {
-    padding: 0.7rem;
+  padding: 0.7rem;
 }
 
 .entry-colors {
-    left: 0;
-    margin: 10px 0 12px 0;
-    display: block;
-    width: 100%;
+  left: 0;
+  margin: 10px 0 12px 0;
+  display: block;
+  width: 100%;
 }
 
 .entry-colors .color_col_1, .entry-colors .color_col_2, .entry-colors .color_col_3 {
-    float: left;
-    height: 5px;
-    width: 33.33%;
+  float: left;
+  height: 5px;
+  width: 33.33%;
 }
+
 .color_col_1 {
-    background: #ec3233 none repeat scroll 0 0;
-    height: 5px;
+  background: #ec3233 none repeat scroll 0 0;
+  height: 5px;
 }
 
 .color_col_2 {
-    background: #1eb2b2 none repeat scroll 0 0;
-    height: 5px;
+  background: #1eb2b2 none repeat scroll 0 0;
+  height: 5px;
 }
 
 .color_col_3 {
-    background: #e0e0e0 none repeat scroll 0 0;
-    height: 5px;
+  background: #e0e0e0 none repeat scroll 0 0;
+  height: 5px;
 }
 
 .post-content {
-    padding-top: 15px;
+  padding-top: 15px;
+}
+
+.post-tags {
+  margin-bottom: 0 !important;
 }

@@ -18,6 +18,7 @@ return [
     'search_results' => ":count article trouvé|:count articles trouvés",
     'view_count' => 'Viewer',
     'category' => 'Category:',
+    'tags' => 'Tags',
 
     'attributes' => [
         'title' => 'Title',

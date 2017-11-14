@@ -52,103 +52,19 @@
                 @yield('content')
             </div>
             <div class="col-md-3">
-                <div class="card border-dark mb-3 right-sidebar">
-                    <div class="card-header">
-                        {!! __('home.right-sidebar.search') !!}
-                    </div>
-                    <div class="card-body text-dark">
-                        <form class="form-inline my-2 my-lg-0">
-                            <input class="form-control" type="text" placeholder="{!! __('home.placeholder.search') !!}">
-                            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
-                                {!! __('home.right-sidebar.submit') !!}
-                            </button>
-                        </form>
-                    </div>
-                </div>
-                <div class="card border-danger mb-3 right-sidebar">
-                    <div class="card-header">
-                        {!! __('home.right-sidebar.subscribe-your-email-address') !!}
-                    </div>
-                    <div class="card-body text-danger">
-                        {!! Form::open(['route' => 'newsletter-subscriptions.store', 'method' => 'post', 'class' => 'form-inline my-2 my-lg-0']) !!}
-                        {!! Form::text('email', null, ['class' => 'form-control', 'placeholder' => __('newsletter.placeholder')]) !!}
-                        {!! Form::submit(__('newsletter.subscribre'), ['class' => 'btn btn-secondary']) !!}
-                        {!! Form::close() !!}
-                    </div>
-                </div>
-                <div class="card border-warning mb-3 right-sidebar">
-                    <div class="card-header">
-                        {!! __('home.right-sidebar.connect-with-us-on-fb') !!}
-                    </div>
-                    <div class="card-body text-warning">
-                        <div class="fb-page" data-href="https://www.facebook.com/khclassifiedads/" data-tabs="timeline"
-                             data-small-header="false" data-adapt-container-width="true" data-hide-cover="false"
-                             data-show-facepile="true">
-                            <blockquote cite="https://www.facebook.com/khclassifiedads/" class="fb-xfbml-parse-ignore">
-                                <a href="https://www.facebook.com/khclassifiedads/"> KH Classified Ads</a>
-                            </blockquote>
-                        </div>
-                    </div>
-                </div>
-                <div class="card border-success mb-3">
-                    <div class="card-header">
-                        {!! __('home.right-sidebar.popular-post') !!}
-                    </div>
-                    <div class="card-body">
-                        <right-sidebar-popular-post></right-sidebar-popular-post>
-                    </div>
-                </div>
-                <div class="card border-primary mb-3 right-sidebar">
-                    <div class="card-header">
-                        {!! __('home.right-sidebar.categories') !!}
-                    </div>
-                    <div class="card-body text-primary">
-                        <right-sidebar-category></right-sidebar-category>
-                    </div>
-                </div>
-                <div class="card border-secondary mb-3">
-                    <div class="card-header">
-                        {!! __('home.right-sidebar.latest-posts') !!}
-                    </div>
-                    <div class="card-body text-secondary">
-                        <right-sidebar-latest-post></right-sidebar-latest-post>
-                    </div>
-                </div>
-                <div class="card border-success mb-3">
-                    <div class="card-header">
-                        {!! __('home.right-sidebar.advertisement') !!}
-                    </div>
-                    <div class="card-body text-success">
-                        <h4 class="card-title">Place your ads here</h4>
-                        <p class="card-text">You will get more client by advertise with us.</p>
-                    </div>
-                </div>
-                <div class="card border-info mb-3">
-                    <div class="card-header">Header</div>
-                    <div class="card-body text-info">
-                        <h4 class="card-title">Info card title</h4>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
-                            the card's content.</p>
-                    </div>
-                </div>
-                <div class="card border-light mb-3">
-                    <div class="card-header">Header</div>
-                    <div class="card-body">
-                        <h4 class="card-title">Light card title</h4>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
-                            the card's content.</p>
-                    </div>
-                </div>
+                @include('shared/_search_form')
+                @include('shared/_subscribe')
+                @include('shared/_fb_page')
+                @include('shared/_popular_post')
+                @include ('posts/_header_category')
+                @include ('shared/_latest_post')
+                @include('shared/_ads')
             </div>
         </div>
     </div>
 
-    <nav class="navbar navbar-dark bg-dark fixed-bottom">
-        <div class="container">
-            @yield('footer')
-            @include('shared/newsletter-form')
-        </div>
-    </nav>
+    @include('shared/footer')
+
 </div>
 
 <!-- Scripts -->

@@ -27,5 +27,8 @@
     "vue": "^2.5.3",
     "vue-images-loaded": "^1.1.2",
     "vue2-dropzone": "^3.0.0"
+  },
+  "devDependencies": {
+    "socket.io-client": "^2.0.4"
   }
 }

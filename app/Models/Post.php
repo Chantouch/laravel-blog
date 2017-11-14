@@ -66,6 +66,18 @@ class Post extends Model
     }
 
     /**
+     * Scope a query to search posts
+     *
+     * @param \Illuminate\Database\Eloquent\Builder $query
+     * @param $search
+     * @return \Illuminate\Database\Eloquent\Builder
+     */
+    public function scopeSearch($query, $search)
+    {
+        return $query->where('title', 'LIKE', "%{$search}%");
+    }
+
+    /**
      * Scope a query to order posts by latest posted
      *
      * @param \Illuminate\Database\Eloquent\Builder $query

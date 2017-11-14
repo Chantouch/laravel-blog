@@ -1,9 +1,9 @@
 <template>
     <div>
         <img :src="option.url" :alt="option.alt" v-if="option.is_loading" class="img-fluid">
-        <a v-for="category in categories" :title="category.name" href="#">
+        <a v-for="tag in post.tags" :title="tag.name" href="#">
             <span class="badge badge-info ml-1">
-                {{ category.name }}
+                {{ tag.name }}
             </span>
         </a>
     </div>
@@ -12,15 +12,14 @@
 <script>
     export default {
         props: [
-            'category_list'
+            'post_id',
         ],
         data() {
             return {
                 post: {
-                    category: [],
+                    tags: [],
                 },
-                categories: [],
-                endpoint: '/api/v1/categories',
+                endpoint: '/api/v1/posts/134/tags/',
                 option: {
                     url: '/images/loading.gif',
                     is_loading: true,
@@ -30,21 +29,17 @@
         },
 
         mounted() {
-            this.categoriesList();
-            this.getCategories();
+            this.postTags();
         },
 
         methods: {
-            categoriesList: function () {
+            postTags: function () {
                 let vm = axios;
                 this.option.is_loading = true;
                 vm.get(this.endpoint).then(response => {
-                    this.categories.push(...response.data.data);
+                    this.post.tags.push(...response.data.data);
                     this.option.is_loading = false;
                 });
-            },
-            getCategories: function () {
-                this.post.category = this.category_list;
             }
         }
     }

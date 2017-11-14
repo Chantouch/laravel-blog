@@ -37,6 +37,9 @@ Route::prefix('v1')->namespace('Api\V1')->group(function () {
     Route::resource('users.comments', 'UserCommentsController', ['only' => 'index']);
     Route::resource('comments', 'CommentsController', ['only' => ['index', 'show']]);
 
+    //Post's Tag
+    Route::resource('posts.tags', 'PostTagController', ['only' => 'index']);
+
     // Posts
     Route::resource('posts', 'PostsController', ['only' => ['index', 'show']]);
     Route::resource('popular-posts', 'PopularPostController', ['only' => ['index']]);

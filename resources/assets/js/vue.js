@@ -12,6 +12,8 @@ Vue.component('post-tags', require('./components/posts/Tag.vue'));
 Vue.component('right-sidebar-category', require('./components/right-sidebar/Category.vue'));
 Vue.component('right-sidebar-latest-post', require('./components/right-sidebar/LatestPost.vue'));
 Vue.component('right-sidebar-popular-post', require('./components/right-sidebar/PopularPost.vue'));
+Vue.component('tags-list', require('./components/home/Tag.vue'));
+Vue.component('post-tags', require('./components/posts/PostTag.vue'));
 
 Vue.use(BootstrapVue);
 
