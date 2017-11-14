@@ -152,6 +152,7 @@
 </div>
 
 <!-- Scripts -->
+<script src="//{!! Request::getHost() !!}:8888/socket.io/socket.io.js"></script>
 <script src="{!! asset('js/app.js') !!}"></script>
 <div id="fb-root"></div>
 <script>(function (d, s, id) {

@@ -18,7 +18,9 @@ class PopularPostController extends Controller
     public function index(Request $request)
     {
         return PostResource::collection(
-            Post::withCount('comments')->latest()->paginate($request->input('limit', 6))
+            Post::withCount('comments')
+                ->where('view_count', '>', 10)
+                ->latest()->paginate($request->input('limit', 6))
         );
     }
 
@@ -35,7 +37,7 @@ class PopularPostController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
@@ -46,7 +48,7 @@ class PopularPostController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function show($id)
@@ -57,7 +59,7 @@ class PopularPostController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
@@ -68,8 +70,8 @@ class PopularPostController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \Illuminate\Http\Request $request
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
@@ -80,7 +82,7 @@ class PopularPostController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)

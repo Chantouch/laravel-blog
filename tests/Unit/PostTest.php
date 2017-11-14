@@ -36,25 +36,25 @@ class PostTest extends TestCase
 
         // Older Posts
         factory(Post::class, 10)
-                ->create()
-                ->each(function ($post) use ($faker) {
-                    $post->posted_at = $faker->dateTimeBetween(Carbon::now()->subMonths(3), Carbon::now()->subMonths(2));
-                    $post->save();
-                });
+            ->create()
+            ->each(function ($post) use ($faker) {
+                $post->posted_at = $faker->dateTimeBetween(Carbon::now()->subMonths(3), Carbon::now()->subMonths(2));
+                $post->save();
+            });
 
         // Newer Posts
         factory(Post::class, 3)
-                ->create()
-                ->each(function ($post) use ($faker) {
-                    $post->posted_at = $faker->dateTimeBetween(Carbon::now()->subWeeks(3), Carbon::now()->subWeeks(1));
-                    $post->save();
-                });
+            ->create()
+            ->each(function ($post) use ($faker) {
+                $post->posted_at = $faker->dateTimeBetween(Carbon::now()->subWeeks(3), Carbon::now()->subWeeks(1));
+                $post->save();
+            });
 
         $isDuringLastMonth = true;
         foreach (Post::lastMonth()->get() as $post) {
             $isDuringLastMonth = $post->posted_at->between(Carbon::now()->subMonth(), Carbon::now());
 
-            if (! $isDuringLastMonth) {
+            if (!$isDuringLastMonth) {
                 break;
             }
         }
@@ -68,25 +68,25 @@ class PostTest extends TestCase
 
         // Older Posts
         factory(Post::class, 10)
-                ->create()
-                ->each(function ($post) use ($faker) {
-                    $post->posted_at = $faker->dateTimeBetween(Carbon::now()->subMonths(3), Carbon::now()->subMonths(2));
-                    $post->save();
-                });
+            ->create()
+            ->each(function ($post) use ($faker) {
+                $post->posted_at = $faker->dateTimeBetween(Carbon::now()->subMonths(3), Carbon::now()->subMonths(2));
+                $post->save();
+            });
 
         // Newer Posts
         factory(Post::class, 3)
-                ->create()
-                ->each(function ($post) use ($faker) {
-                    $post->posted_at = $faker->dateTimeBetween(Carbon::now()->subWeek(), Carbon::now());
-                    $post->save();
-                });
+            ->create()
+            ->each(function ($post) use ($faker) {
+                $post->posted_at = $faker->dateTimeBetween(Carbon::now()->subWeek(), Carbon::now());
+                $post->save();
+            });
 
         $isDuringLastWeek = true;
         foreach (Post::lastWeek()->get() as $post) {
             $isDuringLastWeek = $post->posted_at->between(Carbon::now()->subWeek(), Carbon::now());
 
-            if (! $isDuringLastWeek) {
+            if (!$isDuringLastWeek) {
                 break;
             }
         }
@@ -103,7 +103,7 @@ class PostTest extends TestCase
         foreach (Post::all() as $post) {
             $isBeforeNow = $post->posted_at->lt(Carbon::now());
 
-            if (! $isBeforeNow) {
+            if (!$isBeforeNow) {
                 break;
             }
         }
@@ -123,7 +123,7 @@ class PostTest extends TestCase
         foreach (Post::all() as $post) {
             $isBeforeNow = $post->posted_at->lt(Carbon::now());
 
-            if (! $isBeforeNow) {
+            if (!$isBeforeNow) {
                 break;
             }
         }
@@ -165,5 +165,15 @@ class PostTest extends TestCase
         $this->assertEquals($post->thumbnail()->original_filename, 'file.png');
 
         Storage::delete($post->thumbnail()->filename);
+    }
+
+    public function testSearch()
+    {
+        factory(Post::class)->create(['title' => 'Hello Luke']);
+        factory(Post::class)->create(['title' => 'Hello Leia']);
+
+        $this->assertCount(0, Post::search('Hi Anakin')->get());
+        $this->assertCount(1, Post::search('Hello Lu')->get());
+        $this->assertCount(2, Post::search('Hello')->get());
     }
 }
