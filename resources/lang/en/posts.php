@@ -28,6 +28,7 @@ return [
         'posted_at' => 'Posted at',
         'categories' => 'Categories',
         'new_category' => 'New Category',
+        'new_tag' => 'New Tag',
         'source_title' => 'Title',
         'source_url' => 'Url',
         'source_translator' => 'Translator',

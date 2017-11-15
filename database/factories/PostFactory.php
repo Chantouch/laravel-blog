@@ -12,6 +12,7 @@ $factory->define(Post::class, function (Generator $faker) {
         'posted_at' => Carbon::now(),
         'author_id' => function () {
             return factory(User::class)->create()->id;
-        }
+        },
+        'view_count' => $faker->numberBetween(1, 1000)
     ];
 });

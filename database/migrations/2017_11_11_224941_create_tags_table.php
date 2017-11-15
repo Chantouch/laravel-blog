@@ -16,6 +16,7 @@ class CreateTagsTable extends Migration
         Schema::create('tags', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name')->uqique();
+            $table->string('slug')->unique()->nullable();
             $table->text('description')->nullable();
             $table->tinyInteger('active')->default(1);
             $table->unsignedInteger('media_id')->nullable();

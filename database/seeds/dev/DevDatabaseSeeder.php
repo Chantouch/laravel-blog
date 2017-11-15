@@ -3,6 +3,8 @@
 use Illuminate\Database\Seeder;
 use App\Post;
 use App\User;
+use App\Models\Category;
+use App\Models\Tag;
 use App\Comment;
 use App\NewsletterSubscription;
 use Faker\Factory;
@@ -17,6 +19,9 @@ class DevDatabaseSeeder extends Seeder
     public function run()
     {
         $faker = Factory::create();
+
+        factory(Category::class,10)->create();
+        factory(Tag::class,20)->create();
 
         factory(User::class, 10)
             ->create()

@@ -8,8 +8,9 @@
             <span class="custom-control-description">{{ category.name }}</span>
         </label>
         <div class="pull-right">
-            <a href="javascript:void(0)" @click="addCategory()"><i class="fa fa-plus-square-o"
-                                                                   aria-hidden="true"></i></a>
+            <a href="javascript:void(0)" @click="addCategory()" :title="modal_title">
+                <i class="fa fa-plus-square-o" aria-hidden="true"></i>
+            </a>
         </div>
         <!-- Modal -->
         <div class="modal fade" id="myModalCreateCategory" tabindex="-1" role="dialog"
@@ -43,8 +44,9 @@
                                 </select>
                             </div>
                             <div class="form-group">
-                                <label for="message-text" class="form-control-label">Message:</label>
-                                <textarea class="form-control" id="message-text"></textarea>
+                                <label for="cat-description" class="form-control-label">Description:</label>
+                                <textarea class="form-control" id="cat-description" v-model="newCategory.description">
+                                </textarea>
                             </div>
                         </form>
                     </div>
@@ -91,7 +93,8 @@
                 newCategory: {
                     name: '',
                     slug: '',
-                    parent_id: ''
+                    parent_id: '',
+                    description: ''
                 },
                 formErrors: {},
             }
@@ -122,13 +125,13 @@
                     this.newCategory = {
                         name: '',
                         slug: '',
-                        parent_id: ''
+                        parent_id: '',
+                        description: ''
                     };
                     $("#myModalCreateCategory").modal('hide');
                     this.categories.push(...response.data);
                 }, (response) => {
                     this.formErrors = response.data;
-                    console.log(response);
                 });
             },
 

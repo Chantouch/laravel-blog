@@ -2,16 +2,15 @@
 
 namespace App;
 
+use Cviebrock\EloquentSluggable\Sluggable;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Carbon\Carbon;
-use App\Role;
-use App\Comment;
-use App\Post;
 
 class User extends Authenticatable
 {
     use Notifiable;
+    use Sluggable;
 
     /**
      * The attributes that are mass assignable.
@@ -19,7 +18,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password', 'provider', 'provider_id', 'registered_at', 'api_token'
+        'name', 'email', 'password', 'provider', 'provider_id', 'registered_at', 'api_token', 'username'
     ];
 
     /**
@@ -39,6 +38,21 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    /**
+     * Return the sluggable configuration array for this model.
+     *
+     * @return array
+     */
+    public function sluggable()
+    {
+        return [
+            'username' => [
+                'source' => 'name',
+                'separator' => ''
+            ]
+        ];
+    }
 
     /**
      * Get the user's fullname titleized.

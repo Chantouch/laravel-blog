@@ -14,7 +14,7 @@ class Tag extends Model
     use Mediable;
 
     protected $fillable = [
-        'name', 'description', 'active', 'media_id'
+        'name', 'description', 'active', 'media_id', 'slug'
     ];
 
 

@@ -4,6 +4,7 @@ namespace App;
 
 use App\Models\Category;
 use App\Models\Tag;
+use Cviebrock\EloquentSluggable\Sluggable;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Storage;
@@ -15,6 +16,7 @@ use Carbon\Carbon;
 class Post extends Model
 {
     use Mediable;
+    use Sluggable;
 
     /**
      * The attributes that are mass assignable.
@@ -50,6 +52,20 @@ class Post extends Model
     {
         parent::boot();
         static::addGlobalScope(new PostedScope);
+    }
+
+    /**
+     * Return the sluggable configuration array for this model.
+     *
+     * @return array
+     */
+    public function sluggable()
+    {
+        return [
+            'slug' => [
+                'source' => 'title'
+            ]
+        ];
     }
 
     /**

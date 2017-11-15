@@ -26,9 +26,7 @@ Route::prefix('v1')->namespace('Api\V1')->group(function () {
     });
 
     // Medias
-    Route::get('medias', 'MediasController@index');
-    Route::post('medias', 'MediasController@store');
-    Route::delete('medias/{id}', 'MediasController@destroy');
+    Route::resource('medias', 'MediasController');
 
     Route::post('/authenticate', 'Auth\AuthenticateController@authenticate')->name('authenticate');
 
@@ -51,6 +49,7 @@ Route::prefix('v1')->namespace('Api\V1')->group(function () {
 
     //Categories
     Route::resource('categories', 'CategoryController');
+
     //Tag
-    Route::resource('tags', 'TagController', ['only' => 'index']);
+    Route::resource('tags', 'TagController');
 });
