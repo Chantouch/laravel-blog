@@ -33,9 +33,14 @@
 </div>
 
 <div class="form-group has-success{{ $errors->has('categories') ? ' has-error' : '' }}">
-    {!! Form::label('categories', __('posts.attributes.categories')) !!}<br>
+    {!! Form::label('categories', __('posts.attributes.categories')) !!}
 
-    <post-categories :category_list="{!! isset($post->categories) ? $post->categories->pluck('id') : '[]' !!}">
+    <post-categories
+            :category_list="{!! isset($post->categories) ? $post->categories->pluck('id') : '[]' !!}"
+            modal_button_save="{!! __('forms.actions.save') !!}"
+            modal_button_close="{!! __('forms.actions.back') !!}"
+            modal_title="{!! __('posts.attributes.new_category') !!}"
+    >
     </post-categories>
 
     @if ($errors->has('categories'))
@@ -46,8 +51,10 @@
 </div>
 
 <div class="form-group has-success{{ $errors->has('tags') ? ' has-error' : '' }}">
-    {!! Form::label('tags', __('tags.attributes.title')) !!}<br>
-    <post-tags :tag_list="{!! isset($post->tags) ? $post->tags->pluck('id') : '[]' !!}"></post-tags>
+    {!! Form::label('tags', __('tags.attributes.title')) !!}
+    <post-tags
+            :tag_list="{!! isset($post->tags) ? $post->tags->pluck('id') : '[]' !!}">
+    </post-tags>
     @if ($errors->has('tags'))
         <span class="help-block">
             <small>{{ $errors->first('tags') }}</small>

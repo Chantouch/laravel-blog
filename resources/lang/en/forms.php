@@ -9,6 +9,7 @@ return [
         'generate' => 'Generate',
         'delete' => 'Remove',
         'add' => 'Add',
+        'draft' => 'Draft',
     ],
 
     'comments' => [

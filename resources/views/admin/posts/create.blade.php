@@ -7,7 +7,8 @@
     @include('admin/posts/_form')
 
     {{ link_to_route('admin.posts.index', __('forms.actions.back'), [], ['class' => 'btn btn-secondary']) }}
-    {!! Form::submit(__('forms.actions.save'), ['class' => 'btn btn-primary']) !!}
+    {!! Form::submit(__('forms.actions.save'), ['class' => 'btn btn-primary','name' => 'submit']) !!}
+    {!! Form::submit(__('forms.actions.draft'), ['class' => 'btn btn-info pull-right','name' => 'submit']) !!}
     {!! Form::close() !!}
 @endsection
 

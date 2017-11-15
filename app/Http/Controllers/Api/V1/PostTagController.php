@@ -19,7 +19,7 @@ class PostTagController extends Controller
     public function index(Request $request, Post $post)
     {
         return TagResource::collection(
-            $post->tags()->with('author')->latest()->paginate($request->input('limit', 20))
+            $post->tags()->latest()->paginate($request->input('limit', 20))
         );
     }
 }

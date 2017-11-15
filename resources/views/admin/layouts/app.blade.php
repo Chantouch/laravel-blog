@@ -22,6 +22,7 @@
     <!-- Styles -->
     <link href="{!! asset('css/app.css') !!}" rel="stylesheet">
     <link href="{!! asset('css/admin.css') !!}" rel="stylesheet">
+    @yield('css')
 </head>
 <body class="admin-body">
 <div id="app">
@@ -31,7 +32,7 @@
             <div class="col-md-2 float-left col-1 pl-0 pr-0 collapse width show" id="sidebar">
                 @include('admin/shared/menu')
             </div>
-            <main class="col-md-10 float-left col px-5 pl-md-2 pt-2 main">
+            <main class="col-md-10 float-left col px-5 pl-md-4 pt-2 main mb-3">
                 @include('shared/alerts')
 
                 @yield('content')

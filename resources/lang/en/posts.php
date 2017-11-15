@@ -27,10 +27,12 @@ return [
         'thumbnail' => 'Image in the picture',
         'posted_at' => 'Posted at',
         'categories' => 'Categories',
+        'new_category' => 'New Category',
         'source_title' => 'Title',
         'source_url' => 'Url',
         'source_translator' => 'Translator',
-        'references' => 'References:'
+        'references' => 'References:',
+        'slug' => 'Slug'
     ],
 
     'placeholder' => [

@@ -95,6 +95,13 @@ class PostsController extends Controller
         libxml_clear_errors();
         //<!--Save the description content to db-->
         $data['content'] = $dom->saveHTML();
+        switch ($request->submit) {
+            case 'Save':
+                $data['active'] = 1;
+                break;
+            case 'Draft':
+                $data['active'] = 0;
+        }
         $post = Post::create($data);
         if ($request->has('categories')) {
             $post->categories()->attach(explode(',', $request->categories));
@@ -168,6 +175,13 @@ class PostsController extends Controller
             $data['source_translator'] = $request->source_translator;
             $data['post_id'] = $post->id;
             Source::create($data);
+        }
+        switch ($request->submit) {
+            case 'Update':
+                $data['active'] = 1;
+                break;
+            case 'Draft':
+                $data['active'] = 0;
         }
         $post->update($data);
 

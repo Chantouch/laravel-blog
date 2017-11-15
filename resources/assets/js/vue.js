@@ -1,4 +1,6 @@
 window.Vue = require('vue');
+window.Slug = require('slug');
+Slug.defaults.mode = "rfc3986";
 
 import BootstrapVue from 'bootstrap-vue'
 
@@ -13,7 +15,8 @@ Vue.component('right-sidebar-category', require('./components/right-sidebar/Cate
 Vue.component('right-sidebar-latest-post', require('./components/right-sidebar/LatestPost.vue'));
 Vue.component('right-sidebar-popular-post', require('./components/right-sidebar/PopularPost.vue'));
 Vue.component('tags-list', require('./components/home/Tag.vue'));
-Vue.component('post-tags', require('./components/posts/PostTag.vue'));
+Vue.component('post-tags-list', require('./components/posts/PostTag.vue'));
+Vue.component('post-slug-widget', require('./components/posts/SlugWidget.vue'));
 
 Vue.use(BootstrapVue);
 

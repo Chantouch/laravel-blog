@@ -50,7 +50,7 @@ Route::prefix('v1')->namespace('Api\V1')->group(function () {
     Route::resource('users', 'UsersController', ['only' => ['index', 'show']]);
 
     //Categories
-    Route::resource('categories', 'CategoryController', ['only' => 'index']);
+    Route::resource('categories', 'CategoryController');
     //Tag
     Route::resource('tags', 'TagController', ['only' => 'index']);
 });

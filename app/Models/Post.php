@@ -29,6 +29,7 @@ class Post extends Model
         'thumbnail_id',
         'slug',
         'view_count',
+        'active'
     ];
 
     /**
