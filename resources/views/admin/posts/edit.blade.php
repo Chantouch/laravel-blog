@@ -1,7 +1,4 @@
 @extends('admin.layouts.app')
-@section('css')
-    <link rel="stylesheet" href="{!! asset('plugins/summernote/dist/summernote-bs4.css') !!}">
-@stop
 @section('content')
     <h1>{{ $post->title }}
         <small>{{ link_to_route('posts.show', __('posts.show'), $post) }}</small>
@@ -29,6 +26,6 @@
     {!! Form::button('<i class="fa fa-trash" aria-hidden="true"></i> ' . __('posts.delete'), ['class' => 'btn btn-link text-danger', 'name' => 'submit', 'type' => 'submit']) !!}
     {!! Form::close() !!}
 @endsection
-@section('js')
-    @include('admin.shared.summernote')
-@stop
+
+@include('admin.shared.summernote')
+

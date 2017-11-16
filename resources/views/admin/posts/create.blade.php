@@ -12,6 +12,4 @@
     {!! Form::close() !!}
 @endsection
 
-@section('js')
-    @include('admin.shared.trumbowyg')
-@stop
+@include('admin.shared.summernote')

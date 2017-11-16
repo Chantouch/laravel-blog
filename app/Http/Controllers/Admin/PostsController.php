@@ -158,7 +158,7 @@ class PostsController extends Controller
         } // <!--Check-->
         libxml_clear_errors();
         //<!--Save the description content to db-->
-        $data['content'] = $dom->saveHTML();
+        $data['content'] = clean($dom->saveHTML());
         if ($request->has('categories')) {
             $post->categories()->sync(explode(',', $request->categories));
         } else {
