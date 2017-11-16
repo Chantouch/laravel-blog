@@ -27,6 +27,7 @@ Route::prefix('admin')->middleware(['auth', 'role:admin'])->namespace('Admin')->
     Route::resource('medias', 'MediaController');
     Route::resource('categories', 'CategoryController');
     Route::resource('tags', 'TagController');
+    Route::resource('roles', 'RoleController', ['only' => 'index']);
 });
 
 Route::middleware('auth')->group(function () {
@@ -40,5 +41,7 @@ Route::resource('media', 'MediaController', ['only' => 'show']);
 Route::get('/posts/feed', 'PostsFeedController@index')->name('posts.feed');
 Route::resource('posts', 'PostsController', ['only' => 'show']);
 Route::resource('users', 'UsersController', ['only' => 'show']);
+Route::resource('tags', 'TagsController', ['only' => ['show', 'index']]);
+Route::resource('categories', 'CategoriesController', ['only' => ['show', 'index']]);
 
 Route::get('newsletter-subscriptions/unsubscribe', 'NewsletterSubscriptionsController@unsubscribe')->name('newsletter-subscriptions.unsubscribe');

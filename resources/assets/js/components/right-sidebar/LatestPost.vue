@@ -2,7 +2,7 @@
     <ul class="list-unstyled">
         <img :src="option.url" :alt="option.alt" v-if="option.is_loading" class="img-fluid">
         <li v-for="post in posts">
-            <a href="#" :title="post.title">
+            <a :href="post.url" :title="post.title">
                 <i class="fa fa-hand-o-right mr-1"></i>{{ post.title }}
             </a>
         </li>

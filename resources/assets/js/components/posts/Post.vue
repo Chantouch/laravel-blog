@@ -109,7 +109,8 @@
             categoriesList: function () {
                 let vm = axios;
                 vm.get(this.endpoint).then(response => {
-                    this.categories.push(...response.data.data);
+                    //this.categories.push(...response.data.data);
+                    this.categories = response.data.data;
                 });
             },
             getCategories: function () {
@@ -129,7 +130,7 @@
                         description: ''
                     };
                     $("#myModalCreateCategory").modal('hide');
-                    this.categories.push(...response.data);
+                    this.categoriesList();
                 }, (response) => {
                     this.formErrors = response.data;
                 });

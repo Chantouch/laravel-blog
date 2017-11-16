@@ -2,8 +2,7 @@
     <div class="card-body text-primary">
         <post-tags-list
                 post_id="{!! $post->id !!}"
-                header_title="{!! __('posts.tags') !!}"
-        >
+                header_title="{!! __('posts.tags') !!}">
         </post-tags-list>
     </div>
 </div>

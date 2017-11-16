@@ -18,6 +18,7 @@ class Category extends Resource
             'id' => $this->id,
             'name' => $this->name,
             'description' => $this->description,
+            'url' => route('categories.show', [$this->slug])
         ];
     }
 }

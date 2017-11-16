@@ -11,7 +11,7 @@
     <div class="form-row">
         <div class="form-group col-md-6">
             {!! Form::label('parent_id', __('categories.attributes.parent')) !!}
-            {!! Form::select('parent_id', $categories, null, ['class' => 'form-control' . ($errors->has('parent_id') ? ' is-invalid' : ''), 'required']) !!}
+            {!! Form::select('parent_id', $categories, null, ['class' => 'form-control' . ($errors->has('parent_id') ? ' is-invalid' : ''), 'placeholder' => '--Select option--']) !!}
             @if ($errors->has('parent_id'))
                 <span class="invalid-feedback">{{ $errors->first('parent_id') }}</span>
             @endif

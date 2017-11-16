@@ -1,7 +1,7 @@
 <template>
     <div>
         <img :src="option.url" :alt="option.alt" v-if="option.is_loading" class="img-fluid">
-        <a v-for="category in categories" :title="category.name" href="#">
+        <a v-for="category in categories" :title="category.name" :href="category.url">
             <span class="badge badge-info ml-1">
                 {{ category.name }}
             </span>

@@ -15,5 +15,6 @@ return [
         'tag' => 'Tag'
     ],
     'categories' => 'Categories',
-    'tags' => 'Tags'
+    'tags' => 'Tags',
+    'roles' => 'Roles'
 ];

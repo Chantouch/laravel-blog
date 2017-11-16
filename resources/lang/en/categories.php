@@ -5,12 +5,12 @@ return [
     'delete' => 'Remove',
     'delete_thumbnail' => "Delete the picture in one",
     'edit' => 'Edit',
-    'last_category' => 'Latest categories',
+    'latest_category' => 'Latest categories',
     'create' => 'Add a category',
     'created' => 'Category created successfully',
     'updated' => 'Category updated successfully',
     'deleted' => 'Category deleted successfully',
-    'empty' => "There is no article for the moment.",
+    'empty' => "There is no category for the moment.",
     'new_category' => 'New category',
     'count' => ':count category | :count categories',
     'show' => "See category",
@@ -23,6 +23,7 @@ return [
         'action' => 'Action',
         'created_at' => 'Created at',
         'active' => 'Active',
+        'parent' => 'Main Category'
     ],
 
     'placeholder' => [

@@ -23,7 +23,8 @@ class Post extends Resource
             'author_id' => $this->author_id,
             'has_thumbnail' => $this->hasThumbnail(),
             'thumbnail_url' => optional($this->thumbnail())->url,
-            'comments_count' => $this->comments_count ?? $this->comments()->count()
+            'comments_count' => $this->comments_count ?? $this->comments()->count(),
+            'url' => route('posts.show', [$this->slug])
         ];
     }
 }

@@ -4,6 +4,8 @@ namespace App\Models;
 
 use App\Concern\Mediable;
 use App\Post;
+use Cviebrock\EloquentSluggable\Sluggable;
+use Cviebrock\EloquentSluggable\SluggableScopeHelpers;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\UploadedFile;
 use Illuminate\Support\Facades\File;
@@ -12,14 +14,29 @@ use Illuminate\Support\Facades\Storage;
 class Tag extends Model
 {
     use Mediable;
+    use Sluggable;
+    use SluggableScopeHelpers;
 
     protected $fillable = [
         'name', 'description', 'active', 'media_id', 'slug'
     ];
 
+    /**
+     * Return the sluggable configuration array for this model.
+     *
+     * @return array
+     */
+    public function sluggable()
+    {
+        return [
+            'slug' => [
+                'source' => 'name'
+            ]
+        ];
+    }
 
     /**
-     * Check if the post has a valid thumbnail
+     * Check if the tag has a valid thumbnail
      *
      * @return boolean
      */
@@ -29,7 +46,7 @@ class Tag extends Model
     }
 
     /**
-     * Retrieve the post's thumbnail
+     * Retrieve the tag's thumbnail
      *
      * @return mixed
      */
@@ -70,9 +87,21 @@ class Tag extends Model
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
+     *
+     * Post(s) by tag
      */
     public function posts()
     {
         return $this->belongsToMany(Post::class, 'tag_post', 'tag_id', 'post_id')->withPivot('tag_id', 'post_id')->latest()->withTimestamps();
+    }
+
+    /**
+     * @return bool
+     *
+     * Check if this tag has/have post(s) in it
+     */
+    public function hasPost(): bool
+    {
+        return $this->posts()->count();
     }
 }

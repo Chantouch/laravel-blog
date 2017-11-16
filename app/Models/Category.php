@@ -4,6 +4,8 @@ namespace App\Models;
 
 use App\Concern\Mediable;
 use App\Post;
+use Cviebrock\EloquentSluggable\Sluggable;
+use Cviebrock\EloquentSluggable\SluggableScopeHelpers;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\UploadedFile;
 use Illuminate\Support\Facades\File;
@@ -12,9 +14,25 @@ use Illuminate\Support\Facades\Storage;
 class Category extends Model
 {
     use Mediable;
+    use Sluggable;
+    use SluggableScopeHelpers;
     protected $fillable = [
         'name', 'description', 'active', 'media_id', 'slug'
     ];
+
+    /**
+     * Return the sluggable configuration array for this model.
+     *
+     * @return array
+     */
+    public function sluggable()
+    {
+        return [
+            'slug' => [
+                'source' => 'name'
+            ]
+        ];
+    }
 
     /**
      * Check if the post has a valid thumbnail
@@ -74,4 +92,11 @@ class Category extends Model
         return $this->belongsToMany(Post::class, 'post_category', 'category_id', 'post_id')->withPivot('category_id', 'post_id')->latest()->withTimestamps();
     }
 
+    /**
+     * @return bool
+     */
+    public function hasPost(): bool
+    {
+        return $this->posts()->count();
+    }
 }

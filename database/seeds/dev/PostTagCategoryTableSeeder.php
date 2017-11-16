@@ -26,16 +26,18 @@ class PostTagCategoryTableSeeder extends Seeder
             ]);
             $id++;
         }
+        $ids = 1;
         for ($i = 1; $i <= 150; $i++) {
-            if ($id == 11) {
-                $id = 1;
+            if ($ids == 21) {
+                $ids = 1;
             }
             DB::table('tag_post')->insert([
                 'post_id' => $i,
-                'tag_id' => $id,
+                'tag_id' => $ids,
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now(),
             ]);
+            $ids++;
         }
     }
 }

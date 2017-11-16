@@ -19,6 +19,7 @@ return [
     'view_count' => 'Viewer',
     'category' => 'Category:',
     'tags' => 'Tags',
+    'tag' => 'Tag:',
 
     'attributes' => [
         'title' => 'Title',

@@ -27,15 +27,19 @@
             @lang('dashboard.users')
         </span>
     </a>
+    <a href="{{ route('admin.roles.index') }}"
+       class="list-group-item d-inline-block collapsed {{ Request::is('admin/roles') || Request::is('admin/roles/*') ? 'active' : '' }}"
+       data-parent="#sidebar">
+        <i class="fa fa-bolt" aria-hidden="true"></i> <span class="d-none d-md-inline">
+            @lang('dashboard.roles')
+        </span>
+    </a>
     <a href="{{ route('admin.medias.index') }}"
        class="list-group-item d-inline-block collapsed {{ Request::is('admin/medias') || Request::is('admin/medias/*') ? 'active' : '' }}"
        data-parent="#sidebar">
         <i class="fa fa-file-image-o"></i> <span class="d-none d-md-inline">
             @lang('dashboard.media')
         </span>
-    </a>
-    <a href="#" class="list-group-item d-inline-block collapsed" data-parent="#sidebar">
-        <i class="fa fa-gear"></i> <span class="d-none d-md-inline">Link</span>
     </a>
     <a href="#" class="list-group-item d-inline-block collapsed" data-parent="#sidebar">
         <i class="fa fa-calendar"></i> <span class="d-none d-md-inline">Link</span>

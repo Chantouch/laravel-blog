@@ -3,7 +3,7 @@
         <i class="fa fa-tags" aria-hidden="true"></i>
         {{ header_title }}:
         <img :src="option.url" :alt="option.alt" v-if="option.is_loading" class="img-fluid">
-        <a v-for="tag in post.tags" :title="tag.name" href="#">
+        <a v-for="tag in post.tags" :title="tag.name" :href="tag.url">
             <span class="badge badge-info ml-1">
                 {{ tag.name }}
             </span>

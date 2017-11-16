@@ -18,6 +18,7 @@ class Tag extends Resource
             'id' => $this->id,
             'name' => $this->name,
             'description' => $this->description,
+            'url' => route('tags.show', [$this->slug])
         ];
     }
 }

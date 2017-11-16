@@ -51,5 +51,5 @@ Route::prefix('v1')->namespace('Api\V1')->group(function () {
     Route::resource('categories', 'CategoryController');
 
     //Tag
-    Route::resource('tags', 'TagController');
+    Route::resource('tags', 'TagController', ['only' => ['index', 'show', 'store']]);
 });

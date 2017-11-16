@@ -100,7 +100,7 @@
             tagsList: function () {
                 let vm = axios;
                 vm.get(this.endpoint).then(response => {
-                    this.tags.push(...response.data.data);
+                    this.tags = response.data.data;
                 });
             },
             getTags: function () {
@@ -119,7 +119,7 @@
                         description: ''
                     };
                     $("#myModalCreateItem").modal('hide');
-                    this.tags.push(...response.data);
+                    this.tagsList();
                 }, (response) => {
                     this.formErrors = response.data;
                 });

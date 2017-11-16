@@ -30,7 +30,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="#" title="{!! __('home.menu.tags') !!}" class="nav-link">
+                    <a href="{!! route('tags.index') !!}" title="{!! __('home.menu.tags') !!}" class="nav-link">
                         {!! __('home.menu.tags') !!}
                     </a>
                 </li>
@@ -40,12 +40,12 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="#" title="{!! __('home.menu.latest_post') !!}" class="nav-link">
+                    <a href="{!! route('posts.feed') !!}" title="{!! __('home.menu.latest_post') !!}" class="nav-link">
                         {!! __('home.menu.latest_post') !!}
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="#" title="{!! __('home.menu.home') !!}" class="nav-link">
+                    <a href="{!! route('categories.index') !!}" title="{!! __('home.menu.home') !!}" class="nav-link">
                         {!! __('home.menu.categories') !!}
                     </a>
                 </li>

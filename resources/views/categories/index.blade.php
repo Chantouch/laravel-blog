@@ -1,14 +1,10 @@
 @extends('layouts.app')
 
 @section('content')
-    @include ('posts/_header_category')
+    @include ('posts/_tag_list')
     <div class="d-flex justify-content-between">
         <div class="p-2">
-            @if (request()->has('q'))
-                <h2>{{ trans_choice('posts.search_results', $posts->count(), ['query' => request()->input('q')]) }}</h2>
-            @else
-                <h2>@lang('posts.last_posts')</h2>
-            @endif
+            <h2><i class="fa fa-tags" aria-hidden="true"></i> @lang('categories.latest_category')</h2>
         </div>
 
         <div class="p-2">
@@ -18,6 +14,5 @@
         </div>
     </div>
 
-    @include ('posts/_list')
-    @include ('posts/_tag_list')
+    @include ('categories/_list')
 @endsection
