@@ -1,5 +1,7 @@
 @extends('admin.layouts.app')
-
+@section('css')
+    <link rel="stylesheet" href="{!! asset('plugins/summernote/dist/summernote-bs4.css') !!}">
+@stop
 @section('content')
     <h1>{{ $post->title }}
         <small>{{ link_to_route('posts.show', __('posts.show'), $post) }}</small>
@@ -28,5 +30,5 @@
     {!! Form::close() !!}
 @endsection
 @section('js')
-    @include('admin.shared.trumbowyg')
+    @include('admin.shared.summernote')
 @stop

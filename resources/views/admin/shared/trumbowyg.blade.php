@@ -1,6 +1,6 @@
 <script src="{!! asset('plugins/trumbowyg/base64/trumbowyg.base64.min.js') !!}"></script>
 <script>
-    $('.trumbowyg-form').trumbowyg({
+    $('.form-editor').trumbowyg({
         btnsDef: {
             // Create a new dropdown
             image: {

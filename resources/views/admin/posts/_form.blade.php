@@ -75,7 +75,7 @@
 
 <div class="form-group">
     {!! Form::label('content', __('posts.attributes.content')) !!}
-    {!! Form::textarea('content', null, ['class' => 'form-control trumbowyg-form' . ($errors->has('content') ? ' is-invalid' : ''), 'required' => 'required']) !!}
+    {!! Form::textarea('content', null, ['class' => 'form-control form-editor' . ($errors->has('content') ? ' is-invalid' : ''), 'required' => 'required']) !!}
 
     @if ($errors->has('content'))
         <span class="invalid-feedback">{{ $errors->first('content') }}</span>

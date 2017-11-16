@@ -18,4 +18,6 @@ mix.js('resources/assets/admin/js/admin.js', 'public/js')
     .sass('resources/assets/admin/sass/admin.scss', 'public/css')
     .copy('node_modules/trumbowyg/dist/ui/icons.svg', 'public/js/ui/icons.svg');
 mix.copy('node_modules/trumbowyg/dist/plugins/base64/trumbowyg.base64.min.js', 'public/plugins/trumbowyg/base64/trumbowyg.base64.min.js');
-
+mix.copy('node_modules/summernote/dist/', 'public/plugins/summernote/dist/');
+mix.copy('node_modules/summernote/lang/', 'public/plugins/summernote/lang/');
+mix.copy('node_modules/summernote/plugin/', 'public/plugins/summernote/plugin/');

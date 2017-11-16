@@ -1,6 +1,7 @@
 window.Vue = require('vue');
 window.Slug = require('slug');
 Slug.defaults.mode = "rfc3986";
+Vue.config.productionTip = false;
 
 import BootstrapVue from 'bootstrap-vue'
 

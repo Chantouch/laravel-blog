@@ -30,7 +30,7 @@
     <div class="container-fluid">
         <div class="row d-flex d-md-block flex-nowrap wrapper">
             <div class="col-md-2 float-left col-1 pl-0 pr-0 collapse width show" id="sidebar">
-                @include('admin/shared/menu')
+                @include('admin/shared/sidebar')
             </div>
             <main class="col-md-10 float-left col px-5 pl-md-4 pt-2 main mb-3">
                 @include('shared/alerts')

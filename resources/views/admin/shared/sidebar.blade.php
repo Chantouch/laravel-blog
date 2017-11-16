@@ -1,5 +1,6 @@
 <nav class="col-lg-2 d-none d-lg-block bg-dark sidebar">
     <ul class="nav nav-pills flex-column">
+        <li class="text-muted menu-title">Navigation</li>
         <li role="presentation" class="nav-item">
             <a class="nav-link {{ Request::is('admin/dashboard') ? 'active' : '' }}"
                href="{{ route('admin.dashboard') }}">
@@ -32,6 +33,14 @@
             </a>
         </li>
 
+        <li role="presentation" class="nav-item">
+            <a class="nav-link {{ Request::is('admin/roles') || Request::is('admin/roles/*') ? 'active' : '' }}"
+               href="{{ route('admin.roles.index') }}">
+                <i class="fa fa-bolt" aria-hidden="true"></i>&nbsp;
+                @lang('dashboard.roles')
+            </a>
+        </li>
+
         <li class="nav-item" role="presentation">
             <a href="{{ route('admin.medias.index') }}"
                class="nav-link {{ Request::is('admin/medias') || Request::is('admin/medias/*') ? 'active' : '' }}">
@@ -39,5 +48,24 @@
                 @lang('dashboard.media')
             </a>
         </li>
+
+        <li class="text-muted menu-title">@lang('dashboard.configuration.setting')</li>
+
+        <li class="nav-item" role="presentation">
+            <a href="{!! route('admin.tags.index') !!}"
+               class="nav-link {{ Request::is('admin/tags') || Request::is('admin/tags/*') ? 'active' : '' }}">
+                <i class="fa fa-tags" aria-hidden="true"></i>&nbsp;
+                @lang('dashboard.configuration.tag')
+            </a>
+        </li>
+
+        <li class="nav-item" role="presentation">
+            <a href="{!! route('admin.categories.index') !!}"
+               class="nav-link {{ Request::is('admin/categories') || Request::is('admin/categories/*') ? 'active' : '' }}">
+                <i class="fa fa-briefcase" aria-hidden="true"></i>&nbsp;
+                @lang('dashboard.configuration.category')
+            </a>
+        </li>
+
     </ul>
 </nav>

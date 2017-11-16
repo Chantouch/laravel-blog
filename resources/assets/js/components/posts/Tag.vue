@@ -46,7 +46,8 @@
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">
                             {{modal_button_close}}
                         </button>
-                        <button type="button" class="btn btn-primary" @click="createItem()">{{modal_button_save}}
+                        <button type="button" class="btn btn-primary" @click="createItem()">
+                            {{modal_button_save}}
                         </button>
                     </div>
                 </div>

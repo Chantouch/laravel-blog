@@ -19,4 +19,12 @@
         border-radius: 0;
         color: #fff;
     }
+
+    .menu-title {
+        padding: 12px 20px !important;
+        letter-spacing: .035em;
+        pointer-events: none;
+        cursor: default;
+        font-size: 13px;
+    }
   }
