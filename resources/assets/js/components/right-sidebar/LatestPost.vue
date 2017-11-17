@@ -1,6 +1,6 @@
 <template>
     <ul class="list-unstyled">
-        <img :src="option.url" :alt="option.alt" v-if="option.is_loading" class="img-fluid">
+        <img :src="option.url" :alt="option.alt" v-if="option.is_loading" class="img-fluid mx-auto d-block">
         <li v-for="post in posts">
             <a :href="post.url" :title="post.title">
                 <i class="fa fa-hand-o-right mr-1"></i>{{ post.title }}

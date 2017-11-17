@@ -22,7 +22,7 @@ return [
         'subscribe-your-email-address' => 'Subscribe Your Email address:',
         'connect-with-us-on-fb' => 'Connect with us on FB',
         'search' => 'Search',
-        'submit' => 'Submit'
+        'submit' => 'Search'
     ],
     'placeholder' => [
         'search' => 'Custom Search',

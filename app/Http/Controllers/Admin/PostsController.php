@@ -65,7 +65,9 @@ class PostsController extends Controller
         if (!file_exists($storage_path)) {
             mkdir($storage_path, 0777, true);
         }
+        $request->merge(['content' => clean($request->get('content'))]);
         $dom = new DOMDocument();
+        $dom->formatOutput = true;
         libxml_use_internal_errors(true);
         $dom->loadHtml(mb_convert_encoding($data['content'], 'HTML-ENTITIES', 'UTF-8'), LIBXML_HTML_NOIMPLIED | LIBXML_HTML_NODEFDTD);
         $images = $dom->getElementsByTagName('img');
@@ -94,7 +96,7 @@ class PostsController extends Controller
         } // <!--Check-->
         libxml_clear_errors();
         //<!--Save the description content to db-->
-        $data['content'] = $dom->saveHTML();
+        $data['content'] = clean($dom->saveHTML());
         switch ($request->submit) {
             case 'Save':
                 $data['active'] = 1;
@@ -102,7 +104,15 @@ class PostsController extends Controller
             case 'Draft':
                 $data['active'] = 0;
         }
-        $post = Post::create($data);
+        $post = Post::with('author')->create($data);
+        if ($request->has('source_title') && $request->has('source_url')) {
+            $source = new Source();
+            $source->title = $request->source_title;
+            $source->url = $request->source_url;
+            $source->translator = $request->source_translator;
+            $source->post_id = $post->id;
+            $source->save();
+        }
         if ($request->has('categories')) {
             $post->categories()->attach(explode(',', $request->categories));
         }
@@ -129,7 +139,9 @@ class PostsController extends Controller
         if (!file_exists($storage_path)) {
             mkdir($storage_path, 0777, true);
         }
+        $request->merge(['content' => clean($request->get('content'))]);
         $dom = new DOMDocument();
+        $dom->formatOutput = true;
         libxml_use_internal_errors(true);
         $dom->loadHtml(mb_convert_encoding($data['content'], 'HTML-ENTITIES', 'UTF-8'), LIBXML_HTML_NOIMPLIED | LIBXML_HTML_NODEFDTD);
         $images = $dom->getElementsByTagName('img');
@@ -169,12 +181,22 @@ class PostsController extends Controller
         } else {
             $post->tags()->sync(array());
         }
-        if ($request->has('source_title')) {
-            $data['source_title'] = $request->source_title;
-            $data['source_url'] = $request->source_url;
-            $data['source_translator'] = $request->source_translator;
-            $data['post_id'] = $post->id;
-            Source::create($data);
+        if (!empty($post->source)) {
+            $array_source = [
+                'title' => $request->source_title,
+                'url' => $request->source_url,
+                'translator' => $request->source_translator
+            ];
+            $post->source()->update($array_source);
+        } else {
+            if ($request->has('source_title') && $request->has('source_url')) {
+                $source = new Source();
+                $source->title = $request->source_title;
+                $source->url = $request->source_url;
+                $source->translator = $request->source_translator;
+                $source->post_id = $post->id;
+                $source->save();
+            }
         }
         switch ($request->submit) {
             case 'Update':

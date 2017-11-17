@@ -11,8 +11,11 @@ use App\Role;
 class UsersController extends Controller
 {
     /**
-    * Display the specified resource.
-    */
+     * Display the specified resource.
+     * @param Request $request
+     * @param User $user
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
     public function show(Request $request, User $user)
     {
         return view('users.show', [
@@ -24,8 +27,11 @@ class UsersController extends Controller
     }
 
     /**
-    * Show the form for editing the specified resource.
-    */
+     * Show the form for editing the specified resource.
+     * @param Request $request
+     * @param User $user
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
     public function edit(Request $request, User $user)
     {
         $this->authorize('update', $user);
@@ -37,8 +43,11 @@ class UsersController extends Controller
     }
 
     /**
-    * Update the specified resource in storage.
-    */
+     * Update the specified resource in storage.
+     * @param UsersRequest $request
+     * @param User $user
+     * @return
+     */
     public function update(UsersRequest $request, User $user)
     {
         $this->authorize('update', $user);

@@ -3,6 +3,7 @@
 namespace App;
 
 use App\Models\Category;
+use App\Models\Source;
 use App\Models\Tag;
 use Cviebrock\EloquentSluggable\Sluggable;
 use Illuminate\Database\Eloquent\Model;
@@ -207,9 +208,9 @@ class Post extends Model
      * @param  $length
      * @return string
      */
-    public function excerpt($length = 50): string
+    public function excerpt($length = 200): string
     {
-        return str_limit($this->content, $length);
+        return strip_tags(str_limit($this->content, $length));
     }
 
     /**
@@ -226,5 +227,13 @@ class Post extends Model
     public function tags()
     {
         return $this->belongsToMany(Tag::class, 'tag_post', 'post_id', 'tag_id')->withPivot('post_id', 'tag_id')->withTimestamps();
+    }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasOne
+     */
+    public function source()
+    {
+        return $this->hasOne(Source::class);
     }
 }

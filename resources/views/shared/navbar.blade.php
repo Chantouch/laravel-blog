@@ -1,4 +1,4 @@
-<nav class="navbar navbar-dark bg-dark fixed-top navbar-expand-md">
+<nav class="navbar navbar-expand-md bg-dark navbar-dark {!! Request::is('admin/*') ? 'fixed-top' : 'sticky-top' !!}">
 {{--<div class="{{ Request::is('admin/*') ? 'container-fluid' : 'container-fluid' }}">--}}
 <!-- Branding Image -->
 {{ link_to_route('home', config('app.name', 'Laravel'), [], ['class' => 'navbar-brand']) }}

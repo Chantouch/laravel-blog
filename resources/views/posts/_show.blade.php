@@ -29,7 +29,7 @@
                 <div class="color_col_1"></div>
             </div>
         </div>
-        <div class="card-text post-content">{!! $post->content !!}</div>
+        <div class="card-text post-content">{!! $post->excerpt() !!}</div>
         <p class="card-text">
             @if(count($post->categories))
                 <small class="text-muted">

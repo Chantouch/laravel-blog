@@ -4,19 +4,21 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Requests\NewsletterSubscriptionRequest;
+use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Auth;
 use App\NewsletterSubscription;
 use App\Jobs\UnsubscribeEmailNewsletter;
-use Validator;
+use Illuminate\Support\Facades\Validator;
 
 class NewsletterSubscriptionsController extends Controller
 {
     /**
-    * Store a newly created resource in storage.
-    *
-    * @return Response
-    */
+     * Store a newly created resource in storage.
+     *
+     * @param NewsletterSubscriptionRequest $request
+     * @return Response
+     */
     public function store(NewsletterSubscriptionRequest $request)
     {
         $newsletterSubscription = NewsletterSubscription::create([

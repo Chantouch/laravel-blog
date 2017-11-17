@@ -82,13 +82,19 @@
     @endif
 </div>
 
+@php
+$title = old('source_title') ?? (isset($post->source) ? $post->source->title : null);
+$url = old('source_url') ?? (isset($post->source) ? $post->source->url : null);
+$translator = old('source_translator') ?? (isset($post->source) ? $post->source->translator : null);
+@endphp
+
 <div class="form-row">
     <div class="form-group col-md-12">
         <h4>{!! __('posts.attributes.references') !!}</h4>
     </div>
     <div class="form-group col-md-4">
         {!! Form::label('source_title', __('posts.attributes.source_title')) !!}
-        {!! Form::text('source_title', null, ['class' => 'form-control' . ($errors->has('title') ? ' is-invalid' : '')]) !!}
+        {!! Form::text('source_title', $title, ['class' => 'form-control' . ($errors->has('title') ? ' is-invalid' : '')]) !!}
 
         @if ($errors->has('source_title'))
             <span class="invalid-feedback">{{ $errors->first('source_title') }}</span>
@@ -96,7 +102,7 @@
     </div>
     <div class="form-group col-md-4">
         {!! Form::label('source_url', __('posts.attributes.source_url')) !!}
-        {!! Form::text('source_url', null, ['class' => 'form-control' . ($errors->has('title') ? ' is-invalid' : '')]) !!}
+        {!! Form::text('source_url', $url, ['class' => 'form-control' . ($errors->has('title') ? ' is-invalid' : '')]) !!}
 
         @if ($errors->has('source_url'))
             <span class="invalid-feedback">{{ $errors->first('source_title') }}</span>
@@ -104,7 +110,7 @@
     </div>
     <div class="form-group col-md-4">
         {!! Form::label('source_translator', __('posts.attributes.source_translator')) !!}
-        {!! Form::text('source_translator', null, ['class' => 'form-control' . ($errors->has('title') ? ' is-invalid' : '')]) !!}
+        {!! Form::text('source_translator', $translator, ['class' => 'form-control' . ($errors->has('title') ? ' is-invalid' : '')]) !!}
 
         @if ($errors->has('source_translator'))
             <span class="invalid-feedback">{{ $errors->first('source_translator') }}</span>

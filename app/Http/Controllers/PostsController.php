@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Post;
+use Torann\LaravelMetaTags\Facades\MetaTag;
 
 class PostsController extends BaseController
 {
@@ -22,7 +23,7 @@ class PostsController extends BaseController
                 ->with('author', 'media')
                 ->withCount('comments')
                 ->latest()
-                ->paginate(20)
+                ->paginate($request->input('limit', '20'))
         ]);
     }
 
@@ -34,7 +35,11 @@ class PostsController extends BaseController
      */
     public function show(Request $request, Post $post)
     {
+        MetaTag::set('title', $post->title);
+        MetaTag::set('description', strip_tags($post->content));
+        MetaTag::set('image', asset($post->hasThumbnail() ? $post->thumbnail()->url : 'storage/images/default-share-image.png'));
         $post->comments_count = $post->comments()->count();
+        $post->increment('view_count');
         return view('posts.show', [
             'post' => $post
         ]);

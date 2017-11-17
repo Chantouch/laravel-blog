@@ -1,6 +1,6 @@
 <template>
     <div>
-        <img :src="option.url" :alt="option.alt" v-if="option.is_loading" class="img-fluid">
+        <img :src="option.url" :alt="option.alt" v-if="option.is_loading" class="img-fluid mx-auto d-block">
         <a v-for="category in categories" :title="category.name" :href="category.url">
             <span class="badge badge-info ml-1">
                 {{ category.name }}

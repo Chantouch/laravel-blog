@@ -2,7 +2,7 @@
     <h5 class="post-tags">
         <i class="fa fa-tags" aria-hidden="true"></i>
         {{ header_title }}:
-        <img :src="option.url" :alt="option.alt" v-if="option.is_loading" class="img-fluid">
+        <img :src="option.url" :alt="option.alt" v-if="option.is_loading" class="img-fluid mx-auto d-block">
         <a v-for="tag in post.tags" :title="tag.name" :href="tag.url">
             <span class="badge badge-info ml-1">
                 {{ tag.name }}

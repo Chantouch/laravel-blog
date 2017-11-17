@@ -3,9 +3,16 @@
         {!! __('home.right-sidebar.subscribe-your-email-address') !!}
     </div>
     <div class="card-body text-danger">
-        {!! Form::open(['route' => 'newsletter-subscriptions.store', 'method' => 'post', 'class' => 'form-inline my-2 my-lg-0']) !!}
-        {!! Form::text('email', null, ['class' => 'form-control', 'placeholder' => __('newsletter.placeholder')]) !!}
-        {!! Form::submit(__('newsletter.subscribre'), ['class' => 'btn btn-secondary']) !!}
+        {!! Form::open(['route' => 'newsletter-subscriptions.store', 'method' => 'post', 'class' => 'my-2 my-lg-0']) !!}
+        <div class="input-group">
+            {!! Form::text('email', null, ['class' => 'form-control', 'placeholder' => __('newsletter.placeholder')]) !!}
+            <span class="input-group-btn">
+                <button class="btn btn-outline-secondary" type="submit">
+                    <i class="fa fa-envelope-open-o" aria-hidden="true"></i>
+                    {!! __('newsletter.subscribre') !!}
+                </button>
+            </span>
+        </div>
         {!! Form::close() !!}
     </div>
 </div>

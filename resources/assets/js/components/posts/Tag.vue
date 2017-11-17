@@ -1,5 +1,6 @@
 <template>
     <div>
+        <img :src="option.url" :alt="option.alt" v-if="option.is_loading" class="img-fluid mx-auto d-block">
         <input type="hidden" name="tags" :value="post.tag">
         <label class="custom-control custom-checkbox" v-for="tag in tags">
             <input type="checkbox" class="custom-control-input" :id="'checkbox-'+tag.id" :value="tag.id"
@@ -89,6 +90,11 @@
                     description: ''
                 },
                 formErrors: {},
+                option: {
+                    url: '/images/loading.gif',
+                    is_loading: true,
+                    alt: 'Please wait me!'
+                },
             }
         },
 
@@ -100,8 +106,10 @@
         methods: {
             tagsList: function () {
                 let vm = axios;
+                this.option.is_loading = true;
                 vm.get(this.endpoint).then(response => {
                     this.tags = response.data.data;
+                    this.option.is_loading = false;
                 });
             },
             getTags: function () {

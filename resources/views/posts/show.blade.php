@@ -2,12 +2,7 @@
 
 @section('content')
     <div class="bg-white p-3 post-card">
-        @if ($post->hasThumbnail())
-            {{ Html::image($post->thumbnail()->url, $post->thumbnail()->original_filename, ['class' => 'img-fluid rounded']) }}
-        @endif
-
         <h1>{{ $post->title }}</h1>
-
         <div class="mb-3">
             <small class="text-muted">
                 <i class="fa fa-user mr-1" aria-hidden="true"></i>
@@ -45,9 +40,26 @@
         </div>
 
         <div class="post-content">
-            {!! $post->content !!}
+            {!! clean($post->content) !!}
         </div>
     </div>
     @include('posts/tag')
+    @if(!empty($post->source))
+        <div class="card border-warning mb-3 mt-4 right-sidebar">
+            <div class="card-body text-primary">
+                <h5 class="post-tags">
+                    <i class="fa fa-link" aria-hidden="true"></i>
+                    Reference:
+                    <a href="{!! $post->source->url !!}" title="{!! $post->source->title !!}" target="_blank"
+                       rel="noreferrer">
+                    <span class="badge badge-dark ml-1">
+                        {{ $post->source->title }}
+                    </span>
+                    </a>
+                    By: <span class="badge badge-pill badge-secondary">{!! $post->source->translator !!}</span>
+                </h5>
+            </div>
+        </div>
+    @endif
     @include ('comments/_list')
 @endsection

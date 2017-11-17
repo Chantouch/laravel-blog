@@ -18,36 +18,38 @@
         ]) !!};
     </script>
 
-    <title>{{ MetaTag::get('title') }}</title>
+    <title>{{ MetaTag::get('title') }} - {{ config('app.name', 'My ') }}</title>
 
-{!! MetaTag::tag('robots') !!}
+    {!! MetaTag::tag('robots') !!}
 
-{!! MetaTag::tag('site_name', 'My Blog') !!}
-{!! MetaTag::tag('url', Request::url()); !!}
-{!! MetaTag::tag('locale', 'en_EN') !!}
+    {!! MetaTag::tag('site_name', 'My Blog') !!}
+    {!! MetaTag::tag('url', Request::url()); !!}
+    {!! MetaTag::tag('locale', 'en_EN') !!}
 
-{!! MetaTag::tag('description') !!}
-{!! MetaTag::tag('image') !!}
+    {!! MetaTag::tag('description') !!}
+    {!! MetaTag::tag('image') !!}
 
-{!! MetaTag::openGraph() !!}
+    {!! MetaTag::openGraph() !!}
 
-{!! MetaTag::twitterCard() !!}
+    {!! MetaTag::twitterCard() !!}
 
-{{--Set default share picture after custom section pictures--}}
-{!! MetaTag::tag('image', asset('storage/images/default-logo.png')) !!}
+    {!! MetaTag::tag('image', asset('storage/images/default-logo.png')) !!}
 
-<!-- Styles -->
+
     <link href="{!! asset('css/app.css') !!}" rel="stylesheet">
 </head>
 <body class="bg-light">
 <div id="app">
-
-    <div class="container-fluid {{ (Request::is('/') || Request::is('posts/*') || Request::is('login') || Request::is('register')) ? '' : 'bg-white' }}">
-        @include('shared/navbar')
-        <div class="pt-50">
-            @include('shared/alerts')
+    <div class="container-fluid">
+        <div class="text-center">
+            <img src="{!! asset('images/example-logo.png') !!}" alt="{!! config('app.name', 'My Blog') !!}"
+                 class="img-fluid mx-auto d-block">
         </div>
-        <div class="row pt-50">
+    </div>
+    @include('shared/navbar')
+    <div class="container-fluid {{ (Request::is('/') || Request::is('posts/*') || Request::is('login') || Request::is('register')) ? '' : 'bg-white' }}">
+        @include('shared/alerts')
+        <div class="row">
             <div class="col-md-9">
                 @yield('content')
             </div>

@@ -17,7 +17,7 @@
         ]) !!};
     </script>
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>{{ config('app.name', 'My Blog') }}</title>
 
     <!-- Styles -->
     <link href="{!! asset('css/app.css') !!}" rel="stylesheet">
