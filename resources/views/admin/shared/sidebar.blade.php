@@ -1,4 +1,4 @@
-<nav class="col-lg-2 d-none d-lg-block bg-dark sidebar">
+<nav class="d-none d-md-block d-lg-block bg-dark sidebar">
     <ul class="nav nav-pills flex-column">
         <li class="text-muted menu-title">Navigation</li>
         <li role="presentation" class="nav-item">

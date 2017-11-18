@@ -42,18 +42,20 @@
 <div id="app">
     <div class="container-fluid">
         <div class="text-center">
-            <img src="{!! asset('images/example-logo.png') !!}" alt="{!! config('app.name', 'My Blog') !!}"
-                 class="img-fluid mx-auto d-block">
+            <a href="{!! route('home') !!}">
+                <img src="{!! asset('images/example-logo.png') !!}" alt="{!! config('app.name', 'My Blog') !!}"
+                     class="img-fluid mx-auto d-block">
+            </a>
         </div>
     </div>
     @include('shared/navbar')
     <div class="container-fluid {{ (Request::is('/') || Request::is('posts/*') || Request::is('login') || Request::is('register')) ? '' : 'bg-white' }}">
         @include('shared/alerts')
         <div class="row">
-            <div class="col-md-9">
+            <div class="col-sm-7 col-md-8 col-lg-9">
                 @yield('content')
             </div>
-            <div class="col-md-3">
+            <div class="col-sm-5 col-md-4 col-lg-3">
                 @include('shared/_search_form')
                 @include('shared/_subscribe')
                 @include('shared/_fb_page')

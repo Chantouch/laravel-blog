@@ -6,6 +6,6 @@
   </comment-form>
 @else
   @component('components.alerts.default', ['type' => 'warning'])
-    @lang('comments.sign_in_to_comment')
+    <a href="{!! url('login') !!}">@lang('comments.sign_in')</a>@lang('comments.to_comment')
   @endcomponent
 @endauth

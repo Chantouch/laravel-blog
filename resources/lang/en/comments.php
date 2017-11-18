@@ -10,7 +10,8 @@ return [
     'deleted' => 'Comment successfully deleted',
     'new_comments' => 'New comments',
     'on_post' => "Comment on the article : :post",
-    'sign_in_to_comment' => 'Sign in to comment',
+    'sign_in' => 'Sign in',
+    'to_comment' => ' to comment',
     'loading_comments' => 'Loading comments',
 
     'attributes' => [

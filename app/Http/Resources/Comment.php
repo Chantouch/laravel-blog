@@ -29,7 +29,7 @@ class Comment extends Resource
             'author_id' => $this->author_id,
             'post_id' => $this->post_id,
             'author_name' => $this->author->name,
-            'author_url' => route('users.show', $this->author),
+            'author_url' => route('users.show', $this->author->username),
             'can_delete' => $user ? $user->can('delete', $comment) : false
         ];
     }

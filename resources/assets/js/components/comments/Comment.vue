@@ -3,7 +3,7 @@
         <div class="card-body">
             <div class="card-title d-flex justify-content-between">
                 <h6>
-                    <a :href="comment.author_url">{{ comment.author_name }}</a>
+                    <a :href="comment.author_url" :title="comment.author_name">{{ comment.author_name }}</a>
                 </h6>
 
                 <button v-if="comment.can_delete" @click="deleteComment" class="close text-danger">

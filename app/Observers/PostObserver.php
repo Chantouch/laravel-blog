@@ -16,4 +16,15 @@ class PostObserver
     {
         $post->slug = str_slug($post->title, '-');
     }
+
+    /**
+     * Listen to the User deleting event.
+     *
+     * @param  \App\Post $post
+     * @return void
+     */
+    public function deleting(Post $post)
+    {
+        $post->source()->delete();
+    }
 }

@@ -7,8 +7,8 @@
         <div class="input-group">
             {!! Form::text('q', null, ['class' => 'form-control', 'placeholder' => __('posts.search')]) !!}
             <span class="input-group-btn">
-                <button class="btn btn-outline-secondary" type="submit"><i class="fa fa-search fa-fw"></i>
-                    {!! __('home.right-sidebar.submit') !!}
+                <button class="btn btn-outline-secondary" type="submit"><i class="fa fa-search fa-fw mr-1" aria-hidden="true"></i>
+                    <span class="d-none d-sm-none d-md-none d-lg-block pull-right">{!! __('home.right-sidebar.submit') !!}</span>
                 </button>
             </span>
         </div>

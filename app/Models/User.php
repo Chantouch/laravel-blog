@@ -39,6 +39,21 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
+
+    /**
+     * Get the route key for the model.
+     *
+     * @return string
+     */
+    public function getRouteKeyName(): string
+    {
+        if (request()->expectsJson()) {
+            return 'id';
+        }
+
+        return 'username';
+    }
+
     /**
      * Return the sluggable configuration array for this model.
      *

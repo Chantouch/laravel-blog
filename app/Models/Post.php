@@ -208,9 +208,20 @@ class Post extends Model
      * @param  $length
      * @return string
      */
-    public function excerpt($length = 200): string
+    public function excerpt($length = 150): string
     {
         return strip_tags(str_limit($this->content, $length));
+    }
+
+    /**
+     * return the excerpt of the post content
+     *
+     * @param  $length
+     * @return string
+     */
+    public function trimTitle($length = 30): string
+    {
+        return strip_tags(str_limit($this->title, $length));
     }
 
     /**
@@ -236,4 +247,6 @@ class Post extends Model
     {
         return $this->hasOne(Source::class);
     }
+
+
 }

@@ -3,6 +3,6 @@
         {!! __('home.right-sidebar.advertisement') !!}
     </div>
     <div class="card-body text-success text-center">
-        <img src="{!! asset('storage/images/300x600ad.jpg') !!}" alt="Right sidebar ads" class="img-fluid mx-auto d-block">
+        <img src="{!! asset('images/300x600ad.jpg') !!}" alt="Right sidebar ads" class="img-fluid mx-auto d-block">
     </div>
 </div>

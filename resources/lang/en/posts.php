@@ -4,7 +4,7 @@ return [
     'publish' => 'Publish',
     'delete' => 'Remove',
     'delete_thumbnail' => "Delete the picture in one",
-    'edit' => 'Editor',
+    'edit' => 'Edit',
     'last_posts' => 'Latest articles',
     'create' => 'Add an article',
     'created' => 'Article created successfully',
@@ -34,7 +34,8 @@ return [
         'source_url' => 'Url',
         'source_translator' => 'Translator',
         'references' => 'References:',
-        'slug' => 'Slug'
+        'slug' => 'Slug',
+        'action' => 'Action'
     ],
 
     'placeholder' => [
