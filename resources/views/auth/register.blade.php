@@ -2,6 +2,14 @@
 
 @section('content')
 <div class="row justify-content-md-center">
+    @if(Session::has('alert'))
+        <div class="alert alert-success">
+            {{ Session::get('alert') }}
+            @php
+                Session::forget('alert');
+            @endphp
+        </div>
+    @endif
     <div class="col-md-6">
         <h1>@lang('auth.register')</h1>
 

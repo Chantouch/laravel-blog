@@ -30,18 +30,20 @@ Route::prefix('admin')->middleware(['auth', 'role:admin'])->namespace('Admin')->
     Route::resource('roles', 'RoleController', ['only' => 'index']);
 });
 
-Route::middleware('auth')->group(function () {
+Route::middleware(['auth', 'isVerified'])->group(function () {
     Route::resource('users', 'UsersController', ['only' => ['edit', 'update']]);
     Route::post('/tokens/{user}', 'TokensController@store')->name('tokens.store');
     Route::resource('newsletter-subscriptions', 'NewsletterSubscriptionsController', ['only' => 'store']);
 });
 
-Route::get('/', 'PostsController@index')->name('home');
-Route::resource('media', 'MediaController', ['only' => 'show']);
-Route::get('/posts/feed', 'PostsFeedController@index')->name('posts.feed');
-Route::resource('posts', 'PostsController', ['only' => 'show']);
-Route::resource('users', 'UsersController', ['only' => 'show']);
-Route::resource('tags', 'TagsController', ['only' => ['show', 'index']]);
-Route::resource('categories', 'CategoriesController', ['only' => ['show', 'index']]);
+Route::middleware(['isVerified'])->group(function () {
+    Route::get('/', 'PostsController@index')->name('home');
+    Route::resource('media', 'MediaController', ['only' => 'show']);
+    Route::get('/posts/feed', 'PostsFeedController@index')->name('posts.feed');
+    Route::resource('posts', 'PostsController', ['only' => 'show']);
+    Route::resource('users', 'UsersController', ['only' => 'show']);
+    Route::resource('tags', 'TagsController', ['only' => ['show', 'index']]);
+    Route::resource('categories', 'CategoriesController', ['only' => ['show', 'index']]);
 
-Route::get('newsletter-subscriptions/unsubscribe', 'NewsletterSubscriptionsController@unsubscribe')->name('newsletter-subscriptions.unsubscribe');
+    Route::get('newsletter-subscriptions/unsubscribe', 'NewsletterSubscriptionsController@unsubscribe')->name('newsletter-subscriptions.unsubscribe');
+});
