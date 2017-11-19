@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand-md bg-dark navbar-dark {!! Request::is('admin/*') ? 'fixed-top' : 'sticky-top' !!}">
 {{--<div class="{{ Request::is('admin/*') ? 'container-fluid' : 'container-fluid' }}">--}}
 <!-- Branding Image -->
-{{ link_to_route('home', config('app.name', 'Laravel'), [], ['class' => 'navbar-brand']) }}
+{{ link_to_route('home', config('app.name', 'BCodinger'), [], ['class' => 'navbar-brand']) }}
 
 <!-- Collapsed Hamburger -->
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
@@ -11,11 +11,13 @@
 
     <div class="collapse navbar-collapse" id="navbarCollapse">
         @admin
-        <ul class="navbar-nav">
-            <li class="nav-item">
-                {{ link_to_route('admin.dashboard', __('dashboard.dashboard'), [], ['class' => 'nav-link']) }}
-            </li>
-        </ul>
+        @if(!Request::is('admin/*'))
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    {{ link_to_route('admin.dashboard', __('dashboard.dashboard'), [], ['class' => 'nav-link']) }}
+                </li>
+            </ul>
+        @endif
         @if(Request::is('admin/*'))
             <a href="javascript:void (0)" data-target="#sidebar" data-toggle="collapse">
                 <i class="fa fa-navicon fa-2x py-2 p-1"></i>
@@ -60,7 +62,7 @@
                             {{ Auth::user()->name }}
                         </a>
 
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
                             {{ link_to_route('users.show', __('users.profil'), Auth::user(), ['class' => 'dropdown-item']) }}
                             <a href="{{ url('/logout') }}"
                                class="dropdown-item"

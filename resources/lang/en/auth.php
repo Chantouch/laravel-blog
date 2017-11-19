@@ -29,5 +29,7 @@ return [
     'services' => [
         'github' => 'Connect with Github',
         'twitter' => 'Connect with Twitter',
+        'facebook' => 'Connect with Facebook',
+        'google' => 'Connect with Google',
     ],
 ];

@@ -26,5 +26,8 @@ return [
         'email' => 'Your email',
         'password' => 'Your new password',
         'password_confirmation' => 'Confirmation of the new password'
+    ],
+    'message' => [
+        'registered' => 'An email was sent to you, Please check and activate to start.'
     ]
 ];

@@ -18,11 +18,11 @@
         ]) !!};
     </script>
 
-    <title>{{ MetaTag::get('title') }} - {{ config('app.name', 'My ') }}</title>
+    <title>{{ MetaTag::get('title') }} - {{ config('app.name', 'BCodinger') }}</title>
 
     {!! MetaTag::tag('robots') !!}
 
-    {!! MetaTag::tag('site_name', 'My Blog') !!}
+    {!! MetaTag::tag('site_name', 'BCodinger') !!}
     {!! MetaTag::tag('url', Request::url()); !!}
     {!! MetaTag::tag('locale', 'en_EN') !!}
 
@@ -58,7 +58,7 @@
             <div class="col-sm-5 col-md-4 col-lg-3">
                 @include('shared/_search_form')
                 @include('shared/_subscribe')
-                @include('shared/_fb_page')
+                {{--@include('shared/_fb_page')--}}
                 @include('shared/_popular_post')
                 @include ('posts/_header_category')
                 @include ('shared/_latest_post')

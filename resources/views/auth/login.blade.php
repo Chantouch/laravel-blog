@@ -1,11 +1,11 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="row justify-content-md-center">
-    <div class="col-md-6">
-        <h1>@lang('auth.login')</h1>
+    <div class="row justify-content-md-center">
+        <div class="col-md-10">
+            <h1>@lang('auth.login')</h1>
 
-        {!! Form::open(['route' => 'login', 'role' => 'form', 'method' => 'POST']) !!}
+            {!! Form::open(['route' => 'login', 'role' => 'form', 'method' => 'POST']) !!}
             <div class="form-group">
                 {!! Form::label('email', __('validation.attributes.email'), ['class' => 'control-label']) !!}
                 {!! Form::email('email', old('email'), ['class' => 'form-control' . ($errors->has('email') ? ' is-invalid' : ''), 'required', 'autofocus']) !!}
@@ -25,32 +25,42 @@
             </div>
 
             <div class="form-group">
-                <div class="checkbox">
-                    <label>
-                        {!! Form::checkbox('remember', null, old('remember')) !!} @lang('auth.remember_me')
-                    </label>
-                </div>
+                <label class="custom-control custom-checkbox">
+                    {!! Form::checkbox('remember', null, old('remember'), ['class'=>'custom-control-input']) !!}
+                    <span class="custom-control-indicator"></span>
+                    <span class="custom-control-description">@lang('auth.remember_me')</span>
+                </label>
             </div>
 
             <div class="form-group">
                 {!! Form::submit(__('auth.login'), ['class' => 'btn btn-primary']) !!}
                 {{ link_to('/password/reset', __('auth.forgotten_password'), ['class' => 'btn btn-link'])}}
             </div>
-        {!! Form::close() !!}
+            {!! Form::close() !!}
 
-        <hr>
+            <hr>
 
-        <div class="d-flex justify-content-between flex-wrap">
-            <a href="{{ route('auth.provider', ['provider' => 'github']) }}" class="btn btn-secondary mb-2">
-                @lang('auth.services.github')
-                <i class="fa fa-github" aria-hidden="true"></i>
-            </a>
+            <div class="d-flex justify-content-between flex-wrap">
+                <a href="{{ route('auth.provider', ['provider' => 'github']) }}" class="btn btn-secondary mb-2">
+                    @lang('auth.services.github')
+                    <i class="fa fa-github" aria-hidden="true"></i>
+                </a>
 
-            <a href="{{ route('auth.provider', ['provider' => 'twitter']) }}" class="btn btn-secondary mb-2">
-                @lang('auth.services.twitter')
-                <i class="fa fa-twitter" aria-hidden="true"></i>
-            </a>
+                <a href="{{ route('auth.provider', ['provider' => 'facebook']) }}" class="btn btn-secondary mb-2">
+                    @lang('auth.services.facebook')
+                    <i class="fa fa-facebook" aria-hidden="true"></i>
+                </a>
+
+                <a href="{{ route('auth.provider', ['provider' => 'google']) }}" class="btn btn-secondary mb-2">
+                    @lang('auth.services.google')
+                    <i class="fa fa-google-plus" aria-hidden="true"></i>
+                </a>
+
+                <a href="{{ route('auth.provider', ['provider' => 'twitter']) }}" class="btn btn-secondary mb-2">
+                    @lang('auth.services.twitter')
+                    <i class="fa fa-twitter" aria-hidden="true"></i>
+                </a>
+            </div>
         </div>
     </div>
-</div>
 @endsection

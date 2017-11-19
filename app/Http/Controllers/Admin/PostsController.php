@@ -7,6 +7,7 @@ use App\Http\Requests\Admin\PostsRequest;
 use App\Media;
 use App\Models\Category;
 use App\Models\Source;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use App\Post;
 use App\User;
@@ -103,6 +104,11 @@ class PostsController extends Controller
                 break;
             case 'Draft':
                 $data['active'] = 0;
+        }
+        if ($request->has('posted_at')) {
+            $data['posted_at'] = $request->posted_at;
+        } else {
+            $data['posted_at'] = Carbon::now();
         }
         $post = Post::with('author')->create($data);
         if ($request->has('source_title') && $request->has('source_url')) {
@@ -204,6 +210,11 @@ class PostsController extends Controller
                 break;
             case 'Draft':
                 $data['active'] = 0;
+        }
+        if ($request->has('posted_at')) {
+            $data['posted_at'] = $request->posted_at;
+        } else {
+            $data['posted_at'] = Carbon::now();
         }
         $post->update($data);
 

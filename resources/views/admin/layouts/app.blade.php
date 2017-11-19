@@ -17,7 +17,7 @@
         ]) !!};
     </script>
 
-    <title>{{ config('app.name', 'My Blog') }}</title>
+    <title>{{ config('app.name', 'BCodinger') }}</title>
 
     <!-- Styles -->
     <link href="{!! asset('css/app.css') !!}" rel="stylesheet">

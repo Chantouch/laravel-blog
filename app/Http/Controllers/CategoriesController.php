@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Category;
 use Illuminate\Http\Request;
+use Torann\LaravelMetaTags\Facades\MetaTag;
 
 class CategoriesController extends Controller
 {
@@ -53,6 +54,10 @@ class CategoriesController extends Controller
     {
         $category = Category::findBySlugOrFail($id);
         $category->count_posts = $category->posts()->count();
+        MetaTag::set('title', $category->name);
+        MetaTag::set('description', strip_tags($category->description));
+        MetaTag::set('image', asset($category->hasThumbnail() ? $category->thumbnail()->url : 'storage/images/default-share-image.png'));
+
         return view('categories.show', [
             'category' => $category,
             'posts' => $category->posts()->latest()->paginate($request->input('limit', 20))

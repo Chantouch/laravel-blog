@@ -26,5 +26,7 @@ class PostObserver
     public function deleting(Post $post)
     {
         $post->source()->delete();
+        $post->categories()->detach();
+        $post->tags()->detach();
     }
 }

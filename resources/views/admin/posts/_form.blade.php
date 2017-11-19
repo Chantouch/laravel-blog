@@ -24,7 +24,7 @@
     <div class="form-group col-md-6">
         {!! Form::label('posted_at', __('posts.attributes.posted_at')) !!}
         <input type="datetime-local" name="posted_at" value="{{ $posted_at }}"
-               class="form-control {{ ($errors->has('posted_at') ? ' is-invalid' : '') }}" required>
+               class="form-control {{ ($errors->has('posted_at') ? ' is-invalid' : '') }}">
 
         @if ($errors->has('posted_at'))
             <span class="invalid-feedback">{{ $errors->first('posted_at') }}</span>

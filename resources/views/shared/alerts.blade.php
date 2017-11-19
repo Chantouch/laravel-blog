@@ -4,6 +4,21 @@
     @endcomponent
 @endif
 
+@if (Session::has('message'))
+    @component('components.alerts.dismissible', ['type' => 'info'])
+      {{ Session::get('message') }}
+    @endcomponent
+@endif
+
+@if(Session::has('alert'))
+    <div class="alert alert-success">
+        {{ Session::get('alert') }}
+        @php
+            Session::forget('alert');
+        @endphp
+    </div>
+@endif
+
 @if (Session::has('errors'))
     @component('components.alerts.dismissible', ['type' => 'danger'])
         @if ($errors->count() > 1)

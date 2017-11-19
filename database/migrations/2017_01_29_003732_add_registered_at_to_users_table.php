@@ -15,6 +15,7 @@ class AddRegisteredAtToUsersTable extends Migration
     {
         Schema::table('users', function (Blueprint $table) {
             $table->datetime('registered_at')->nullable();
+            $table->string('avatar')->nullable();
         });
     }
 
@@ -27,6 +28,7 @@ class AddRegisteredAtToUsersTable extends Migration
     {
         Schema::table('users', function (Blueprint $table) {
             $table->dropColumn('registered_at');
+            $table->dropColumn('avatar');
         });
     }
 }

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Tag;
 use Illuminate\Http\Request;
+use Torann\LaravelMetaTags\Facades\MetaTag;
 
 class TagsController extends Controller
 {
@@ -53,6 +54,11 @@ class TagsController extends Controller
     {
         $tag = Tag::findBySlugOrFail($id);
         $tag->count_post = $tag->posts()->count();
+
+        MetaTag::set('title', $tag->name);
+        MetaTag::set('description', strip_tags($tag->description));
+        MetaTag::set('image', asset($tag->hasThumbnail() ? $tag->thumbnail()->url : 'storage/images/default-share-image.png'));
+
         return view('tags.show', [
             'tag' => $tag,
             'posts' => $tag->posts()->latest()->paginate($request->input('limit', 20))

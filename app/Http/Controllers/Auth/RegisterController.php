@@ -92,9 +92,9 @@ class RegisterController extends Controller
 
         UserVerification::generate($user);
 
-        UserVerification::send($user, 'My Custom E-mail Subject', config('mail.from.address'), config('mail.from.name'));
+        UserVerification::send($user, 'Account verification');
 
         return $this->registered($request, $user)
-            ?: redirect($this->redirectPath());
+            ?: redirect($this->redirectPath())->withMessage(__('users.message.registered'));
     }
 }
