@@ -76,11 +76,12 @@ class AuthController extends Controller
     /**
      * Send a successful response
      *
+     * @param $provider null
      * @return \Illuminate\Http\RedirectResponse
      */
-    protected function sendSuccessResponse()
+    protected function sendSuccessResponse($provider = null)
     {
-        return redirect()->intended('home');
+        return redirect()->intended('/')->with('success', "You are login with {$provider}");
     }
 
     /**
@@ -109,7 +110,11 @@ class AuthController extends Controller
             ->whereProviderUserId($providerUser->getId())
             ->first();
         if ($account) {
-            return $account->user;
+            // login the user
+            Auth::login($account->user, true);
+
+            return $this->sendSuccessResponse($provider);
+
         } else {
             $account = new SocialLogin([
                 'provider_user_id' => $providerUser->getId(),
@@ -125,6 +130,7 @@ class AuthController extends Controller
                     'email' => $providerUser->getEmail(),
                     'name' => $providerUser->getName(),
                     'password' => bcrypt(rand(1, 10000)),
+                    'verified' => 1
                 ]);
             }
             $account->user()->associate($user);
@@ -134,7 +140,7 @@ class AuthController extends Controller
         // login the user
         Auth::login($user, true);
 
-        return $this->sendSuccessResponse();
+        return $this->sendSuccessResponse($provider);
     }
 
     /**

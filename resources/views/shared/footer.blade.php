@@ -7,7 +7,7 @@
 
             <li class="nav-item text-white m-3">
                 <a href="https://github.com/Chantouch/laravel-blog" target="_blank" class="btn btn-outline-secondary mt-1"><i class="fa fa-github" aria-hidden="true"></i> Fork me on GitHub</a>
-                <a href="https://twitter.com/@David83" target="_blank" class="btn btn-outline-secondary mt-1"><i class="fa fa-twitter" aria-hidden="true"></i> Say Hi on Twitter !</a>
+                <a href="https://twitter.com/@DevidCs83" target="_blank" class="btn btn-outline-secondary mt-1"><i class="fa fa-twitter" aria-hidden="true"></i> Say Hi on Twitter !</a>
             </li>
 
             <li class="nav-item m-3">

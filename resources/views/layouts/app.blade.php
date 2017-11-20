@@ -18,11 +18,11 @@
         ]) !!};
     </script>
 
-    <title>{{ MetaTag::get('title') }} - {{ config('app.name', 'BCodinger') }}</title>
+    <title>{{ MetaTag::get('title') }} - {{ config('app.name', 'My ') }}</title>
 
     {!! MetaTag::tag('robots') !!}
 
-    {!! MetaTag::tag('site_name', 'BCodinger') !!}
+    {!! MetaTag::tag('site_name', 'My Blog') !!}
     {!! MetaTag::tag('url', Request::url()); !!}
     {!! MetaTag::tag('locale', 'en_EN') !!}
 
@@ -72,7 +72,7 @@
 </div>
 
 <!-- Scripts -->
-<script src="//{!! Request::getHost() !!}:8888/socket.io/socket.io.js"></script>
+{{--<script src="//{!! Request::getHost() !!}:8888/socket.io/socket.io.js"></script>--}}
 <script src="{!! asset('js/app.js') !!}"></script>
 <div id="fb-root"></div>
 <script>(function (d, s, id) {
