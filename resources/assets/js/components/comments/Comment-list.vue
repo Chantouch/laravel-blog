@@ -33,16 +33,16 @@
         mounted() {
             this.retrieveComments();
 
-//            if (window.Echo) {
-//                Echo.channel('post.' + this.post_id)
-//                    .listen('.comment.posted', (e) => {
-//                        this.comments.unshift(e.comment)
-//                    });
-//            }
-//
-//            Event.$on('added', (comment) => {
-//                this.addComment(comment)
-//            })
+            if (window.Echo) {
+                Echo.channel('post.' + this.post_id)
+                    .listen('.comment.posted', (e) => {
+                        this.comments.unshift(e.comment)
+                    });
+            }
+
+            Event.$on('added', (comment) => {
+                this.addComment(comment)
+            })
         },
 
         methods: {
