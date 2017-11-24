@@ -13,6 +13,8 @@
 
 Auth::routes();
 
+Route::get('/verify/email/{token}', 'Auth\RegisterController@verify')->name('email-verification.check');
+
 Route::prefix('auth')->group(function () {
     Route::get('{provider}', 'Auth\AuthController@redirectToProvider')->name('auth.provider');
     Route::get('{provider}/callback', 'Auth\AuthController@handleProviderCallback');

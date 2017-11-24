@@ -4,6 +4,12 @@
     @endcomponent
 @endif
 
+@if (Session::has('warning'))
+    @component('components.alerts.dismissible', ['type' => 'warning'])
+      {{ Session::get('warning') }}
+    @endcomponent
+@endif
+
 @if (Session::has('message'))
     @component('components.alerts.dismissible', ['type' => 'info'])
       {{ Session::get('message') }}

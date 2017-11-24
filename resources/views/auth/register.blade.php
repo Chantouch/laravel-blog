@@ -1,19 +1,19 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="row justify-content-md-center">
-    @if(Session::has('alert'))
-        <div class="alert alert-success">
-            {{ Session::get('alert') }}
-            @php
-                Session::forget('alert');
-            @endphp
-        </div>
-    @endif
-    <div class="col-md-6">
-        <h1>@lang('auth.register')</h1>
+    <div class="row justify-content-md-center">
+        @if(Session::has('alert'))
+            <div class="alert alert-success">
+                {{ Session::get('alert') }}
+                @php
+                    Session::forget('alert');
+                @endphp
+            </div>
+        @endif
+        <div class="col-md-10">
+            <h1>@lang('auth.register')</h1>
 
-        {!! Form::open(['route' => 'register', 'role' => 'form', 'method' => 'POST']) !!}
+            {!! Form::open(['route' => 'register', 'role' => 'form', 'method' => 'POST']) !!}
             <div class="form-group">
                 {!! Form::label('name', __('validation.attributes.name'), ['class' => 'control-label']) !!}
                 {!! Form::text('name', old('name'), ['class' => 'form-control' . ($errors->has('name') ? ' is-invalid' : ''), 'required', 'autofocus']) !!}
@@ -52,9 +52,15 @@
 
             <div class="form-group">
                 {!! Form::submit(__('auth.register'), ['class' => 'btn btn-primary']) !!}
+                {{ link_to_route('home', __('forms.actions.back'), [], ['class' => 'btn btn-danger']) }}
             </div>
 
-        {!! Form::close() !!}
+            {!! Form::close() !!}
+
+            <hr>
+
+            @include('shared._login_social')
+
+        </div>
     </div>
-</div>
 @endsection

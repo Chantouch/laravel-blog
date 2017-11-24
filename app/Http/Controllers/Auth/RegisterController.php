@@ -6,10 +6,9 @@ use App\User;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Http\Request;
-use Jrean\UserVerification\Traits\VerifiesUsers;
 use Illuminate\Support\Facades\Validator;
 use App\Http\Controllers\Controller;
-use Jrean\UserVerification\Facades\UserVerification;
+use App\Jobs\SendVerificationEmail;
 
 class RegisterController extends Controller
 {
@@ -25,7 +24,6 @@ class RegisterController extends Controller
     */
 
     use RegistersUsers;
-    use VerifiesUsers;
 
     /**
      * Where to redirect users after login / registration.
@@ -41,7 +39,7 @@ class RegisterController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('guest', ['except' => ['getVerification', 'getVerificationError']]);
+        $this->middleware('guest', ['except' => ['isVerified']]);
     }
 
     /**
@@ -71,6 +69,7 @@ class RegisterController extends Controller
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => $data['password'],
+            'verification_token' => base64_encode($data['email']),
         ]);
     }
 
@@ -88,13 +87,35 @@ class RegisterController extends Controller
 
         event(new Registered($user));
 
+        dispatch(new SendVerificationEmail($user));
+
         $this->guard()->login($user);
-
-        UserVerification::generate($user);
-
-        UserVerification::send($user, 'Account verification');
 
         return $this->registered($request, $user)
             ?: redirect($this->redirectPath())->withMessage(__('users.message.registered'));
+    }
+
+    /**
+     * Handle a registration request for the application.
+     *
+     * @param $token
+     * @return \Illuminate\Http\Response
+     */
+    public function verify($token)
+    {
+        $this->guard()->logout();
+
+        $user = User::where('verification_token', $token)->first();
+
+        if ($user->verified) {
+            $this->guard()->login($user);
+
+            return redirect('/')->with('warning', trans('users.message.verification_verified'));
+        }
+        $user->verified = 1;
+        if ($user->save()) {
+            $this->guard()->login($user);
+        }
+        return redirect('/')->with('success', trans('users.message.verification_success'));
     }
 }

@@ -1,12 +1,8 @@
 <?php
-/**
- * This file is part of Jrean\UserVerification package.
- *
- * (c) Jean Ragouin <go@askjong.com> <www.askjong.com>
- */
 
-use Illuminate\Database\Migrations\Migration;
+use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Database\Migrations\Migration;
 
 class AddVerificationToUserTable extends Migration
 {

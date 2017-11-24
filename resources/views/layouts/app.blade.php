@@ -53,10 +53,15 @@
         @include('shared/alerts')
         <div class="row">
             <div class="col-sm-7 col-md-8 col-lg-9">
+                <div class="d-block d-sm-none d-md-none d-lg-none">
+                    @include('shared/_search_form')
+                </div>
                 @yield('content')
             </div>
             <div class="col-sm-5 col-md-4 col-lg-3">
-                @include('shared/_search_form')
+                <div class="d-none d-sm-block d-md-block d-lg-block">
+                    @include('shared/_search_form')
+                </div>
                 @include('shared/_subscribe')
                 {{--@include('shared/_fb_page')--}}
                 @include('shared/_popular_post')

@@ -7,25 +7,23 @@ use Illuminate\Queue\SerializesModels;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
-
-use App\Mail\Newsletter;
-use App\Post;
+use App\Mail\EmailVerification;
 use Illuminate\Support\Facades\Mail;
 
-class SendNewsletterSubscriptionEmail implements ShouldQueue
+class SendVerificationEmail implements ShouldQueue
 {
     use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
 
-    protected $email;
+    protected $user;
 
     /**
      * Create a new job instance.
      *
-     * @param $email
+     * @param $user
      */
-    public function __construct($email)
+    public function __construct($user)
     {
-        $this->email = $email;
+        $this->user = $user;
     }
 
     /**
@@ -35,9 +33,7 @@ class SendNewsletterSubscriptionEmail implements ShouldQueue
      */
     public function handle()
     {
-        $posts = Post::lastMonth()->get();
-        $email = $this->email;
-
-        Mail::to($this->email)->send(new Newsletter($posts, $email));
+        $email = new EmailVerification($this->user);
+        Mail::to($this->user->email)->send($email);
     }
 }

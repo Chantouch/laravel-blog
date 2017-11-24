@@ -9,7 +9,6 @@
             @else
                 <h2>@lang('posts.last_posts')</h2>
             @endif
-            <hr>
         </div>
 
         <div class="p-2">
