@@ -42,7 +42,7 @@ class Media extends Model
      */
     public function getPath(): string
     {
-        return storage_path('app/public/uploads/media/') . $this->filename;
+        return storage_path('public/uploads/media/') . $this->filename;
     }
 
     /**

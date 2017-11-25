@@ -97,7 +97,7 @@ class PostsController extends Controller
         } // <!--Check-->
         libxml_clear_errors();
         //<!--Save the description content to db-->
-        $data['content'] = clean($dom->saveHTML());
+        $data['content'] = $dom->saveHTML();
         switch ($request->submit) {
             case 'Save':
                 $data['active'] = 1;
@@ -176,7 +176,7 @@ class PostsController extends Controller
         } // <!--Check-->
         libxml_clear_errors();
         //<!--Save the description content to db-->
-        $data['content'] = clean($dom->saveHTML());
+        $data['content'] = $dom->saveHTML();
         if ($request->has('categories')) {
             $post->categories()->sync(explode(',', $request->categories));
         } else {
@@ -195,7 +195,7 @@ class PostsController extends Controller
             ];
             $post->source()->update($array_source);
         } else {
-            if ($request->has('source_title') && $request->has('source_url')) {
+            if ($request->source_title != null && $request->source_url != null) {
                 $source = new Source();
                 $source->title = $request->source_title;
                 $source->url = $request->source_url;

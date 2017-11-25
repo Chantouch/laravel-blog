@@ -88,6 +88,7 @@
         js.src = 'https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.11&appId=1956057827965065';
         fjs.parentNode.insertBefore(js, fjs);
     }(document, 'script', 'facebook-jssdk'));</script>
+@yield('scripts')
 @stack('inline-scripts')
 </body>
 </html>

@@ -161,24 +161,24 @@ class Post extends Model
     public function storeAndSetThumbnail(UploadedFile $thumbnail)
     {
         $thumbnail_name = $thumbnail->store('public/uploads/media');
+        $array_data = [
+            'filename' => str_replace('public/uploads/media/', '', $thumbnail_name),
+            'original_filename' => $thumbnail->getClientOriginalName(),
+            'mime_type' => $thumbnail->getMimeType()
+        ];
         if (!$this->hasThumbnail()) {
-            $media = $this->media()->create([
-                'filename' => str_replace('public/uploads/media/', '', $thumbnail_name),
-                'original_filename' => $thumbnail->getClientOriginalName(),
-                'mime_type' => $thumbnail->getMimeType()
-            ]);
+            $media = $this->media()->create($array_data);
 
             $this->update(['thumbnail_id' => $media->id]);
         } else {
             $name = $this->thumbnail()->filename;
-            if (File::exists(storage_path('app/public/uploads/media'))) {
-                Storage::delete('public/uploads/media/posts/' . $name);
+
+            $path = 'public/uploads/media/';
+
+            if (Storage::disk('ftp')->exists($path . $name)) {
+                Storage::disk('ftp')->delete($path . $name);
             }
-            $this->thumbnail()->update([
-                'filename' => str_replace('public/uploads/media/', '', $thumbnail_name),
-                'original_filename' => $thumbnail->getClientOriginalName(),
-                'mime_type' => $thumbnail->getMimeType()
-            ]);
+            $this->thumbnail()->update($array_data);
         }
     }
 

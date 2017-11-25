@@ -44,6 +44,12 @@
 <!-- Scripts -->
 <script src="{!! asset('js/app.js') !!}"></script>
 <script src="{!! asset('js/admin.js') !!}"></script>
+<script src="https://rawgit.com/google/code-prettify/master/loader/run_prettify.js?autoload=true&amp;skin=sunburst&amp;lang=css" defer=""></script>
+<script>
+    (function () {
+        $('pre').addClass('prettyprint');
+    })();
+</script>
 @yield('js')
 </body>
 </html>

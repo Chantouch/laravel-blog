@@ -24,7 +24,7 @@ return [
     'settings'      => [
         'default'           => [
             'HTML.Doctype'             => 'HTML 4.01 Transitional',
-            'HTML.Allowed'             => 'iframe[src|width|height|class|frameborder],h1[class],h2[class],h3[class],h4[class],h5[class],div[class],b,strong,i,em,a[href|title|class],ul,ol,li,p[style|class],br,span[style|class],img[width|height|alt|src|class]',
+            'HTML.Allowed'             => 'iframe[src|width|height|class|frameborder],h1[class],h2[class],h3[class],h4[class],h5[class],div[class],b,strong,i,em,a[href|title|class],ul,ol,li,p[style|class],br,span[style|class],img[width|height|alt|src|class],pre[style|class]',
             'CSS.AllowedProperties'    => 'font,font-size,font-weight,font-style,font-family,text-decoration,padding-left,color,background-color,text-align',
             "HTML.SafeIframe"          => true,
             "URI.SafeIframeRegexp"     => "%^(http://|https://|//)(www.youtube.com/embed/|player.vimeo.com/video/|api.soundcloud.com/tracks/)%",

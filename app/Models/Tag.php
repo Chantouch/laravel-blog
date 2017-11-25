@@ -22,6 +22,20 @@ class Tag extends Model
     ];
 
     /**
+     * Get the route key for the model.
+     *
+     * @return string
+     */
+    public function getRouteKeyName(): string
+    {
+        if (request()->expectsJson()) {
+            return 'id';
+        }
+
+        return 'slug';
+    }
+
+    /**
      * Return the sluggable configuration array for this model.
      *
      * @return array

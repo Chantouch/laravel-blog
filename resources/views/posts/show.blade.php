@@ -2,6 +2,9 @@
 
 @section('content')
     <div class="bg-white p-3 post-card">
+        @if ($post->hasThumbnail())
+            {{ Html::image($post->thumbnail()->url, $post->thumbnail()->original_filename, ['class' => 'img-fluid rounded']) }}
+        @endif
         <h1>{{ $post->title }}</h1>
         <div class="mb-3">
             <small class="text-muted">
@@ -26,9 +29,9 @@
                     <i class="fa fa-briefcase" aria-hidden="true"></i>
                     {{ __('posts.category') }}
                     @foreach($post->categories as $category)
-                        <span class="badge badge-info ml-1">
+                        <a href="{!! route('categories.show', [$category]) !!}"><span class="badge badge-info ml-1">
                             {!! $category->name !!}
-                        </span>
+                        </span></a>
                     @endforeach
                 </small>
             @endif
@@ -43,7 +46,7 @@
             {!! clean($post->content) !!}
         </div>
     </div>
-    @include('posts/tag')
+    @include('posts._tag')
     @if(!empty($post->source))
         <div class="card border-warning mb-3 mt-4 right-sidebar">
             <div class="card-body text-primary">
@@ -62,4 +65,13 @@
         </div>
     @endif
     @include ('comments/_list')
+@endsection
+
+@section('scripts')
+    <script src="https://rawgit.com/google/code-prettify/master/loader/run_prettify.js?autoload=true&amp;skin=sunburst&amp;lang=css"></script>
+    <script>
+        (function () {
+            $('pre').addClass('prettyprint');
+        })();
+    </script>
 @endsection
