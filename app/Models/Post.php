@@ -175,8 +175,8 @@ class Post extends Model
 
             $path = 'public/uploads/media/';
 
-            if (Storage::disk('ftp')->exists($path . $name)) {
-                Storage::disk('ftp')->delete($path . $name);
+            if (Storage::disk(config('filesystem.default'))->exists($path . $name)) {
+                Storage::disk(config('filesystem.default'))->delete($path . $name);
             }
             $this->thumbnail()->update($array_data);
         }
