@@ -1,0 +1,35 @@
+<?php
+
+namespace App\Http\Controllers\Api\V1;
+
+use App\Http\Controllers\Controller;
+use App\Post;
+use Illuminate\Http\Request;
+use Illuminate\Http\Response;
+
+class PostLikesController extends Controller
+{
+
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param Request $request
+     * @param Post $post
+     * @return Response
+     */
+    public function store(Request $request, Post $post)
+    {
+        return $post->like();
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  Post $post
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy(Post $post)
+    {
+        return $post->dislike();
+    }
+}

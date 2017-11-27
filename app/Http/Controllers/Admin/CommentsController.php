@@ -2,18 +2,18 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Comment;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Admin\CommentsRequest;
-use App\Comment;
 use App\User;
 
 class CommentsController extends Controller
 {
     /**
-    * Show the application comments index.
-    *
-    * @return \Illuminate\Http\Response
-    */
+     * Show the application comments index.
+     *
+     * @return \Illuminate\Http\Response
+     */
     public function index()
     {
         return view('admin.comments.index', [
@@ -48,11 +48,11 @@ class CommentsController extends Controller
     }
 
     /**
-    * Remove the specified resource from storage.
-    *
-    * @param  Comment  $comment
-    * @return \Illuminate\Http\Response
-    */
+     * Remove the specified resource from storage.
+     *
+     * @param  Comment $comment
+     * @return \Illuminate\Http\Response
+     */
     public function destroy(Comment $comment)
     {
         $comment->delete();

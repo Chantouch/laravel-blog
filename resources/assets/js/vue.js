@@ -19,6 +19,8 @@ Vue.component('tags-list', require('./components/home/Tag.vue'));
 Vue.component('post-tags-list', require('./components/posts/PostTag.vue'));
 Vue.component('post-slug-widget', require('./components/posts/SlugWidget.vue'));
 
+Vue.component('like', require('./components/posts/Like.vue'));
+
 Vue.use(BootstrapVue);
 
 window.Event = new Vue();

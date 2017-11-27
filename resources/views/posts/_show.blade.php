@@ -20,6 +20,13 @@
                 <i class="fa fa-commenting-o" aria-hidden="true"></i>
                 {{ trans_choice('comments.count', $post->comments_count) }}
             </small>
+            <like
+                    likes_count="{{ $post->likes_count }}"
+                    liked="{{ $post->isLiked() }}"
+                    item_id="{{ $post->id }}"
+                    item_type="posts"
+                    logged_in="{{ Auth::check() }}"
+            ></like>
             <div class="entry-colors">
                 <div class="color_col_2"></div>
                 <div class="color_col_3"></div>

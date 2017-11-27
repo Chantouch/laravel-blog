@@ -14,8 +14,8 @@ class UserPostsController extends Controller
     *
     * @param  Request $request
     * @param  User $user
-    * @return \Illuminate\Http\Response
-    */
+    * @return \Illuminate\Http\Resources\Json\AnonymousResourceCollection
+     */
     public function index(Request $request, User $user)
     {
         return PostResource::collection(

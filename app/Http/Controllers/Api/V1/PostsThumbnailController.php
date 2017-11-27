@@ -12,8 +12,8 @@ class PostsThumbnailController extends Controller
     * Unset the post's thumbnail.
     *
     * @param  Post $post
-    * @return \Illuminate\Http\Response
-    */
+    * @return PostResource
+     */
     public function destroy(Post $post)
     {
         $this->authorize('update', $post);

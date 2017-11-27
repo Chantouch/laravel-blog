@@ -2,6 +2,7 @@
 
 namespace App;
 
+use App\Concern\Likeable;
 use App\Models\Category;
 use App\Models\Source;
 use App\Models\Tag;
@@ -16,7 +17,7 @@ use Carbon\Carbon;
 
 class Post extends Model
 {
-    use Mediable;
+    use Mediable, Likeable;
     use Sluggable;
 
     /**
