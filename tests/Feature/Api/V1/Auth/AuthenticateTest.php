@@ -2,10 +2,10 @@
 
 namespace Tests\Feature\Api\V1\Auth;
 
-use Tests\TestCase;
-use Illuminate\Foundation\Testing\RefreshDatabase;
-use App\User;
 use App\Role;
+use App\User;
+use Illuminate\Foundation\Testing\RefreshDatabase;
+use Tests\TestCase;
 
 class AuthenticateTest extends TestCase
 {
@@ -46,10 +46,11 @@ class AuthenticateTest extends TestCase
     public function testAuthenticateFail()
     {
         $user = factory(User::class)->states('anakin')->create(['password' => '4nak1n']);
-        $role = factory(Role::class)->states('editor')->create();
-        $user->roles()->save($role);
+        $user->roles()->save(
+            factory(Role::class)->states('editor')->create()
+        );
 
-        $res = $this->json('POST', '/api/v1/authenticate', [
+        $this->json('POST', '/api/v1/authenticate', [
                 'email' => 'anakin@skywalker.st',
                 'password' => 'Luk3'
             ])

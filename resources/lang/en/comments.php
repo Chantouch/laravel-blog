@@ -3,6 +3,7 @@
 return [
     'count' => ':count comment|:count comments',
     'comment' => 'Comments',
+    'comments' => 'Comments',
     'delete' => 'Remove',
     'last_comments' => 'The last comments',
     'created' => 'Comment created successfully',
@@ -13,6 +14,7 @@ return [
     'sign_in' => 'Sign in',
     'to_comment' => ' to comment',
     'loading_comments' => 'Loading comments',
+    'posted_on' => 'Posted on',
 
     'attributes' => [
         'content' => 'Content',

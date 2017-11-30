@@ -2,14 +2,12 @@
 
 namespace Tests\Feature;
 
-use Tests\TestCase;
+use App\Comment;
 
+use App\Post;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Support\Facades\Hash;
-use App\User;
-use App\Role;
-use App\Comment;
-use App\Post;
+use Tests\TestCase;
 
 class UserTest extends TestCase
 {
@@ -18,57 +16,39 @@ class UserTest extends TestCase
     public function testProfil()
     {
         $user = $this->user();
-        $role_admin = factory(Role::class)->states('admin')->create();
-        $role_editor = factory(Role::class)->states('editor')->create();
         $comment = factory(Comment::class)->create(['author_id' => $user->id]);
-        $post = factory(Post::class)->create(['author_id' => $user->id]);
+        $posts = factory(Post::class, 3)->create(['author_id' => $user->id]);
 
         $this->actingAs($user)
             ->get("/users/{$user->id}")
             ->assertStatus(200)
             ->assertSee(e($user->name))
             ->assertSee(e($user->email))
-            ->assertSee('Nombre de commentaires')
-            ->assertSee('Administrateur')
-            ->assertSee('Éditeur')
+            ->assertSee('Commentaires')
+            ->assertSee('Articles')
+            ->assertSee('3')
+            ->assertSee("J'aime")
+            ->assertSee('Commentaires')
+            ->assertSee('Les derniers commentaires')
+            ->assertSee($comment->content)
+            ->assertSee('Les derniers articles')
+            ->assertSee($posts->first()->title)
             ->assertSee('&Eacute;diter le profil');
-    }
-
-    public function testShowWithoutRoles()
-    {
-        $user = $this->user();
-
-        $this->get("/users/{$user->id}")
-            ->assertStatus(200)
-            ->assertSee(e($user->name))
-            ->assertSee(e($user->email))
-            ->assertSee('Nombre de commentaires')
-            ->assertSee('Aucun');
     }
 
     public function testEditing()
     {
         $user = $this->user();
 
-        $response = $this->actingAs($user)->get("/users/{$user->id}/edit");
-
-        $response->assertStatus(200)
-                 ->assertSee($user->name)
-                 ->assertSee($user->email)
-                 ->assertSee('Mot de passe')
-                 ->assertSee('Confirmation du mot de passe')
-                 ->assertSee('Sauvegarder')
-                 ->assertSee('Retour');
-    }
-
-    public function testEditingFail()
-    {
-        $user = $this->user();
-        $anakin = factory(User::class)->states('anakin')->create();
-
-        $response = $this->actingAs($user)->get("/users/{$anakin->id}/edit");
-
-        $response->assertStatus(403);
+        $this->actingAs($user)
+            ->get('/settings/account')
+            ->assertStatus(200)
+            ->assertSee('Mon profil')
+            ->assertSee('Mon profil public')
+            ->assertSee($user->name)
+            ->assertSee($user->email)
+            ->assertSee('Sécurité')
+            ->assertSee('Sauvegarder');
     }
 
     public function testUpdate()
@@ -76,45 +56,40 @@ class UserTest extends TestCase
         $user = $this->user();
         $params = $this->validParams();
 
-        $response = $this->actingAs($user)->patch("/users/{$user->id}", $params);
+        $this->actingAs($user)
+            ->patch('/settings/account', $params)
+            ->assertRedirect('/settings/account');
 
         $user->refresh();
-
-        $response->assertStatus(302);
-        $response->assertRedirect("/users/{$user->id}");
         $this->assertDatabaseHas('users', $params);
         $this->assertEquals($params['email'], $user->email);
     }
 
     public function testUpdatePassword()
     {
-        $user = $this->user();
-        $params = $this->validParams([
-            'password' => '7h3_3mp1r3_57r1k35_b4ck',
-            'password_confirmation' => '7h3_3mp1r3_57r1k35_b4ck'
-        ]);
+        $user = $this->user(['password' => '4_n3w_h0p3']);
+        $params = $this->validPasswordParams();
 
-        $response = $this->actingAs($user)->patch("/users/{$user->id}", $params);
+        $this->actingAs($user)
+            ->patch('/settings/password', $params)
+            ->assertStatus(302)
+            ->assertRedirect('/settings/password');
 
         $user->refresh();
-
-        $response->assertStatus(302);
-        $response->assertRedirect("/users/{$user->id}");
-        $this->assertDatabaseHas('users', array_only($params, ['name', 'email']));
-        $this->assertEquals($params['email'], $user->email);
         $this->assertTrue(Hash::check($params['password'], $user->password));
     }
 
-    public function testUpdateOtherUser()
+    public function testUpdatePasswordFail()
     {
-        $user = $this->user();
-        $anakin = factory(User::class)->states('anakin')->create();
-        $params = $this->validParams();
+        $user = $this->user(['password' => '4_n3w_h0p3']);
+        $params = $this->validPasswordParams(['current_password' => '7h3_l457_j3d1']);
 
-        $response = $this->actingAs($user)->patch("/users/{$anakin->id}", $params);
+        $this->actingAs($user)
+            ->patch('/settings/password', $params)
+            ->assertStatus(302);
 
-        $response->assertStatus(403);
-        $this->assertDatabaseMissing('users', $params);
+        $user->refresh();
+        $this->assertFalse(Hash::check($params['password'], $user->password));
     }
 
     /**
@@ -128,6 +103,21 @@ class UserTest extends TestCase
         return array_merge([
             'name' => 'Padmé',
             'email' => 'padme@amidala.na',
+        ], $overrides);
+    }
+
+    /**
+     * Valid params for updating or creating a resource's password
+     *
+     * @param  array  $overrides new params
+     * @return array  Valid params for updating or creating a resource
+     */
+    private function validPasswordParams($overrides = [])
+    {
+        return array_merge([
+            'current_password' => '4_n3w_h0p3',
+            'password' => '7h3_3mp1r3_57r1k35_b4ck',
+            'password_confirmation' => '7h3_3mp1r3_57r1k35_b4ck'
         ], $overrides);
     }
 }

@@ -2,15 +2,15 @@
 
 namespace Tests\Browser\Admin;
 
-use Tests\BrowserKitTest;
-
-use Illuminate\Foundation\Testing\RefreshDatabase;
 use App\User;
+
 use Faker\Factory;
+use Illuminate\Foundation\Testing\DatabaseMigrations;
+use Tests\BrowserKitTest;
 
 class UsersBrowserTest extends BrowserKitTest
 {
-    use RefreshDatabase;
+    use DatabaseMigrations;
 
     public function testUserIndexEditLink()
     {

@@ -2,12 +2,11 @@
 
 namespace Tests\Unit;
 
-use Tests\TestCase;
-use Illuminate\Foundation\Testing\RefreshDatabase;
-use Illuminate\Support\Facades\Mail;
 use App\Mail\Newsletter;
 use App\Post;
-use App\User;
+use Illuminate\Foundation\Testing\RefreshDatabase;
+use Illuminate\Support\Facades\Mail;
+use Tests\TestCase;
 
 class NewsletterMailTest extends TestCase
 {
@@ -16,7 +15,7 @@ class NewsletterMailTest extends TestCase
     public function testNewsletterMail()
     {
         $user = $this->user();
-        $posts = factory(Post::class, 10)->create();
+        $posts = factory(Post::class, 2)->create();
 
         Mail::fake();
 

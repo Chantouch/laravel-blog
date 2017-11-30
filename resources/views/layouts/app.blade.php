@@ -49,7 +49,7 @@
         </div>
     </div>
     @include('shared/navbar')
-    <div class="container-fluid {{ (Request::is('/') || Request::is('posts/*') || Request::is('login') || Request::is('register')) ? '' : 'bg-white' }}">
+    <div class="container-fluid">
         @include('shared/alerts')
         <div class="row">
             <div class="col-sm-7 col-md-8 col-lg-9">

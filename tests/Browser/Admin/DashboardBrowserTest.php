@@ -2,20 +2,17 @@
 
 namespace Tests\Browser\Admin;
 
-use Tests\BrowserKitTest;
+use Illuminate\Foundation\Testing\DatabaseMigrations;
 
-use Illuminate\Foundation\Testing\RefreshDatabase;
-use App\User;
-use App\Post;
-use Faker\Factory;
+use Tests\BrowserKitTest;
 
 class DashboardBrowserTest extends BrowserKitTest
 {
-    use RefreshDatabase;
+    use DatabaseMigrations;
 
     public function testDashboardPostsIndexLink()
     {
-        $this->actingAs($this->admin())
+        $this->actingAsAdmin()
             ->visit('/admin/dashboard')
             ->click('Articles')
             ->seeRouteIs('admin.posts.index');
@@ -23,7 +20,7 @@ class DashboardBrowserTest extends BrowserKitTest
 
     public function testDashboardCommentsIndexLink()
     {
-        $this->actingAs($this->admin())
+        $this->actingAsAdmin()
             ->visit('/admin/dashboard')
             ->click('Commentaires')
             ->seeRouteIs('admin.comments.index');
@@ -31,7 +28,7 @@ class DashboardBrowserTest extends BrowserKitTest
 
     public function testDashboardUsersIndexLink()
     {
-        $this->actingAs($this->admin())
+        $this->actingAsAdmin()
             ->visit('/admin/dashboard')
             ->click('Utilisateurs')
             ->seeRouteIs('admin.users.index');

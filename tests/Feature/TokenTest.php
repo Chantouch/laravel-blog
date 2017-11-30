@@ -2,10 +2,9 @@
 
 namespace Tests\Feature;
 
-use Tests\TestCase;
-
 use Illuminate\Foundation\Testing\RefreshDatabase;
-use Illuminate\Support\Facades\Hash;
+
+use Tests\TestCase;
 
 class TokenTest extends TestCase
 {
@@ -15,12 +14,11 @@ class TokenTest extends TestCase
     {
         $user = $this->user(['api_token' => null]);
 
-        $response = $this->actingAs($user)->post("/tokens/{$user->id}", []);
+        $this->actingAs($user)
+            ->patch('/settings/token', [])
+            ->assertRedirect('/settings/token');
 
         $user->refresh();
-
-        $response->assertStatus(302);
-        $response->assertRedirect("/users/{$user->id}/edit");
         $this->assertNotNull($user->api_token);
     }
 }

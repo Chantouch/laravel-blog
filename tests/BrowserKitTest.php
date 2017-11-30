@@ -2,10 +2,9 @@
 
 namespace Tests;
 
-use Illuminate\Contracts\Console\Kernel;
-use Laravel\BrowserKitTesting\TestCase as BaseTestCase;
-use App\User;
 use App\Role;
+use App\User;
+use Laravel\BrowserKitTesting\TestCase as BaseTestCase;
 
 abstract class BrowserKitTest extends BaseTestCase
 {
@@ -37,5 +36,25 @@ abstract class BrowserKitTest extends BaseTestCase
     protected function user($overrides = [])
     {
         return factory(User::class)->create($overrides);
+    }
+
+    /**
+     * Acting as an admin
+     */
+    protected function actingAsAdmin($api = null)
+    {
+        $this->actingAs($this->admin(), $api);
+
+        return $this;
+    }
+
+    /**
+     * Acting as an user
+     */
+    protected function actingAsUser($api = null)
+    {
+        $this->actingAs($this->user(), $api);
+
+        return $this;
     }
 }

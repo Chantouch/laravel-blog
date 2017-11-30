@@ -1,19 +1,25 @@
 <?php
 
 return [
-    'profil' => 'My profile',
+    'profile' => 'My profile',
+    'public_profile' => 'My public profile',
+    'settings' => 'Settings',
     'nb_of_posts' => "Number of articles",
     'nb_of_comments' => "Number of comments",
     'edit' => 'Edit Profile',
     'show' => 'View Profile',
     'updated' => 'Profile has been updated',
+    'password_updated' => 'Password has been updated',
     'new_users' => 'New user | New users',
     'count' => ':count user|:count user',
     'empty_api_token' => "No API key available.",
+    'api_token' => "API key",
+    'security' => "Security",
 
     'attributes' => [
         'name' => 'Name',
         'email' => 'Email',
+        'current_password' => 'Current Password',
         'password' => 'Password',
         'password_confirmation' => 'Password Confirmation',
         'roles' => 'Roles',
@@ -24,6 +30,7 @@ return [
     'placeholder' => [
         'name' => 'Your name',
         'email' => 'Your email',
+        'current_password' => 'Your current password',
         'password' => 'Your new password',
         'password_confirmation' => 'Confirmation of the new password'
     ],

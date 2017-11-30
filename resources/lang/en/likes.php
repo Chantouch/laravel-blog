@@ -1,5 +1,5 @@
 <?php
 
 return [
-    'likes' => "J'aime",
+    'likes' => "Likes",
 ];

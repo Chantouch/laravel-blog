@@ -87,6 +87,8 @@ return [
     'unique' => 'The :attribute has already been taken.',
     'uploaded' => 'The :attribute failed to upload.',
     'url' => 'The :attribute format is invalid.',
+    'can_be_author'        => "The selected user can not be an author.",
+    'current_password'     => "The current password is invalid.",
 
     /*
     |--------------------------------------------------------------------------
@@ -100,8 +102,11 @@ return [
     */
 
     'custom' => [
-        'attribute-name' => [
-            'rule-name' => 'custom-message',
+        'can_be_author' => [
+            'accepted' => "The selected author is not valid.",
+        ],
+        'current_password' => [
+            'accepted' => "The current password is invalid.",
         ],
     ],
 
@@ -122,6 +127,7 @@ return [
         'email' => 'E-mail address',
         'first_name' => 'First name',
         'last_name' => 'Last name',
+        'current_password'      => 'Current Password',
         'password' => 'Password',
         'password_confirmation' => 'Password confirmation',
         'city' => 'City',

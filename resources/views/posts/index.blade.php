@@ -5,7 +5,7 @@
     <div class="d-flex justify-content-between">
         <div class="p-2 text-center">
             @if (request()->has('q'))
-                <h2>{{ trans_choice('posts.search_results', $posts->count(), ['query' => request()->input('q')]) }}</h2>
+                <h2>{{ trans_choice('posts.search_results', $count_posts, ['query' => request()->input('q')]) }}</h2>
             @else
                 <h2>@lang('posts.last_posts')</h2>
             @endif

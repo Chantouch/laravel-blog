@@ -2,6 +2,7 @@
 
 namespace App;
 
+use App\Models\Like;
 use Cviebrock\EloquentSluggable\Sluggable;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -189,6 +190,16 @@ class User extends Authenticatable
     public function comments()
     {
         return $this->hasMany(Comment::class, 'author_id');
+    }
+
+    /**
+     * Return the user's likes
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function likes()
+    {
+        return $this->hasMany(Like::class, 'author_id');
     }
 
     /**

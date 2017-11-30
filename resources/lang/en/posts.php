@@ -2,6 +2,7 @@
 
 return [
     'publish' => 'Publish',
+    'posts' => 'Articles',
     'delete' => 'Remove',
     'delete_thumbnail' => "Delete the picture in one",
     'edit' => 'Edit',

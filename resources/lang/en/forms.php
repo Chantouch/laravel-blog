@@ -24,6 +24,7 @@ return [
     'tokens' => [
         'regenerate' => 'Are you sure you want to regenerate a key? All of its APIs will be disconnected.',
         'delete' => 'Are you sure you want to delete this key? All of its APIs will be disconnected.',
+        'generate' => 'Are you sure you want to generate a key? All of its APIs will be disconnected.',
     ]
 
 ];

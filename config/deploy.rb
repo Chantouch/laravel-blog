@@ -2,7 +2,7 @@
 lock '3.9.1'
 
 set :application, 'laravel-blog'
-set :repo_url, 'git@github.com:guillaumebriday/laravel-blog.git'
+set :repo_url, 'git@github.com:chantouch/laravel-blog.git'
 
 # Default branch is :master
 set :branch, :master
@@ -19,13 +19,13 @@ set :docker_compose, '/var/www/docker-compose.yml'
 
 # Paths that should have ACLs set for a standard Laravel 5 application
 set :laravel_acl_paths, [
-  'bootstrap/cache',
-  'storage',
-  'storage/app',
-  'storage/app/public',
-  'storage/framework',
-  'storage/framework/cache',
-  'storage/framework/sessions',
-  'storage/framework/views',
-  'storage/logs'
+    'bootstrap/cache',
+    'storage',
+    'storage/app',
+    'storage/app/public',
+    'storage/framework',
+    'storage/framework/cache',
+    'storage/framework/sessions',
+    'storage/framework/views',
+    'storage/logs'
 ]

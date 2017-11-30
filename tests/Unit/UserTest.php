@@ -2,12 +2,12 @@
 
 namespace Tests\Unit;
 
-use Tests\TestCase;
-use Illuminate\Foundation\Testing\RefreshDatabase;
-use App\User;
 use App\Role;
-use Faker\Factory;
+use App\User;
 use Carbon\Carbon;
+use Faker\Factory;
+use Illuminate\Foundation\Testing\RefreshDatabase;
+use Tests\TestCase;
 
 class UserTest extends TestCase
 {
@@ -36,8 +36,9 @@ class UserTest extends TestCase
     public function testUserIsNotAdmin()
     {
         $user = factory(User::class)->create();
-        $role_editor = factory(Role::class)->states('editor')->create();
-        $user->roles()->attach($role_editor);
+        $user->roles()->attach(
+            factory(Role::class)->states('editor')->create()
+        );
 
         $this->assertFalse($user->isAdmin());
     }
@@ -102,6 +103,7 @@ class UserTest extends TestCase
         $hasOnlyAuthors = true;
         foreach ($authors as $author) {
             if (! $author->canBeAuthor()) {
+                $hasOnlyAuthors = false;
                 break;
             }
         }

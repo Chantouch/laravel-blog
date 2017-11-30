@@ -2,11 +2,11 @@
 
 namespace Tests\Unit;
 
-use Tests\TestCase;
-use Illuminate\Foundation\Testing\RefreshDatabase;
 use App\Comment;
-use Faker\Factory;
 use Carbon\Carbon;
+use Faker\Factory;
+use Illuminate\Foundation\Testing\RefreshDatabase;
+use Tests\TestCase;
 
 class CommentTest extends TestCase
 {
@@ -23,7 +23,7 @@ class CommentTest extends TestCase
         $faker = Factory::create();
 
         // Older Comments
-        factory(Comment::class, 10)
+        factory(Comment::class, 3)
                 ->create()
                 ->each(function ($comment) use ($faker) {
                     $comment->posted_at = $faker->dateTimeBetween(Carbon::now()->subMonths(3), Carbon::now()->subMonths(2));

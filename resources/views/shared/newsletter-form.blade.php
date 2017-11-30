@@ -5,7 +5,7 @@
         <span class="input-group-btn">
             <button class="btn btn-outline-secondary" type="submit">
                 <i class="fa fa-envelope-open-o mr-1" aria-hidden="true"></i>
-                <span class="d-none d-sm-none d-md-none d-lg-block pull-right">{!! __('newsletter.subscribre') !!}</span>
+                <span class="d-none d-sm-none d-md-none d-lg-block pull-right">{!! __('newsletter.subscribe') !!}</span>
             </button>
         </span>
     </div>
