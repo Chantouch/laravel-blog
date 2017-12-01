@@ -37,6 +37,7 @@
 
 
     <link href="{!! asset('css/app.css') !!}" rel="stylesheet">
+    @stack('css')
 </head>
 <body class="bg-light">
 <div id="app">

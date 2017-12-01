@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 use App\Http\Requests\UsersRequest;
 use App\User;
 use App\Role;
@@ -30,6 +29,7 @@ class UsersController extends Controller
 
     /**
      * Show the form for editing the specified resource.
+     * @throws \Illuminate\Auth\Access\AuthorizationException
      */
     public function edit()
     {
@@ -46,7 +46,8 @@ class UsersController extends Controller
     /**
      * Update the specified resource in storage.
      * @param UsersRequest $request
-     * @return
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     * @throws \Illuminate\Auth\Access\AuthorizationException
      */
     public function update(UsersRequest $request)
     {
@@ -55,6 +56,10 @@ class UsersController extends Controller
         $this->authorize('update', $user);
 
         $user->update(array_filter($request->only(['name', 'email'])));
+
+        if ($request->hasFile('thumbnail')) {
+            $user->storeAndSetThumbnail($request->file('thumbnail'));
+        }
 
         return redirect()->route('users.edit')->withSuccess(__('users.updated'));
     }

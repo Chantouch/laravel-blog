@@ -58,6 +58,7 @@ class PostsController extends Controller
      * Store a newly created resource in storage.
      *
      * @param PostsRequest $request
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function store(PostsRequest $request)
     {
@@ -136,7 +137,7 @@ class PostsController extends Controller
      * Update the specified resource in storage.
      * @param PostsRequest $request
      * @param Post $post
-     * @return
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function update(PostsRequest $request, Post $post)
     {
@@ -177,6 +178,7 @@ class PostsController extends Controller
         libxml_clear_errors();
         //<!--Save the description content to db-->
         $data['content'] = $dom->saveHTML();
+        //dd($data);
         if ($request->has('categories')) {
             $post->categories()->sync(explode(',', $request->categories));
         } else {
@@ -233,8 +235,10 @@ class PostsController extends Controller
      */
     public function destroy(Post $post)
     {
-        $post->delete();
-
+        try {
+            $post->delete();
+        } catch (\Exception $e) {
+        }
         return redirect()->route('admin.posts.index')->withSuccess(__('posts.deleted'));
     }
 }

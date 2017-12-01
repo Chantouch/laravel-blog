@@ -22,8 +22,8 @@ class UserPolicy
     /**
      * Determine whether the user can update the user.
      *
-     * @param  \App\User  $user
-     * @param  \App\User  $user
+     * @param User $current_user
+     * @param  \App\User $user
      * @return boolean
      */
     public function update(User $current_user, User $user): bool

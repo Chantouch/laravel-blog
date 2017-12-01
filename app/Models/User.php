@@ -2,16 +2,20 @@
 
 namespace App;
 
+use App\Concern\Mediable;
 use App\Models\Like;
 use Cviebrock\EloquentSluggable\Sluggable;
+use Illuminate\Http\UploadedFile;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\Storage;
 
 class User extends Authenticatable
 {
     use Notifiable;
     use Sluggable;
+    use Mediable;
 
     /**
      * The attributes that are mass assignable.
@@ -21,7 +25,7 @@ class User extends Authenticatable
     protected $fillable = [
         'name', 'email', 'password', 'registered_at',
         'api_token', 'username', 'access_token', 'avatar',
-        'verified', 'verification_token'
+        'verified', 'verification_token', 'thumbnail_id'
     ];
 
     /**
@@ -210,5 +214,60 @@ class User extends Authenticatable
     public function roles()
     {
         return $this->belongsToMany(Role::class)->withTimestamps();
+    }
+
+    /**
+     * Check if the post has a valid thumbnail
+     *
+     * @return boolean
+     */
+    public function hasThumbnail(): bool
+    {
+        return $this->hasMedia($this->thumbnail_id);
+    }
+
+    /**
+     * Retrieve the post's thumbnail
+     *
+     * @return mixed
+     */
+    public function thumbnail()
+    {
+        return $this->media->where('id', $this->thumbnail_id)->first();
+    }
+
+    /**
+     * Store and set the post's thumbnail
+     *
+     * @param UploadedFile $thumbnail
+     * @return void
+     */
+    public function storeAndSetThumbnail(UploadedFile $thumbnail)
+    {
+
+        $thumbnail_name = $thumbnail->store('public/uploads/media');
+        $array_data = [
+            'filename' => str_replace('public/uploads/media/', '', $thumbnail_name),
+            'original_filename' => $thumbnail->getClientOriginalName(),
+            'mime_type' => $thumbnail->getMimeType()
+        ];
+
+        if (!$this->hasThumbnail()) {
+
+            $media = $this->media()->create($array_data);
+
+            $this->update(['thumbnail_id' => $media->id]);
+
+        } else {
+
+            $name = $this->thumbnail()->filename;
+
+            $path = 'public/uploads/media/';
+
+            if (Storage::disk(config('filesystem.default'))->exists($path . $name)) {
+                Storage::disk(config('filesystem.default'))->delete($path . $name);
+            }
+            $this->thumbnail()->update($array_data);
+        }
     }
 }

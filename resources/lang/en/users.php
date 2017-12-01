@@ -24,7 +24,8 @@ return [
         'password_confirmation' => 'Password Confirmation',
         'roles' => 'Roles',
         'registered_at' => 'Registered at',
-        'api_token' => "API key"
+        'api_token' => "API key",
+        'thumbnail' => 'Thumbnail'
     ],
 
     'placeholder' => [

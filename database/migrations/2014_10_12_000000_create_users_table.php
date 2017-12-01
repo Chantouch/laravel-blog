@@ -19,6 +19,8 @@ class CreateUsersTable extends Migration
             $table->string('username')->unique()->nullable();
             $table->string('email')->unique();
             $table->string('password');
+            $table->integer('thumbnail_id')->unsigned()->nullable();
+            $table->foreign('thumbnail_id')->references('id')->on('media');
             $table->rememberToken();
             $table->timestamps();
         });

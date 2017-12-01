@@ -43,7 +43,7 @@
         </div>
 
         <div class="post-content">
-            {!! clean($post->content) !!}
+            {!! $post->content !!}
         </div>
     </div>
     @include('posts._tag')
@@ -68,7 +68,7 @@
 @endsection
 
 @section('scripts')
-    <script src="https://rawgit.com/google/code-prettify/master/loader/run_prettify.js?autoload=true&amp;skin=sunburst&amp;lang=css"></script>
+    <script src="https://rawgit.com/google/code-prettify/master/loader/run_prettify.js?autoload=true&amp;skin=sons-of-obsidian&amp;lang=css"></script>
     <script>
         (function () {
             $('pre').addClass('prettyprint');

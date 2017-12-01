@@ -35,11 +35,11 @@ class MediaController extends Controller
 
         $media = Media::where('filename', $medium)->firstOrFail();
 
-        $filecontent = Storage::disk('ftp')->get($path . $media->filename);
+        $filecontent = Storage::disk(config('filesystem.default'))->get($path . $media->filename);
 
-        return Response::make($filecontent, '200', array(
+        return Response::make($filecontent, '200', [
             'Content-Type' => $media->mime_type,
             'Content-Disposition' => "filename='{$media->original_filename}'"
-        ));
+        ]);
     }
 }
