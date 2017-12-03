@@ -1,5 +1,9 @@
 @extends('layouts.app')
-
+@push('css')
+    <link type="text/css" rel="stylesheet" href="https://cdn.jsdelivr.net/jquery.jssocials/1.4.0/jssocials.css"/>
+    <link type="text/css" rel="stylesheet"
+          href="https://cdn.jsdelivr.net/jquery.jssocials/1.4.0/jssocials-theme-plain.css"/>
+@endpush
 @section('content')
     <div class="bg-white p-3 post-card">
         @if ($post->hasThumbnail())
@@ -9,7 +13,7 @@
         <div class="mb-3">
             <small class="text-muted">
                 <i class="fa fa-user mr-1" aria-hidden="true"></i>
-                By {{ link_to_route('users.show', $post->author->fullname, $post->author) }}
+                @lang('posts.attributes.by') {{ link_to_route('users.show', $post->author->fullname, $post->author) }}
             </small>
             ,
             <small class="text-muted">{{ humanize_date($post->posted_at) }}</small>
@@ -52,26 +56,43 @@
             <div class="card-body text-primary">
                 <h5 class="post-tags">
                     <i class="fa fa-link" aria-hidden="true"></i>
-                    Reference:
+                    @lang('posts.attributes.references')
                     <a href="{!! $post->source->url !!}" title="{!! $post->source->title !!}" target="_blank"
                        rel="noreferrer">
                     <span class="badge badge-dark ml-1">
                         {{ $post->source->title }}
                     </span>
                     </a>
-                    By: <span class="badge badge-pill badge-secondary">{!! $post->source->translator !!}</span>
+                    @lang('posts.attributes.by') <span
+                            class="badge badge-pill badge-secondary">{!! $post->source->translator !!}</span>
                 </h5>
             </div>
         </div>
     @endif
+    <div class="card border-info mb-3 mt-4 right-sidebar">
+        <div class="card-header">
+            <h5 class="post-tags">
+                <i class="fa fa-social" aria-hidden="true"></i>
+                @lang('posts.attributes.share')
+            </h5>
+        </div>
+        <div class="card-body text-primary">
+            <div id="share"></div>
+        </div>
+    </div>
     @include ('comments/_list')
 @endsection
 
-@section('scripts')
-    <script src="https://rawgit.com/google/code-prettify/master/loader/run_prettify.js?autoload=true&amp;skin=sons-of-obsidian&amp;lang=css"></script>
+@push('inline-scripts')
+    <script rel="prefetch"
+            src="https://rawgit.com/google/code-prettify/master/loader/run_prettify.js?autoload=true&amp;skin=sons-of-obsidian&amp;lang=css"></script>
+    <script rel="prefetch" src="https://cdn.jsdelivr.net/jquery.jssocials/1.4.0/jssocials.min.js"></script>
     <script>
         (function () {
-            $('pre').addClass('prettyprint');
+            $('.post-content pre').addClass('prettyprint');
+            $("#share").jsSocials({
+                shares: ["facebook", "googleplus", "twitter", "linkedin", "pinterest", "email"]
+            });
         })();
     </script>
-@endsection
+@endpush

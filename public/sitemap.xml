@@ -1,0 +1,1683 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+    <url>
+        <loc>http://127.0.0.1:8000/</loc>
+    
+    
+        <lastmod>2017-12-03T17:44:34+07:00</lastmod>
+    
+        <changefreq>daily</changefreq>
+    
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/?page=1</loc>
+    
+    
+        <lastmod>2017-12-03T17:45:14+07:00</lastmod>
+    
+        <changefreq>daily</changefreq>
+    
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/?page=2</loc>
+    
+    
+        <lastmod>2017-12-03T17:44:45+07:00</lastmod>
+    
+        <changefreq>daily</changefreq>
+    
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/?page=3</loc>
+    
+    
+        <lastmod>2017-12-03T17:44:47+07:00</lastmod>
+    
+        <changefreq>daily</changefreq>
+    
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/?page=4</loc>
+    
+    
+        <lastmod>2017-12-03T17:44:47+07:00</lastmod>
+    
+        <changefreq>daily</changefreq>
+    
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/?page=5</loc>
+    
+    
+        <lastmod>2017-12-03T17:44:48+07:00</lastmod>
+    
+        <changefreq>daily</changefreq>
+    
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/?page=6</loc>
+    
+    
+        <lastmod>2017-12-03T17:44:48+07:00</lastmod>
+    
+        <changefreq>daily</changefreq>
+    
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/auth/facebook</loc>
+    
+    
+        <lastmod>2017-12-03T17:45:06+07:00</lastmod>
+    
+        <changefreq>daily</changefreq>
+    
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/auth/github</loc>
+    
+    
+        <lastmod>2017-12-03T17:45:06+07:00</lastmod>
+    
+        <changefreq>daily</changefreq>
+    
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/auth/google</loc>
+    
+    
+        <lastmod>2017-12-03T17:45:06+07:00</lastmod>
+    
+        <changefreq>daily</changefreq>
+    
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/auth/twitter</loc>
+    
+    
+        <lastmod>2017-12-03T17:45:08+07:00</lastmod>
+    
+        <changefreq>daily</changefreq>
+    
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/categories</loc>
+    
+    
+        <lastmod>2017-12-03T17:44:35+07:00</lastmod>
+    
+        <changefreq>daily</changefreq>
+    
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/categories/aperiam-possimus-eos-non-iure-id-sunt-perspiciatis</loc>
+    
+    
+        <lastmod>2017-12-03T17:44:58+07:00</lastmod>
+    
+        <changefreq>daily</changefreq>
+    
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/categories/distinctio-sed-veniam-ratione-tempore-voluptates</loc>
+    
+    
+        <lastmod>2017-12-03T17:45:04+07:00</lastmod>
+    
+        <changefreq>daily</changefreq>
+    
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/categories/doloremque-tempora-est-reprehenderit-dolorum-voluptates-officia</loc>
+    
+    
+        <lastmod>2017-12-03T17:45:00+07:00</lastmod>
+    
+        <changefreq>daily</changefreq>
+    
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/categories/et-porro-sit-doloremque-praesentium-architecto</loc>
+    
+    
+        <lastmod>2017-12-03T17:44:59+07:00</lastmod>
+    
+        <changefreq>daily</changefreq>
+    
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/categories/nihil-sit-at-illum-voluptas-sit-eum-pariatur</loc>
+    
+    
+        <lastmod>2017-12-03T17:44:58+07:00</lastmod>
+    
+        <changefreq>daily</changefreq>
+    
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/categories/occaecati-nostrum-ipsa-est-ab-ad-dolorem</loc>
+    
+    
+        <lastmod>2017-12-03T17:44:59+07:00</lastmod>
+    
+        <changefreq>daily</changefreq>
+    
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/categories/praesentium-beatae-iure-dignissimos-consectetur-voluptatem-incidunt-labore-nam</loc>
+    
+    
+        <lastmod>2017-12-03T17:45:05+07:00</lastmod>
+    
+        <changefreq>daily</changefreq>
+    
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/categories/similique-aspernatur-quas-saepe-cum-ipsum-doloribus</loc>
+    
+    
+        <lastmod>2017-12-03T17:45:02+07:00</lastmod>
+    
+        <changefreq>daily</changefreq>
+    
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/categories/tempora-et-est-quia-et-rem-velit</loc>
+    
+    
+        <lastmod>2017-12-03T17:45:04+07:00</lastmod>
+    
+        <changefreq>daily</changefreq>
+    
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/categories/typehead</loc>
+    
+    
+        <lastmod>2017-12-03T17:44:58+07:00</lastmod>
+    
+        <changefreq>daily</changefreq>
+    
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/categories/voluptates-magni-consectetur-dolores-doloribus</loc>
+    
+    
+        <lastmod>2017-12-03T17:45:00+07:00</lastmod>
+    
+        <changefreq>daily</changefreq>
+    
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/login</loc>
+    
+    
+        <lastmod>2017-12-03T17:44:36+07:00</lastmod>
+    
+        <changefreq>daily</changefreq>
+    
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/password/reset</loc>
+    
+    
+        <lastmod>2017-12-03T17:45:05+07:00</lastmod>
+    
+        <changefreq>daily</changefreq>
+    
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/posts/a-facilis-vero-ipsum-debitis-ratione-quo-tempore</loc>
+    
+    
+        <lastmod>2017-12-03T17:45:29+07:00</lastmod>
+    
+        <changefreq>daily</changefreq>
+    
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/posts/a-odio-sit-eos-est</loc>
+    
+    
+        <lastmod>2017-12-03T17:45:15+07:00</lastmod>
+    
+        <changefreq>daily</changefreq>
+    
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/posts/a-qui-et-adipisci-vero-inventore-ullam-laudantium</loc>
+    
+    
+        <lastmod>2017-12-03T17:45:25+07:00</lastmod>
+    
+        <changefreq>daily</changefreq>
+    
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/posts/accusamus-repudiandae-quae-ullam-dignissimos-similique-nulla-qui-est</loc>
+    
+    
+        <lastmod>2017-12-03T17:45:08+07:00</lastmod>
+    
+        <changefreq>daily</changefreq>
+    
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/posts/accusantium-tempora-aut-perferendis-magnam-eveniet</loc>
+    
+    
+        <lastmod>2017-12-03T17:45:16+07:00</lastmod>
+    
+        <changefreq>daily</changefreq>
+    
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/posts/angularjs-ajax-autocomplete-using-typeahead-in-php-example</loc>
+    
+    
+        <lastmod>2017-12-03T17:44:36+07:00</lastmod>
+    
+        <changefreq>daily</changefreq>
+    
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/posts/aspernatur-iusto-provident-asperiores-voluptatem-ut-aperiam-ex</loc>
+    
+    
+        <lastmod>2017-12-03T17:45:17+07:00</lastmod>
+    
+        <changefreq>daily</changefreq>
+    
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/posts/assumenda-quod-cum-accusantium-animi</loc>
+    
+    
+        <lastmod>2017-12-03T17:45:12+07:00</lastmod>
+    
+        <changefreq>daily</changefreq>
+    
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/posts/aut-harum-qui-est-eum-quae</loc>
+    
+    
+        <lastmod>2017-12-03T17:45:18+07:00</lastmod>
+    
+        <changefreq>daily</changefreq>
+    
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/posts/autem-non-possimus-aut-amet-sed-sunt-assumenda-voluptatem</loc>
+    
+    
+        <lastmod>2017-12-03T17:45:10+07:00</lastmod>
+    
+        <changefreq>daily</changefreq>
+    
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/posts/autem-omnis-alias-sed-sint-ut-aut</loc>
+    
+    
+        <lastmod>2017-12-03T17:45:16+07:00</lastmod>
+    
+        <changefreq>daily</changefreq>
+    
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/posts/consequatur-ab-veritatis-assumenda-eos-et-voluptatem-beatae</loc>
+    
+    
+        <lastmod>2017-12-03T17:45:17+07:00</lastmod>
+    
+        <changefreq>daily</changefreq>
+    
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/posts/consequatur-cumque-natus-odit-accusamus-quia</loc>
+    
+    
+        <lastmod>2017-12-03T17:45:14+07:00</lastmod>
+    
+        <changefreq>daily</changefreq>
+    
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/posts/consequuntur-nobis-quam-aperiam-pariatur-nihil-rerum</loc>
+    
+    
+        <lastmod>2017-12-03T17:45:10+07:00</lastmod>
+    
+        <changefreq>daily</changefreq>
+    
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/posts/dicta-optio-perferendis-corporis</loc>
+    
+    
+        <lastmod>2017-12-03T17:45:31+07:00</lastmod>
+    
+        <changefreq>daily</changefreq>
+    
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/posts/dignissimos-quidem-et-accusamus-dignissimos-iste</loc>
+    
+    
+        <lastmod>2017-12-03T17:45:09+07:00</lastmod>
+    
+        <changefreq>daily</changefreq>
+    
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/posts/distinctio-rerum-ut-eaque-totam-dolorem-similique-non</loc>
+    
+    
+        <lastmod>2017-12-03T17:44:38+07:00</lastmod>
+    
+        <changefreq>daily</changefreq>
+    
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/posts/dolor-dicta-quaerat-quasi</loc>
+    
+    
+        <lastmod>2017-12-03T17:45:27+07:00</lastmod>
+    
+        <changefreq>daily</changefreq>
+    
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/posts/dolor-dolorum-totam-explicabo-consequatur-animi</loc>
+    
+    
+        <lastmod>2017-12-03T17:45:08+07:00</lastmod>
+    
+        <changefreq>daily</changefreq>
+    
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/posts/dolor-modi-perferendis-asperiores</loc>
+    
+    
+        <lastmod>2017-12-03T17:45:23+07:00</lastmod>
+    
+        <changefreq>daily</changefreq>
+    
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/posts/dolor-quo-est-voluptas-quia</loc>
+    
+    
+        <lastmod>2017-12-03T17:45:28+07:00</lastmod>
+    
+        <changefreq>daily</changefreq>
+    
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/posts/dolore-autem-nam-aliquid-est</loc>
+    
+    
+        <lastmod>2017-12-03T17:45:24+07:00</lastmod>
+    
+        <changefreq>daily</changefreq>
+    
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/posts/dolorem-voluptas-rerum-voluptates-iure-quae-at</loc>
+    
+    
+        <lastmod>2017-12-03T17:45:19+07:00</lastmod>
+    
+        <changefreq>daily</changefreq>
+    
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/posts/dolorum-tenetur-deleniti-dolorem-fugiat-esse-sunt-officiis</loc>
+    
+    
+        <lastmod>2017-12-03T17:45:27+07:00</lastmod>
+    
+        <changefreq>daily</changefreq>
+    
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/posts/ea-eos-qui-in-esse-est-architecto</loc>
+    
+    
+        <lastmod>2017-12-03T17:44:44+07:00</lastmod>
+    
+        <changefreq>daily</changefreq>
+    
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/posts/eaque-saepe-necessitatibus-quibusdam-maiores-ipsa-nobis-est</loc>
+    
+    
+        <lastmod>2017-12-03T17:44:41+07:00</lastmod>
+    
+        <changefreq>daily</changefreq>
+    
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/posts/enim-commodi-vero-qui-facere-corrupti-excepturi-consequatur-odit</loc>
+    
+    
+        <lastmod>2017-12-03T17:45:32+07:00</lastmod>
+    
+        <changefreq>daily</changefreq>
+    
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/posts/eos-ad-accusamus-reprehenderit-eligendi-molestiae</loc>
+    
+    
+        <lastmod>2017-12-03T17:45:19+07:00</lastmod>
+    
+        <changefreq>daily</changefreq>
+    
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/posts/eos-et-eum-temporibus-iusto-aut-aspernatur</loc>
+    
+    
+        <lastmod>2017-12-03T17:45:16+07:00</lastmod>
+    
+        <changefreq>daily</changefreq>
+    
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/posts/eos-laudantium-libero-ut-cum-dolore-commodi-dicta</loc>
+    
+    
+        <lastmod>2017-12-03T17:45:22+07:00</lastmod>
+    
+        <changefreq>daily</changefreq>
+    
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/posts/est-esse-ea-non-consequatur-nostrum-voluptatum-aut-ratione</loc>
+    
+    
+        <lastmod>2017-12-03T17:45:13+07:00</lastmod>
+    
+        <changefreq>daily</changefreq>
+    
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/posts/est-suscipit-saepe-quia-fuga-voluptatem</loc>
+    
+    
+        <lastmod>2017-12-03T17:45:32+07:00</lastmod>
+    
+        <changefreq>daily</changefreq>
+    
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/posts/et-atque-quas-pariatur-magni-velit-eos-rerum</loc>
+    
+    
+        <lastmod>2017-12-03T17:45:23+07:00</lastmod>
+    
+        <changefreq>daily</changefreq>
+    
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/posts/et-totam-ad-rerum-ad-enim-consequuntur</loc>
+    
+    
+        <lastmod>2017-12-03T17:44:42+07:00</lastmod>
+    
+        <changefreq>daily</changefreq>
+    
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/posts/et-voluptatum-sed-minima-perferendis-quae</loc>
+    
+    
+        <lastmod>2017-12-03T17:44:44+07:00</lastmod>
+    
+        <changefreq>daily</changefreq>
+    
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/posts/excepturi-et-explicabo-voluptatem-quidem-expedita-hic-illum-sed</loc>
+    
+    
+        <lastmod>2017-12-03T17:45:17+07:00</lastmod>
+    
+        <changefreq>daily</changefreq>
+    
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/posts/explicabo-labore-eos-recusandae-perspiciatis-qui-repellat</loc>
+    
+    
+        <lastmod>2017-12-03T17:44:44+07:00</lastmod>
+    
+        <changefreq>daily</changefreq>
+    
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/posts/explicabo-quae-nam-autem</loc>
+    
+    
+        <lastmod>2017-12-03T17:45:27+07:00</lastmod>
+    
+        <changefreq>daily</changefreq>
+    
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/posts/facilis-ut-eligendi-eius-possimus</loc>
+    
+    
+        <lastmod>2017-12-03T17:45:27+07:00</lastmod>
+    
+        <changefreq>daily</changefreq>
+    
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/posts/feed</loc>
+    
+    
+        <lastmod>2017-12-03T17:44:35+07:00</lastmod>
+    
+        <changefreq>daily</changefreq>
+    
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/posts/fuga-ipsam-esse-ut-aut-sed-voluptas</loc>
+    
+    
+        <lastmod>2017-12-03T17:45:29+07:00</lastmod>
+    
+        <changefreq>daily</changefreq>
+    
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/posts/fuga-saepe-nemo-quia-soluta</loc>
+    
+    
+        <lastmod>2017-12-03T17:45:20+07:00</lastmod>
+    
+        <changefreq>daily</changefreq>
+    
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/posts/id-numquam-atque-velit-dolores</loc>
+    
+    
+        <lastmod>2017-12-03T17:44:42+07:00</lastmod>
+    
+        <changefreq>daily</changefreq>
+    
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/posts/illo-laudantium-amet-commodi-omnis</loc>
+    
+    
+        <lastmod>2017-12-03T17:45:32+07:00</lastmod>
+    
+        <changefreq>daily</changefreq>
+    
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/posts/illo-sint-totam-ut-perspiciatis-totam-eveniet</loc>
+    
+    
+        <lastmod>2017-12-03T17:44:40+07:00</lastmod>
+    
+        <changefreq>daily</changefreq>
+    
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/posts/illum-incidunt-eligendi-ducimus-sit</loc>
+    
+    
+        <lastmod>2017-12-03T17:45:15+07:00</lastmod>
+    
+        <changefreq>daily</changefreq>
+    
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/posts/in-esse-natus-assumenda-non-eveniet</loc>
+    
+    
+        <lastmod>2017-12-03T17:45:25+07:00</lastmod>
+    
+        <changefreq>daily</changefreq>
+    
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/posts/in-officiis-quos-velit-aut</loc>
+    
+    
+        <lastmod>2017-12-03T17:45:21+07:00</lastmod>
+    
+        <changefreq>daily</changefreq>
+    
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/posts/ipsa-enim-reprehenderit-quibusdam-id-laudantium-qui</loc>
+    
+    
+        <lastmod>2017-12-03T17:45:29+07:00</lastmod>
+    
+        <changefreq>daily</changefreq>
+    
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/posts/ipsa-facere-sunt-soluta-sit-laborum-vitae-a</loc>
+    
+    
+        <lastmod>2017-12-03T17:45:24+07:00</lastmod>
+    
+        <changefreq>daily</changefreq>
+    
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/posts/ipsam-totam-enim-voluptatem-laudantium-id-sunt-labore-sit</loc>
+    
+    
+        <lastmod>2017-12-03T17:45:08+07:00</lastmod>
+    
+        <changefreq>daily</changefreq>
+    
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/posts/ipsam-voluptatem-sint-quibusdam-dolorem-non</loc>
+    
+    
+        <lastmod>2017-12-03T17:44:41+07:00</lastmod>
+    
+        <changefreq>daily</changefreq>
+    
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/posts/ipsum-rerum-illo-impedit-qui-aspernatur-nulla-inventore</loc>
+    
+    
+        <lastmod>2017-12-03T17:45:20+07:00</lastmod>
+    
+        <changefreq>daily</changefreq>
+    
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/posts/modi-corporis-neque-et-tenetur-cupiditate-sunt-quo</loc>
+    
+    
+        <lastmod>2017-12-03T17:44:43+07:00</lastmod>
+    
+        <changefreq>daily</changefreq>
+    
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/posts/modi-et-exercitationem-officiis-culpa</loc>
+    
+    
+        <lastmod>2017-12-03T17:45:09+07:00</lastmod>
+    
+        <changefreq>daily</changefreq>
+    
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/posts/molestias-voluptatem-fugit-deserunt-qui</loc>
+    
+    
+        <lastmod>2017-12-03T17:45:30+07:00</lastmod>
+    
+        <changefreq>daily</changefreq>
+    
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/posts/natus-consequatur-cupiditate-aut-omnis-non-libero</loc>
+    
+    
+        <lastmod>2017-12-03T17:45:20+07:00</lastmod>
+    
+        <changefreq>daily</changefreq>
+    
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/posts/nisi-fugit-illum-dolor-nemo-dicta</loc>
+    
+    
+        <lastmod>2017-12-03T17:45:19+07:00</lastmod>
+    
+        <changefreq>daily</changefreq>
+    
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/posts/occaecati-provident-ipsum-et-eos-ut-amet</loc>
+    
+    
+        <lastmod>2017-12-03T17:45:31+07:00</lastmod>
+    
+        <changefreq>daily</changefreq>
+    
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/posts/occaecati-rerum-magnam-sint-velit-eius-blanditiis-qui</loc>
+    
+    
+        <lastmod>2017-12-03T17:45:31+07:00</lastmod>
+    
+        <changefreq>daily</changefreq>
+    
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/posts/odio-nisi-laboriosam-dicta-tenetur</loc>
+    
+    
+        <lastmod>2017-12-03T17:45:13+07:00</lastmod>
+    
+        <changefreq>daily</changefreq>
+    
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/posts/odit-id-quisquam-mollitia-sed-eaque</loc>
+    
+    
+        <lastmod>2017-12-03T17:45:21+07:00</lastmod>
+    
+        <changefreq>daily</changefreq>
+    
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/posts/optio-omnis-ea-libero-ducimus-debitis-aliquam</loc>
+    
+    
+        <lastmod>2017-12-03T17:45:12+07:00</lastmod>
+    
+        <changefreq>daily</changefreq>
+    
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/posts/perferendis-omnis-quae-aperiam-aut</loc>
+    
+    
+        <lastmod>2017-12-03T17:45:29+07:00</lastmod>
+    
+        <changefreq>daily</changefreq>
+    
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/posts/placeat-doloremque-sed-consequuntur-ea-praesentium-totam</loc>
+    
+    
+        <lastmod>2017-12-03T17:45:25+07:00</lastmod>
+    
+        <changefreq>daily</changefreq>
+    
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/posts/quae-quam-sed-non-expedita-mollitia-aut</loc>
+    
+    
+        <lastmod>2017-12-03T17:44:42+07:00</lastmod>
+    
+        <changefreq>daily</changefreq>
+    
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/posts/quae-quo-mollitia-eum-quia</loc>
+    
+    
+        <lastmod>2017-12-03T17:45:30+07:00</lastmod>
+    
+        <changefreq>daily</changefreq>
+    
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/posts/quam-tenetur-explicabo-et-sint-hic-enim</loc>
+    
+    
+        <lastmod>2017-12-03T17:45:22+07:00</lastmod>
+    
+        <changefreq>daily</changefreq>
+    
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/posts/quasi-et-sunt-ut-tenetur-dolores-a-ut</loc>
+    
+    
+        <lastmod>2017-12-03T17:45:21+07:00</lastmod>
+    
+        <changefreq>daily</changefreq>
+    
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/posts/quia-minima-ipsam-necessitatibus-qui-quibusdam-repudiandae-voluptatem</loc>
+    
+    
+        <lastmod>2017-12-03T17:45:22+07:00</lastmod>
+    
+        <changefreq>daily</changefreq>
+    
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/posts/quia-nostrum-est-commodi-maxime-minima-ea-ducimus-ut</loc>
+    
+    
+        <lastmod>2017-12-03T17:44:39+07:00</lastmod>
+    
+        <changefreq>daily</changefreq>
+    
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/posts/quibusdam-et-vel-consectetur-non</loc>
+    
+    
+        <lastmod>2017-12-03T17:45:12+07:00</lastmod>
+    
+        <changefreq>daily</changefreq>
+    
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/posts/quis-quam-dignissimos-iusto-quia-totam</loc>
+    
+    
+        <lastmod>2017-12-03T17:45:22+07:00</lastmod>
+    
+        <changefreq>daily</changefreq>
+    
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/posts/quo-accusamus-sequi-nulla-iusto-pariatur</loc>
+    
+    
+        <lastmod>2017-12-03T17:45:14+07:00</lastmod>
+    
+        <changefreq>daily</changefreq>
+    
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/posts/quo-et-consequatur-fugit</loc>
+    
+    
+        <lastmod>2017-12-03T17:44:40+07:00</lastmod>
+    
+        <changefreq>daily</changefreq>
+    
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/posts/quod-quae-eos-dolor-nam-velit-est</loc>
+    
+    
+        <lastmod>2017-12-03T17:45:12+07:00</lastmod>
+    
+        <changefreq>daily</changefreq>
+    
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/posts/quos-laborum-libero-eaque-repudiandae-modi</loc>
+    
+    
+        <lastmod>2017-12-03T17:45:19+07:00</lastmod>
+    
+        <changefreq>daily</changefreq>
+    
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/posts/ratione-tempora-animi-veritatis-fugit-dicta-tempora-fuga-deserunt</loc>
+    
+    
+        <lastmod>2017-12-03T17:45:23+07:00</lastmod>
+    
+        <changefreq>daily</changefreq>
+    
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/posts/recusandae-doloribus-voluptatibus-blanditiis-sint-deserunt-iste</loc>
+    
+    
+        <lastmod>2017-12-03T17:45:26+07:00</lastmod>
+    
+        <changefreq>daily</changefreq>
+    
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/posts/reiciendis-deserunt-molestias-illo-nam-voluptatem-qui-fugiat-totam</loc>
+    
+    
+        <lastmod>2017-12-03T17:45:24+07:00</lastmod>
+    
+        <changefreq>daily</changefreq>
+    
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/posts/rem-sed-ea-et-modi</loc>
+    
+    
+        <lastmod>2017-12-03T17:45:25+07:00</lastmod>
+    
+        <changefreq>daily</changefreq>
+    
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/posts/repellat-vero-unde-doloremque-mollitia</loc>
+    
+    
+        <lastmod>2017-12-03T17:44:39+07:00</lastmod>
+    
+        <changefreq>daily</changefreq>
+    
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/posts/reprehenderit-id-ex-suscipit-vitae-illum-aspernatur-nam</loc>
+    
+    
+        <lastmod>2017-12-03T17:44:41+07:00</lastmod>
+    
+        <changefreq>daily</changefreq>
+    
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/posts/saepe-repellat-aut-quo-reiciendis</loc>
+    
+    
+        <lastmod>2017-12-03T17:45:11+07:00</lastmod>
+    
+        <changefreq>daily</changefreq>
+    
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/posts/sapiente-pariatur-sint-nesciunt-vel-illum</loc>
+    
+    
+        <lastmod>2017-12-03T17:45:26+07:00</lastmod>
+    
+        <changefreq>daily</changefreq>
+    
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/posts/sed-quis-voluptatem-repellendus</loc>
+    
+    
+        <lastmod>2017-12-03T17:45:09+07:00</lastmod>
+    
+        <changefreq>daily</changefreq>
+    
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/posts/sequi-excepturi-aut-velit-cumque</loc>
+    
+    
+        <lastmod>2017-12-03T17:44:44+07:00</lastmod>
+    
+        <changefreq>daily</changefreq>
+    
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/posts/sequi-perferendis-praesentium-quidem-suscipit-officia</loc>
+    
+    
+        <lastmod>2017-12-03T17:45:26+07:00</lastmod>
+    
+        <changefreq>daily</changefreq>
+    
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/posts/sint-in-deserunt-sunt-quisquam-corporis-facilis</loc>
+    
+    
+        <lastmod>2017-12-03T17:45:13+07:00</lastmod>
+    
+        <changefreq>daily</changefreq>
+    
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/posts/sit-autem-non-quo-dolor</loc>
+    
+    
+        <lastmod>2017-12-03T17:45:18+07:00</lastmod>
+    
+        <changefreq>daily</changefreq>
+    
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/posts/sit-deleniti-in-eum-numquam-dolor-laborum</loc>
+    
+    
+        <lastmod>2017-12-03T17:45:26+07:00</lastmod>
+    
+        <changefreq>daily</changefreq>
+    
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/posts/sit-quis-repudiandae-quia-maiores-tempora-sapiente</loc>
+    
+    
+        <lastmod>2017-12-03T17:45:13+07:00</lastmod>
+    
+        <changefreq>daily</changefreq>
+    
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/posts/tenetur-alias-corrupti-quas-aliquam</loc>
+    
+    
+        <lastmod>2017-12-03T17:45:18+07:00</lastmod>
+    
+        <changefreq>daily</changefreq>
+    
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/posts/tenetur-cum-modi-et-ut-vitae</loc>
+    
+    
+        <lastmod>2017-12-03T17:45:11+07:00</lastmod>
+    
+        <changefreq>daily</changefreq>
+    
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/posts/ullam-voluptates-illo-reiciendis-occaecati-distinctio-aliquam-ut-at</loc>
+    
+    
+        <lastmod>2017-12-03T17:45:09+07:00</lastmod>
+    
+        <changefreq>daily</changefreq>
+    
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/posts/unde-ab-totam-et-dignissimos-sint-amet-quis</loc>
+    
+    
+        <lastmod>2017-12-03T17:44:42+07:00</lastmod>
+    
+        <changefreq>daily</changefreq>
+    
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/posts/ut-ipsam-in-consequuntur-explicabo</loc>
+    
+    
+        <lastmod>2017-12-03T17:45:30+07:00</lastmod>
+    
+        <changefreq>daily</changefreq>
+    
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/posts/velit-totam-qui-ut-quaerat-magni</loc>
+    
+    
+        <lastmod>2017-12-03T17:44:43+07:00</lastmod>
+    
+        <changefreq>daily</changefreq>
+    
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/posts/veritatis-quo-vitae-harum-voluptatum-eaque</loc>
+    
+    
+        <lastmod>2017-12-03T17:45:31+07:00</lastmod>
+    
+        <changefreq>daily</changefreq>
+    
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/posts/vero-ex-nulla-dolores-natus-harum</loc>
+    
+    
+        <lastmod>2017-12-03T17:45:28+07:00</lastmod>
+    
+        <changefreq>daily</changefreq>
+    
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/posts/vero-quibusdam-ratione-aut-id-et-et-vel</loc>
+    
+    
+        <lastmod>2017-12-03T17:45:28+07:00</lastmod>
+    
+        <changefreq>daily</changefreq>
+    
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/posts/vero-rerum-voluptas-blanditiis-repellat-perferendis</loc>
+    
+    
+        <lastmod>2017-12-03T17:45:15+07:00</lastmod>
+    
+        <changefreq>daily</changefreq>
+    
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/posts/voluptas-aut-ratione-ut-voluptatem-voluptatum-qui</loc>
+    
+    
+        <lastmod>2017-12-03T17:45:20+07:00</lastmod>
+    
+        <changefreq>daily</changefreq>
+    
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/posts/voluptas-sit-rem-ratione-dicta-unde</loc>
+    
+    
+        <lastmod>2017-12-03T17:45:21+07:00</lastmod>
+    
+        <changefreq>daily</changefreq>
+    
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/posts/voluptatem-praesentium-voluptas-hic-blanditiis-minus</loc>
+    
+    
+        <lastmod>2017-12-03T17:45:11+07:00</lastmod>
+    
+        <changefreq>daily</changefreq>
+    
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/posts/voluptatum-voluptas-et-nostrum-aut-rem-error-doloremque</loc>
+    
+    
+        <lastmod>2017-12-03T17:44:41+07:00</lastmod>
+    
+        <changefreq>daily</changefreq>
+    
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/posts/www.blog.com</loc>
+    
+    
+        <lastmod>2017-12-03T17:45:33+07:00</lastmod>
+    
+        <changefreq>daily</changefreq>
+    
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/register</loc>
+    
+    
+        <lastmod>2017-12-03T17:44:36+07:00</lastmod>
+    
+        <changefreq>daily</changefreq>
+    
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/tags</loc>
+    
+    
+        <lastmod>2017-12-03T17:44:35+07:00</lastmod>
+    
+        <changefreq>daily</changefreq>
+    
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/tags/accusantium-harum-reiciendis-unde-quasi-rerum</loc>
+    
+    
+        <lastmod>2017-12-03T17:44:55+07:00</lastmod>
+    
+        <changefreq>daily</changefreq>
+    
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/tags/ad-ea-nesciunt-et-rerum-deleniti-quo-voluptates</loc>
+    
+    
+        <lastmod>2017-12-03T17:44:57+07:00</lastmod>
+    
+        <changefreq>daily</changefreq>
+    
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/tags/ajax</loc>
+    
+    
+        <lastmod>2017-12-03T17:44:48+07:00</lastmod>
+    
+        <changefreq>daily</changefreq>
+    
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/tags/corporis-et-commodi-eveniet-aperiam</loc>
+    
+    
+        <lastmod>2017-12-03T17:44:55+07:00</lastmod>
+    
+        <changefreq>daily</changefreq>
+    
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/tags/cum-quae-cumque-veritatis-ratione-id</loc>
+    
+    
+        <lastmod>2017-12-03T17:44:55+07:00</lastmod>
+    
+        <changefreq>daily</changefreq>
+    
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/tags/dolor-aspernatur-recusandae-quo-perferendis-est</loc>
+    
+    
+        <lastmod>2017-12-03T17:44:57+07:00</lastmod>
+    
+        <changefreq>daily</changefreq>
+    
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/tags/dolores-similique-repudiandae-ducimus-aut-sed-omnis</loc>
+    
+    
+        <lastmod>2017-12-03T17:44:49+07:00</lastmod>
+    
+        <changefreq>daily</changefreq>
+    
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/tags/hic-doloremque-ratione-dolor-omnis-commodi-aperiam</loc>
+    
+    
+        <lastmod>2017-12-03T17:44:52+07:00</lastmod>
+    
+        <changefreq>daily</changefreq>
+    
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/tags/nam-placeat-sint-sit-reprehenderit-consectetur-asperiores-voluptas-voluptas</loc>
+    
+    
+        <lastmod>2017-12-03T17:44:51+07:00</lastmod>
+    
+        <changefreq>daily</changefreq>
+    
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/tags/non-nemo-et-nam-non</loc>
+    
+    
+        <lastmod>2017-12-03T17:44:56+07:00</lastmod>
+    
+        <changefreq>daily</changefreq>
+    
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/tags/odit-quasi-similique-quis-vel</loc>
+    
+    
+        <lastmod>2017-12-03T17:44:56+07:00</lastmod>
+    
+        <changefreq>daily</changefreq>
+    
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/tags/pariatur-dolores-fugit-enim-praesentium-hic</loc>
+    
+    
+        <lastmod>2017-12-03T17:44:56+07:00</lastmod>
+    
+        <changefreq>daily</changefreq>
+    
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/tags/perspiciatis-quos-dolorem-non-nam-nostrum-inventore-quia</loc>
+    
+    
+        <lastmod>2017-12-03T17:44:53+07:00</lastmod>
+    
+        <changefreq>daily</changefreq>
+    
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/tags/praesentium-temporibus-maxime-quis-sed-odit-autem</loc>
+    
+    
+        <lastmod>2017-12-03T17:44:54+07:00</lastmod>
+    
+        <changefreq>daily</changefreq>
+    
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/tags/quis-possimus-omnis-expedita-consectetur</loc>
+    
+    
+        <lastmod>2017-12-03T17:44:50+07:00</lastmod>
+    
+        <changefreq>daily</changefreq>
+    
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/tags/quis-ut-exercitationem-voluptas-expedita-ut-quos-debitis</loc>
+    
+    
+        <lastmod>2017-12-03T17:44:53+07:00</lastmod>
+    
+        <changefreq>daily</changefreq>
+    
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/tags/soluta-quas-fuga-perspiciatis-adipisci-minus-velit-non</loc>
+    
+    
+        <lastmod>2017-12-03T17:45:32+07:00</lastmod>
+    
+        <changefreq>daily</changefreq>
+    
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/tags/tempora-ipsa-consequuntur-voluptas-sed</loc>
+    
+    
+        <lastmod>2017-12-03T17:44:49+07:00</lastmod>
+    
+        <changefreq>daily</changefreq>
+    
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/tags/ut-rerum-dolore-laudantium-ratione</loc>
+    
+    
+        <lastmod>2017-12-03T17:44:54+07:00</lastmod>
+    
+        <changefreq>daily</changefreq>
+    
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/tags/velit-qui-doloribus-animi-dignissimos-excepturi-magni-veritatis</loc>
+    
+    
+        <lastmod>2017-12-03T17:44:54+07:00</lastmod>
+    
+        <changefreq>daily</changefreq>
+    
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/tags/voluptatem-maiores-et-odio-aspernatur</loc>
+    
+    
+        <lastmod>2017-12-03T17:44:53+07:00</lastmod>
+    
+        <changefreq>daily</changefreq>
+    
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/tags?page=1</loc>
+    
+    
+        <lastmod>2017-12-03T17:45:33+07:00</lastmod>
+    
+        <changefreq>daily</changefreq>
+    
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/tags?page=2</loc>
+    
+    
+        <lastmod>2017-12-03T17:44:57+07:00</lastmod>
+    
+        <changefreq>daily</changefreq>
+    
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/users/brayanbuckridge</loc>
+    
+    
+        <lastmod>2017-12-03T17:44:43+07:00</lastmod>
+    
+        <changefreq>daily</changefreq>
+    
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/users/chadrickschiller</loc>
+    
+    
+        <lastmod>2017-12-03T17:45:15+07:00</lastmod>
+    
+        <changefreq>daily</changefreq>
+    
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/users/chantouch</loc>
+    
+    
+        <lastmod>2017-12-03T17:44:37+07:00</lastmod>
+    
+        <changefreq>daily</changefreq>
+    
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/users/clarissahammes</loc>
+    
+    
+        <lastmod>2017-12-03T17:44:38+07:00</lastmod>
+    
+        <changefreq>daily</changefreq>
+    
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/users/davontebechtelar</loc>
+    
+    
+        <lastmod>2017-12-03T17:45:10+07:00</lastmod>
+    
+        <changefreq>daily</changefreq>
+    
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/users/deliamclaughlin</loc>
+    
+    
+        <lastmod>2017-12-03T17:45:17+07:00</lastmod>
+    
+        <changefreq>daily</changefreq>
+    
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/users/drjazmynboyeriii</loc>
+    
+    
+        <lastmod>2017-12-03T17:45:28+07:00</lastmod>
+    
+        <changefreq>daily</changefreq>
+    
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/users/dropheliawildermanii</loc>
+    
+    
+        <lastmod>2017-12-03T17:45:23+07:00</lastmod>
+    
+        <changefreq>daily</changefreq>
+    
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/users/drpaulpricei</loc>
+    
+    
+        <lastmod>2017-12-03T17:45:11+07:00</lastmod>
+    
+        <changefreq>daily</changefreq>
+    
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/users/emmanuellepacocha</loc>
+    
+    
+        <lastmod>2017-12-03T17:45:30+07:00</lastmod>
+    
+        <changefreq>daily</changefreq>
+    
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/users/reidokeefe</loc>
+    
+    
+        <lastmod>2017-12-03T17:45:18+07:00</lastmod>
+    
+        <changefreq>daily</changefreq>
+    
+        <priority>0.8</priority>
+    </url>
+</urlset>

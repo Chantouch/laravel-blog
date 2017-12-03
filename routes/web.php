@@ -57,4 +57,13 @@ Route::middleware(['isVerified'])->group(function () {
     Route::resource('categories', 'CategoriesController', ['only' => ['show', 'index']]);
 
     Route::get('newsletter-subscriptions/unsubscribe', 'NewsletterSubscriptionsController@unsubscribe')->name('newsletter-subscriptions.unsubscribe');
+
+    //Sitemap
+    Route::get('/sitemap.html', 'SitemapController@index')->name('sitemap.html');
+    Route::get('/sitemap/posts', 'SitemapController@posts')->name('sitemap.posts');
+    Route::get('/sitemap/categories', 'SitemapController@categories')->name('sitemap.categories');
+
+    //Page*
+    Route::get('/about', 'ContactusController@about')->name('page.about');
+    Route::resource('/feedback', 'ContactusController', ['only' => ['index', 'store']]);
 });

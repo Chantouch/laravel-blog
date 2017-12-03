@@ -36,7 +36,7 @@
     {!! MetaTag::tag('image', asset('storage/images/default-logo.png')) !!}
 
 
-    <link href="{!! asset('css/app.css') !!}" rel="stylesheet">
+    <link href="{!! asset('css/app.css') !!}" rel="stylesheet" media="all">
     @stack('css')
 </head>
 <body class="bg-light">
@@ -79,7 +79,7 @@
 
 <!-- Scripts -->
 {{--<script src="//{!! Request::getHost() !!}:8888/socket.io/socket.io.js"></script>--}}
-<script src="{!! asset('js/app.js') !!}"></script>
+<script rel="preload" src="{!! asset('js/app.js') !!}"></script>
 <div id="fb-root"></div>
 <script>(function (d, s, id) {
         let js, fjs = d.getElementsByTagName(s)[0];

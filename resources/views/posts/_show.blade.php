@@ -25,7 +25,7 @@
                     liked="{{ $post->isLiked() }}"
                     item_id="{{ $post->id }}"
                     item_type="posts"
-                    logged_in="{{ Auth::check() }}"
+                    logged_in="{{ auth()->check() }}"
             ></like>
             <div class="entry-colors">
                 <div class="color_col_2"></div>

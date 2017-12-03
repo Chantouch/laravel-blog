@@ -36,7 +36,12 @@ return [
         'source_translator' => 'Translator',
         'references' => 'References:',
         'slug' => 'Slug',
-        'action' => 'Action'
+        'action' => 'Action',
+        'share' => 'Share:',
+        'by' => 'By:',
+        'sitemap' => 'Sitemap',
+        'view_all' => 'View All',
+        'view_more' => 'View More',
     ],
 
     'placeholder' => [

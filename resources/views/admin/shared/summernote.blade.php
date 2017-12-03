@@ -6,10 +6,10 @@
     <script>
         $(document).ready(function () {
             $('.form-editor').summernote({
-                height: 600,                 // set editor height
-                minHeight: 500,             // set minimum height of editor
-                maxHeight: 1200,             // set maximum height of editor
-                focus: false,                  // set focus to editable area after initializing summernote
+                height: 600,
+                minHeight: 500,
+                maxHeight: 1200,
+                focus: false,
                 dialogsFade: true,
             });
         });
