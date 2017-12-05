@@ -35,9 +35,63 @@
 
     {!! MetaTag::tag('image', asset('storage/images/default-logo.png')) !!}
 
+    <link rel="preload" href="{!! asset('css/app.css') !!}" as="style" onload="this.rel='stylesheet'">
 
-    <link href="{!! asset('css/app.css') !!}" rel="stylesheet" media="all">
+    {{--<script>--}}
+        {{--(function(w) {--}}
+            {{--'use strict';--}}
+            {{--var xhrRunner = {--}}
+                {{--firstRun: true--}}
+            {{--};--}}
+            {{--xhrRunner.getAsyncFile = function(fileStr) {--}}
+                {{--var xhr = new XMLHttpRequest();--}}
+                {{--xhr.timeout = 4000;--}}
+                {{--xhr.overrideMimeType('text/css; charset=UTF-8');--}}
+                {{--xhr.onreadystatechange = function() {--}}
+                    {{--if (xhr.readyState === 4 && xhr.status === 200) {--}}
+                        {{--var style = document.createElement('style'),--}}
+                            {{--head = document.getElementsByTagName('head')[0];--}}
+                        {{--style.appendChild(document.createTextNode(xhr.responseText));--}}
+                        {{--head.appendChild(style);--}}
+                    {{--}--}}
+                {{--};--}}
+                {{--xhr.open('GET', fileStr, true);--}}
+                {{--xhr.send(null);--}}
+            {{--};--}}
+            {{--if (xhrRunner.firstRun) {--}}
+                {{--xhrRunner.getAsyncFile('/css/app.css');--}}
+                {{--xhrRunner.firstRun = false;--}}
+            {{--}--}}
+            {{--w.xhrRunner = xhrRunner;--}}
+        {{--}(window));--}}
+    {{--</script>--}}
+
     @stack('css')
+
+    <script>
+        window.ga = window.ga || function () {
+            (ga.q = ga.q || []).push(arguments)
+        };
+        ga.l = +new Date;
+        ga('create', 'UA-51288724-4', 'auto');
+        ga('send', 'pageview');
+    </script>
+    <script async src='https://www.google-analytics.com/analytics.js'></script>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-51288724-4"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+
+        gtag('js', new Date());
+
+        gtag('config', 'UA-51288724-4');
+
+    </script>
 </head>
 <body class="bg-light">
 <div id="app">
@@ -79,10 +133,10 @@
 
 <!-- Scripts -->
 {{--<script src="//{!! Request::getHost() !!}:8888/socket.io/socket.io.js"></script>--}}
-<script rel="preload" src="{!! asset('js/app.js') !!}"></script>
+<script defer rel="preload" src="{!! asset('js/app.js') !!}"></script>
 <div id="fb-root"></div>
 <script>(function (d, s, id) {
-        let js, fjs = d.getElementsByTagName(s)[0];
+        var js, fjs = d.getElementsByTagName(s)[0];
         if (d.getElementById(id)) return;
         js = d.createElement(s);
         js.id = id;

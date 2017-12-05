@@ -21,16 +21,14 @@
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">
-                                <label for="name">
-                                    Name</label>
+                                <label for="name"> Name</label>
                                 {!! Form::text('name', null, array('class'=>'form-control','placeholder'=>'Enter your name', 'required' => 'required')) !!}
                                 @if ($errors->has('name'))
                                     <span class="invalid-feedback">{{ $errors->first('name') }}</span>
                                 @endif
                             </div>
                             <div class="form-group">
-                                <label for="email">
-                                    Email Address</label>
+                                <label for="email"> Email Address</label>
                                 <div class="input-group">
                                     <span class="input-group-addon">
                                         <i class="fa fa-envelope-open-o" aria-hidden="true"></i>
@@ -42,8 +40,7 @@
                                 @endif
                             </div>
                             <div class="form-group">
-                                <label for="subject">
-                                    Subject</label>
+                                <label for="subject"> Subject</label>
                                 <select id="subject" name="subject" class="form-control" required="required">
                                     <option value="na" selected="">Choose One:</option>
                                     <option value="service">General Customer Service</option>
@@ -54,8 +51,7 @@
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
-                                <label for="name">
-                                    Message</label>
+                                <label for="name"> Message</label>
                                 {!! Form::textarea('message', null, ['class' => 'form-control' . ($errors->has('message') ? ' is-invalid' : ''), 'required' => 'required', 'rows' => '9', 'cols' => '25']) !!}
                                 @if ($errors->has('message'))
                                     <span class="invalid-feedback">{{ $errors->first('message') }}</span>
@@ -75,7 +71,7 @@
                 <form>
                     <legend><span class="fa fa-globe"></span> Our office</legend>
                     <address>
-                        <strong>BCodiger, Inc.</strong><br>
+                        <strong>BCodinger, Inc.</strong><br>
                         9B Road 2, ChakangreLuer<br>
                         Meanchey, PP 12346<br>
                         <abbr title="Phone">

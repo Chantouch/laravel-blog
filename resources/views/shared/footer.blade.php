@@ -30,8 +30,8 @@
                         <ul class="list-unstyled">
                             <li><a href="#"></a></li>
                             <li><a href="{!! route('sitemap.html') !!}">@lang('posts.attributes.sitemap')</a></li>
-                            <li><a href="#">Contact Directory</a></li>
-                            <li><a href="#">Forms</a></li>
+                            <li><a href="{!! route('feedback.index') !!}">Contact Us</a></li>
+                            <li><a href="{!! route('page.about') !!}">About Us</a></li>
                             <li><a href="#">News and Updates</a></li>
                             <li><a href="#">FAQs</a></li>
                         </ul>
@@ -73,15 +73,15 @@
 </footer>
 
 <nav class="navbar navbar-dark bg-dark footer-container">
-    <div class="container justify-content-center">
+    <div class="container-fluid justify-content-center">
         <ul class="navbar-nav text-center">
             <li class="nav-item text-white m-3">
                 Made with <i class="fa fa-heart text-danger" aria-hidden="true"></i> by <a href="https://bookingkh.com" target="_blank" class="text-secondary">Booking KH</a>
             </li>
 
             <li class="nav-item text-white m-3">
-                <a href="https://github.com/Chantouch/laravel-blog" target="_blank" class="btn btn-outline-secondary mt-1"><i class="fa fa-github" aria-hidden="true"></i> Fork me on GitHub</a>
-                <a href="https://twitter.com/@DevidCs83" target="_blank" class="btn btn-outline-secondary mt-1"><i class="fa fa-twitter" aria-hidden="true"></i> Say Hi on Twitter !</a>
+                <a href="https://github.com/Chantouch/laravel-blog" target="_blank" class="btn btn-outline-info mt-1"><i class="fa fa-github" aria-hidden="true"></i> Fork me on GitHub</a>
+                <a href="https://twitter.com/@DevidCs83" target="_blank" class="btn btn-outline-light mt-1"><i class="fa fa-twitter" aria-hidden="true"></i> Say Hi on Twitter !</a>
                 <a href="{!! route('feedback.index') !!}" class="btn btn-outline-primary mt-1"><i class="fa fa-commenting-o" aria-hidden="true"></i> Send Feedback !</a>
             </li>
 
@@ -94,7 +94,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-xs-12">
-                    <p class="text-center">&copy; Copyright 2017 - City of Cambodia.  All rights reserved.</p>
+                    <p class="text-center text-white">&copy; Copyright 2017 - City of Cambodia.  All rights reserved.</p>
                 </div>
             </div>
         </div>
