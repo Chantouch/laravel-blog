@@ -47,7 +47,6 @@
                             <li><a href="#">Disclaimer</a></li>
                             <li><a href="#">Privacy Policy</a></li>
                             <li><a href="#">FAQs</a></li>
-                            <li><a href="#">Webmaster</a></li>
                         </ul>
                     </div>
                 </div>

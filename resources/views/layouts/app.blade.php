@@ -1,6 +1,9 @@
 <!doctype html>
 <html lang="{{ app()->getLocale() }}">
 <head>
+
+    <title>{{ MetaTag::get('title') }} - {{ config('app.name', 'BCodinger') }}</title>
+
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta http-equiv="content-type" content="text/html; charset=utf-8">
@@ -18,11 +21,9 @@
         ]) !!};
     </script>
 
-    <title>{{ MetaTag::get('title') }} - {{ config('app.name', 'My ') }}</title>
-
     {!! MetaTag::tag('robots') !!}
 
-    {!! MetaTag::tag('site_name', 'My Blog') !!}
+    {!! MetaTag::tag('site_name', 'BCodinger') !!}
     {!! MetaTag::tag('url', Request::url()); !!}
     {!! MetaTag::tag('locale', 'en_EN') !!}
 
