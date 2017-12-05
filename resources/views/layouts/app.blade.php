@@ -35,7 +35,7 @@
 
     {!! MetaTag::tag('image', asset('storage/images/default-logo.png')) !!}
 
-    <link rel="preload" href="{!! asset('css/app.css') !!}" as="style" onload="this.rel='stylesheet'">
+    <link href="{!! asset('css/app.css') !!}" rel="preload"  as="style" onload="this.rel='stylesheet'">
 
     {{--<script>--}}
         {{--(function(w) {--}}
@@ -133,7 +133,7 @@
 
 <!-- Scripts -->
 {{--<script src="//{!! Request::getHost() !!}:8888/socket.io/socket.io.js"></script>--}}
-<script defer rel="preload" src="{!! asset('js/app.js') !!}"></script>
+<script rel="preload" src="{!! asset('js/app.js') !!}" ></script>
 <div id="fb-root"></div>
 <script>(function (d, s, id) {
         var js, fjs = d.getElementsByTagName(s)[0];

@@ -9,7 +9,7 @@ return array(
      |
      */
 
-    'title' => 'My Blog',
+    'title' => 'Blog Codinger',
 
     /*
      |--------------------------------------------------------------------------
@@ -20,7 +20,7 @@ return array(
      |
      */
 
-    'title_limit' => 70,
+    'title_limit' => 60,
 
     /*
      |--------------------------------------------------------------------------
@@ -41,7 +41,7 @@ return array(
      */
 
     'open_graph' => [
-        'site_name' => 'My Blog',
+        'site_name' => 'Blog Codinger',
         'type' => 'website'
     ],
 
@@ -54,8 +54,8 @@ return array(
 
     'twitter' => [
         'card' => 'summary',
-        'creator' => '@Chantouch',
-        'site' => '@myblog'
+        'creator' => '@DevidCs83',
+        'site' => '@BCodinger'
     ],
 
     /*

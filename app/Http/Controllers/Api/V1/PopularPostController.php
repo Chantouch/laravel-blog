@@ -19,8 +19,9 @@ class PopularPostController extends Controller
     {
         return PostResource::collection(
             Post::withCount('comments')
-                ->where('view_count', '>', 10)
-                ->latest()->paginate($request->input('limit', 6))
+                ->where('view_count', '>', 100)
+                ->orderBy('view_count', 'desc')
+                ->paginate($request->input('limit', 6))
         );
     }
 

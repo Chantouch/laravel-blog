@@ -64,6 +64,6 @@ Route::middleware(['isVerified'])->group(function () {
     Route::get('/sitemap/categories', 'SitemapController@categories')->name('sitemap.categories');
 
     //Page*
-    Route::get('/about', 'ContactusController@about')->name('page.about');
+    Route::get('/about-us', 'ContactusController@about')->name('page.about');
     Route::resource('/feedback', 'ContactusController', ['only' => ['index', 'store']]);
 });

@@ -80,7 +80,7 @@
             </li>
 
             <li class="nav-item text-white m-3">
-                <a href="https://github.com/Chantouch/laravel-blog" target="_blank" class="btn btn-outline-info mt-1"><i class="fa fa-github" aria-hidden="true"></i> Fork me on GitHub</a>
+                <a href="https://www.facebook.com/chantouch.sek" target="_blank" class="btn btn-outline-info mt-1"><i class="fa fa-facebook-f" aria-hidden="true"></i> Find me on FB</a>
                 <a href="https://twitter.com/@DevidCs83" target="_blank" class="btn btn-outline-light mt-1"><i class="fa fa-twitter" aria-hidden="true"></i> Say Hi on Twitter !</a>
                 <a href="{!! route('feedback.index') !!}" class="btn btn-outline-primary mt-1"><i class="fa fa-commenting-o" aria-hidden="true"></i> Send Feedback !</a>
             </li>
