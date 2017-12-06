@@ -347,7 +347,7 @@
 
 <!-- Necessery scripts -->
 <script src="{!! asset('about/js/jquery-2.1.3.min.js') !!}"></script>
-<script src="{!! asset('about/js/bootstrap.min.js') !!}" async></script>
+<script src="{!! asset('about/js/bootstrap.min.js') !!}"></script>
 <script src="https://maps.googleapis.com/maps/api/js?v=3.exp" async></script>
 <script src="{!! asset('about/js/jquery.actual.min.js') !!}" async></script>
 <script src="{!! asset('about/js/smooth-scroll.js') !!}" async></script>

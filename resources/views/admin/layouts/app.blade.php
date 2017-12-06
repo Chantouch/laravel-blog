@@ -8,14 +8,9 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <!-- Scripts -->
-    <script>
-        window.Laravel = {!! json_encode([
-            'pusherKey' => config('broadcasting.connections.pusher.key'),
-            'pusherCluster' => config('broadcasting.connections.pusher.options.cluster'),
-            'csrfToken' => csrf_token(),
-        ]) !!};
-    </script>
+    @auth
+        <meta name="api-token" content="{{ auth()->user()->api_token }}">
+    @endauth
 
     <title>{{ config('app.name', 'BCodinger') }}</title>
 
