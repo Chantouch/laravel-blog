@@ -10,7 +10,7 @@ return [
     'testimonial' => [
         'testimonials' => 'Testimonials',
         'name' => [
-            'chantouch_sek' => 'Chantouch Sek',
+            'chantouch_sek' => 'Touch Sek',
             'theary_rin' => 'Rin Theary',
             'sreyet_hel' => 'Sreyet Hel',
         ],
