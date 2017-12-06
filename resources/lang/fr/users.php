@@ -4,8 +4,6 @@ return [
   'profile' => 'Mon profil',
   'public_profile' => 'Mon profil public',
   'settings' => 'Réglages',
-    'nb_of_posts' => "Number of articles",
-    'nb_of_comments' => "Number of comments",
   'edit' => 'Éditer le profil',
   'show' => 'Voir le profil',
   'updated' => 'Le profil a bien été mis à jour',

@@ -347,8 +347,13 @@
 
 <!-- Necessery scripts -->
 <script src="{!! asset('about/js/jquery-2.1.3.min.js') !!}"></script>
+<<<<<<< HEAD
 <script src="{!! asset('about/js/bootstrap.min.js') !!}" async></script>
 <script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
+=======
+<script src="{!! asset('about/js/bootstrap.min.js') !!}"></script>
+<script src="https://maps.googleapis.com/maps/api/js?v=3.exp" async></script>
+>>>>>>> 7c8a0d2c8aeb19c700a5000f11aa8987015c7fca
 <script src="{!! asset('about/js/jquery.actual.min.js') !!}" async></script>
 <script src="{!! asset('about/js/smooth-scroll.js') !!}" async></script>
 <script src="{!! asset('about/js/owl.carousel.js') !!}"></script>

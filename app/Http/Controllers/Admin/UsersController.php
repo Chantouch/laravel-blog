@@ -10,20 +10,22 @@ use App\Role;
 class UsersController extends Controller
 {
     /**
-    * Show the application users index.
-    *
-    * @return \Illuminate\Http\Response
-    */
+     * Show the application users index.
+     *
+     * @return \Illuminate\Http\Response
+     */
     public function index()
     {
         return view('admin.users.index', [
-            'users' => User::withCount('posts')->latest()->paginate(50)
+            'users' => User::latest()->paginate(50)
         ]);
     }
 
     /**
-    * Display the specified resource edit form.
-    */
+     * Display the specified resource edit form.
+     * @param User $user
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
     public function edit(User $user)
     {
         return view('admin.users.edit', [
@@ -33,8 +35,11 @@ class UsersController extends Controller
     }
 
     /**
-    * Update the specified resource in storage.
-    */
+     * Update the specified resource in storage.
+     * @param UsersRequest $request
+     * @param User $user
+     * @return
+     */
     public function update(UsersRequest $request, User $user)
     {
         $user->update(array_filter($request->only(['name', 'email', 'password'])));

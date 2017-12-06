@@ -12,8 +12,8 @@
     <tbody>
         @foreach($categories as $category)
             <tr>
-                <th>{{ link_to_route('admin.categories.edit', $category->name, $category) }}</th>
-                <td>{!! $category->description !!}</td>
+                <th>{{ link_to_route('admin.categories.edit', $category->excerpt($category->name), $category) }}</th>
+                <td>{!! $category->excerpt($category->description) !!}</td>
                 <td>{{ humanize_date($category->created_at, 'd/m/Y H:i:s') }}</td>
                 <td>{!! active($category->active) !!}</td>
                 <td>
@@ -21,13 +21,13 @@
                         {!! Form::open(['route' => ['admin.categories.destroy', $category->id], 'method' => 'delete']) !!}
                         <a href="{!! route('admin.categories.show', [$category->id]) !!}"
                            class='btn btn-info btn-outline btn-1b waves-effect btn-sm'>
-                            {!! __('categories.view') !!}
+                            <i class="fa fa-eye-slash" aria-hidden="true"></i>
                         </a>
                         <a href="{!! route('admin.categories.edit', [$category->id]) !!}"
                            class='btn btn-primary btn-outline waves-effect btn-sm'>
-                            {!! __('categories.edit') !!}
+                            <i class="fa fa-pencil" aria-hidden="true"></i>
                         </a>
-                        {!! Form::button(__('categories.delete'), ['type' => 'submit', 'class' => 'btn btn-danger btn-outline waves-effect btn-sm', 'onclick' => "return confirm('Are you sure?')"]) !!}
+                        {!! Form::button('<i class="fa fa-trash" aria-hidden="true"></i>', ['type' => 'submit', 'class' => 'btn btn-danger btn-outline waves-effect btn-sm', 'onclick' => "return confirm('Are you sure?')"]) !!}
                         {!! Form::close() !!}
                     </div>
                 </td>

@@ -27,9 +27,9 @@ return [
     'not_authorized' => 'Your are not Authorized',
 
     'services' => [
-        'github' => 'Connect with Github',
-        'twitter' => 'Connect with Twitter',
-        'facebook' => 'Connect with Facebook',
-        'google' => 'Connect with Google',
+        'github' => 'Login with Github',
+        'twitter' => 'Login with Twitter',
+        'facebook' => 'Login with Facebook',
+        'google' => 'Login with Google',
     ],
 ];

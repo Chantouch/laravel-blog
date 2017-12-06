@@ -113,4 +113,16 @@ class Category extends Model
     {
         return $this->posts()->count();
     }
+
+    /**
+     * return the excerpt of the post content
+     *
+     * @param $attr
+     * @param int $length
+     * @return string
+     */
+    public function excerpt($attr, $length = 50): string
+    {
+        return strip_tags(str_limit($attr, $length));
+    }
 }

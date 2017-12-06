@@ -18,26 +18,15 @@ class DevDatabaseSeeder extends Seeder
      */
     public function run()
     {
-        $faker = Factory::create();
-
-        factory(Category::class,10)->create();
-        factory(Tag::class,20)->create();
-
-        factory(User::class, 10)
+        factory(Post::class, 20)
             ->create()
-            ->each(function ($user) use ($faker) {
-                factory(Post::class, $faker->numberBetween(2, 20))
+            ->each(function ($post) {
+                factory(Comment::class, 5)
                     ->create([
-                        'author_id' => $user->id
-                    ])
-                    ->each(function ($post) use ($faker) {
-                        factory(Comment::class, $faker->numberBetween(10, 60))
-                            ->create([
-                                'post_id' => $post->id
-                            ]);
-                    });
+                        'post_id' => $post->id
+                    ]);
             });
 
-        factory(NewsletterSubscription::class, $faker->numberBetween(10, 50))->create();
+        factory(NewsletterSubscription::class, 5)->create();
     }
 }
