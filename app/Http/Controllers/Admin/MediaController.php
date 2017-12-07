@@ -5,12 +5,15 @@ namespace App\Http\Controllers\Admin;
 use App\Media;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use FroalaEditor_Image;
+use Exception;
 
 class MediaController extends Controller
 {
 
     public $view = 'admin.medias.';
     public $route = 'admin.medias.';
+
     /**
      * Display a listing of the resource.
      *
@@ -18,8 +21,12 @@ class MediaController extends Controller
      */
     public function index()
     {
-        $medias = Media::latest()->paginate(50);
-        return view($this->view.'index',compact('medias'));
+        try {
+            $response = FroalaEditor_Image::getList('/storage/uploads/media/');
+            return stripslashes(json_encode($response));
+        } catch (Exception $e) {
+            return http_response_code(404);
+        }
     }
 
     /**
@@ -35,18 +42,27 @@ class MediaController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
     {
-        //
+        $input = $request->all();
+        $fileData = $request->file('image'); //this gets the image data for 1st argument
+        // $filename 			= $fileData->getClientOriginalName();
+        $filename = $_FILES['image']['name'];
+        // $completePath 		= url('/' . $location . '/' . $filename);
+        $destinationPath = 'images/';
+        $request->file('image')->move($destinationPath, $filename);
+        $completePath = url('/' . $destinationPath . $filename);
+        return response()->json(['link' => $completePath]);
+        // }
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function show($id)
@@ -57,7 +73,7 @@ class MediaController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
@@ -68,8 +84,8 @@ class MediaController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \Illuminate\Http\Request $request
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
@@ -80,11 +96,16 @@ class MediaController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  int $id
+     * @param Request $request
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy($id, Request $request)
     {
-        //
+        $input = $request->all();
+        $url = parse_url($input['src']);
+        $splitPath = explode("/", $url["path"]);
+        $splitPathLength = count($splitPath);
+        Media::where('path', 'LIKE', '%' . $splitPath[$splitPathLength - 1] . '%')->delete();
     }
 }
