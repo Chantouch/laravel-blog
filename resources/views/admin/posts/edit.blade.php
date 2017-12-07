@@ -19,5 +19,5 @@
     {!! Form::close() !!}
 @endsection
 
-@include('admin.shared.summernote')
+@include('admin.shared.froalaEditor')
 
