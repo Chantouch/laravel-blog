@@ -15,7 +15,7 @@
     <script>
         $(document).ready(function () {
             $('.form-editor').froalaEditor({
-                imageUploadURL: '/admin/medias/',
+                imageUploadURL: '{!! route('admin.medias.store') !!}',
                 //toolbarButtons: ['undo', 'redo', 'html', '-', 'fontSize', 'paragraphFormat', 'align', 'quote', '|', 'formatOL', 'formatUL', '|', 'bold', 'italic', 'underline', '|', 'insertLink', 'insertImage', 'insertTable'],
                 heightMin: 300,
                 imageMove: true,
@@ -26,9 +26,9 @@
                     _token: "{{ csrf_token() }}" // This passes the laravel token with the ajax request.
                 },
                 // URL to get all department images from
-                imageManagerLoadURL: '/admin/medias',
+                imageManagerLoadURL: '{!! route('admin.medias.index') !!}',
                 // Set the delete image request URL.
-                imageManagerDeleteURL: "/admin/medias/",
+                imageManagerDeleteURL: '{!! route('admin.medias.destroy') !!}',
                 // Set the delete image request type.
                 imageManagerDeleteMethod: "DELETE",
                 imageManagerDeleteParams: {

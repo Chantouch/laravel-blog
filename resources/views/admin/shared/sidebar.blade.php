@@ -26,6 +26,31 @@
             <span class="nav-link-text">@lang('dashboard.users')</span>
         </a>
     </li>
+
+    <li role="presentation" class="nav-item" data-toggle="tooltip" data-placement="right" title="@lang('dashboard.roles')">
+        <a class="nav-link {{ Request::is('admin/roles') || Request::is('admin/roles/*') ? 'active' : '' }}"
+           href="{{ route('admin.roles.index') }}">
+            <i class="fa fa-bolt" aria-hidden="true"></i>&nbsp;
+            <span class="nav-link-text">@lang('dashboard.roles')</span>
+        </a>
+    </li>
+
+    <li class="nav-item" role="presentation" data-toggle="tooltip" data-placement="right" title="@lang('dashboard.configuration.tag')">
+        <a href="{!! route('admin.tags.index') !!}"
+           class="nav-link {{ Request::is('admin/tags') || Request::is('admin/tags/*') ? 'active' : '' }}">
+            <i class="fa fa-tags" aria-hidden="true"></i>&nbsp;
+            <span class="nav-link-text">@lang('dashboard.configuration.tag')</span>
+        </a>
+    </li>
+
+    <li class="nav-item" role="presentation" data-toggle="tooltip" data-placement="right" title="@lang('dashboard.configuration.category')">
+        <a href="{!! route('admin.categories.index') !!}"
+           class="nav-link {{ Request::is('admin/categories') || Request::is('admin/categories/*') ? 'active' : '' }}">
+            <i class="fa fa-briefcase" aria-hidden="true"></i>&nbsp;
+            <span class="nav-link-text">@lang('dashboard.configuration.category')</span>
+        </a>
+    </li>
+
 </ul>
 
 <ul class="navbar-nav sidenav-toggler">

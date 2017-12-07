@@ -1,5 +1,5 @@
 <nav class="navbar navbar-dark bg-dark fixed-top navbar-expand-lg">
-    <div class="container">
+    <div class="container-fluid">
         <!-- Branding Image -->
         {{ link_to_route('home', config('app.name', 'Laravel'), [], ['class' => 'navbar-brand']) }}
 
