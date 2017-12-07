@@ -20,7 +20,7 @@
                 heightMin: 300,
                 imageMove: true,
                 imageUploadParam: 'image',
-                imageUploadMethod: 'post',
+                imageUploadMethod: 'POST',
                 imageUploadParams: {
                     location: 'images', // This allows us to distinguish between Froala or a regular file upload.
                     _token: "{{ csrf_token() }}" // This passes the laravel token with the ajax request.

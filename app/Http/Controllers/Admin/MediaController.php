@@ -7,6 +7,8 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use FroalaEditor_Image;
 use Exception;
+use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Storage;
 
 class MediaController extends Controller
 {
@@ -47,16 +49,20 @@ class MediaController extends Controller
      */
     public function store(Request $request)
     {
-        $input = $request->all();
-        $fileData = $request->file('image'); //this gets the image data for 1st argument
-        // $filename 			= $fileData->getClientOriginalName();
-        $filename = $_FILES['image']['name'];
-        // $completePath 		= url('/' . $location . '/' . $filename);
-        $destinationPath = 'images/';
-        $request->file('image')->move($destinationPath, $filename);
-        $completePath = url('/' . $destinationPath . $filename);
+        try {
+            $input = $request->all();
+            $fileData = $request->file('image'); //this gets the image data for 1st argument
+            $filename = $fileData->getClientOriginalName();
+            //$filename = $_FILES['image']['name'];
+            // $completePath 		= url('/' . $location . '/' . $filename);
+            $destinationPath = 'uploads/images/';
+            $request->file('image')->move($destinationPath, $filename);
+            $completePath = url('/' . $destinationPath . $filename);
+        } catch (Exception $exception) {
+            return http_response_code(404);
+        }
         return response()->json(['link' => $completePath]);
-        // }
+
     }
 
     /**
@@ -96,16 +102,24 @@ class MediaController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int $id
      * @param Request $request
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id, Request $request)
+    public function destroy(Request $request)
     {
-        $input = $request->all();
-        $url = parse_url($input['src']);
-        $splitPath = explode("/", $url["path"]);
-        $splitPathLength = count($splitPath);
-        Media::where('path', 'LIKE', '%' . $splitPath[$splitPathLength - 1] . '%')->delete();
+        try {
+            $input = $request->all();
+            $url = parse_url($input['src']);
+            $splitPath = explode("/", $url["path"]);
+            $splitPathLength = count($splitPath);
+            $filename = $splitPath[$splitPathLength - 1];
+            if (File::exists(storage_path('app/public/uploads/media'))) {
+                Storage::delete('public/uploads/media/' . $filename);
+                Media::where('filename', $filename)->delete();
+            }
+        } catch (Exception $exception) {
+            return http_response_code(404);
+        }
+        return response()->json('Image deleted!');
     }
 }
