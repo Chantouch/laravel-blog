@@ -18,12 +18,12 @@
                 <td>{!! active($category->active) !!}</td>
                 <td>
                     <div class="btn-group">
-                        {!! Form::open(['route' => ['admin.categories.destroy', $category->id], 'method' => 'delete']) !!}
-                        <a href="{!! route('admin.categories.show', [$category->id]) !!}"
+                        {!! Form::open(['route' => ['admin.categories.destroy', $category], 'method' => 'delete']) !!}
+                        <a href="{!! route('admin.categories.show', [$category]) !!}"
                            class='btn btn-info btn-outline btn-1b waves-effect btn-sm'>
                             <i class="fa fa-eye-slash" aria-hidden="true"></i>
                         </a>
-                        <a href="{!! route('admin.categories.edit', [$category->id]) !!}"
+                        <a href="{!! route('admin.categories.edit', [$category]) !!}"
                            class='btn btn-primary btn-outline waves-effect btn-sm'>
                             <i class="fa fa-pencil" aria-hidden="true"></i>
                         </a>

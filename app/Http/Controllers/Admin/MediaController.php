@@ -50,14 +50,17 @@ class MediaController extends Controller
     public function store(Request $request)
     {
         try {
-            $input = $request->all();
             $fileData = $request->file('image'); //this gets the image data for 1st argument
-            $filename = $fileData->getClientOriginalName();
-            //$filename = $_FILES['image']['name'];
-            // $completePath 		= url('/' . $location . '/' . $filename);
-            $destinationPath = 'uploads/images/';
-            $request->file('image')->move($destinationPath, $filename);
-            $completePath = url('/' . $destinationPath . $filename);
+            $filename = $fileData->store('public/uploads/media');
+            $destinationPath = 'storage/uploads/media/';
+            $media = new Media();
+            $media->filename = str_replace('public/uploads/media/', '', $filename);
+            $media->original_filename = $fileData->getClientOriginalName();
+            $media->mime_type = $fileData->getMimeType();
+            $media->mediable_type = 'App\Media';
+            $media->save();
+            $fileData->move($destinationPath, str_replace('public/uploads/media/', '', $filename));
+            $completePath = url('/' . $destinationPath . str_replace('public/uploads/media/', '', $filename));
         } catch (Exception $exception) {
             return http_response_code(404);
         }
