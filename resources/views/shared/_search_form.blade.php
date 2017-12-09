@@ -1,6 +1,6 @@
 <div class="card border-dark mb-3 right-sidebar">
     <div class="card-header">
-        {!! __('home.right-sidebar.search') !!}
+        <h1 class="font-size-1rem">{!! __('home.right-sidebar.search') !!}</h1>
     </div>
     <div class="card-body text-dark">
         {!! Form::open(['route' => 'home', 'class' => 'my-2 my-lg-0', 'method' => 'GET']) !!}

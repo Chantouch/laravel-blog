@@ -13,7 +13,7 @@ class BaseController extends Controller
      */
     public function __construct()
     {
-        MetaTag::set('description', 'Blog Wes Anderson bicycle rights, occupy Shoreditch gentrify keffiyeh.');
-        MetaTag::set('image', asset('storage/images/default-share-image.png'));
+        MetaTag::set('description', 'BCodinger website focuses on all web language and framework tutorial PHP, Laravel, Codeigniter, Nodejs, API, MySQL, AJAX, jQuery, JavaScript, Demo');
+        MetaTag::set('image', asset('images/example-logo.png'));
     }
 }

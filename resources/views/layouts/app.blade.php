@@ -34,7 +34,7 @@
 
     {!! MetaTag::twitterCard() !!}
 
-    {!! MetaTag::tag('image', asset('storage/images/default-logo.png')) !!}
+    {!! MetaTag::tag('image', asset('images/example-logo.png')) !!}
 
     <link href="{!! asset('css/app.css') !!}" rel="preload"  as="style" onload="this.rel='stylesheet'">
     <meta name="google-site-verification" content="czpAh0wrDqGHOiiBWborRdEMjq6S580nxv73uIuAagQ" />

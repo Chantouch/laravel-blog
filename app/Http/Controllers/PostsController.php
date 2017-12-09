@@ -18,6 +18,7 @@ class PostsController extends BaseController
      */
     public function index(Request $request)
     {
+        MetaTag::set('title', 'Tutorial IT Language Site | See Demo Example');
         $count_posts = Post::search($request->input('q'))->count();
         $posts = Post::search($request->input('q'))
             ->with('author', 'media')
