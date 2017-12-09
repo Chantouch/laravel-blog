@@ -17,7 +17,7 @@
                         {{ Auth::user()->name }}
                     </a>
 
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
                         {{ link_to_route('users.show', __('users.public_profile'), Auth::user(), ['class' => 'dropdown-item']) }}
                         {{ link_to_route('users.edit', __('users.settings'), [], ['class' => 'dropdown-item']) }}
 
