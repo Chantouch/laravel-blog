@@ -12,6 +12,7 @@ use Illuminate\Http\Request;
 use App\Post;
 use App\User;
 use DOMDocument;
+use Illuminate\Support\Facades\Storage;
 use Intervention\Image\ImageManagerStatic as Image;
 
 class PostsController extends Controller
@@ -63,10 +64,6 @@ class PostsController extends Controller
     public function store(PostsRequest $request)
     {
         $data = $request->all();
-        $storage_path = storage_path("app/public/uploads/media/");
-        if (!file_exists($storage_path)) {
-            mkdir($storage_path, 0777, true);
-        }
         $request->merge(['content' => clean($request->get('content'))]);
         $dom = new DOMDocument();
         $dom->formatOutput = true;
@@ -87,8 +84,9 @@ class PostsController extends Controller
                 $filepath = "/media/$filename_mime";
                 // @see http://image.intervention.io/api/
                 $image = Image::make($src)// resize if required	/* ->resize(300, 200) */
-                ->encode($mimetype, 100)// encode file to the specified mimetype
-                ->save($storage_path . $filename_mime);
+                ->encode($mimetype, 100);// encode file to the specified mimetype
+                //->save($storage_path . $filename_mime);
+                Storage::put('public/uploads/media/'.$filename_mime, $image->__toString());
                 $medialibrary = new Media();
                 $medialibrary->storeMediaLibraryByPost($filename_mime, $mimetype, $filename_mime);
                 $new_src = asset($filepath);
@@ -142,10 +140,6 @@ class PostsController extends Controller
     public function update(PostsRequest $request, Post $post)
     {
         $data = $request->all();
-        $storage_path = storage_path("app/public/uploads/media/");
-        if (!file_exists($storage_path)) {
-            mkdir($storage_path, 0777, true);
-        }
         $request->merge(['content' => clean($request->get('content'))]);
         $dom = new DOMDocument();
         $dom->formatOutput = true;
@@ -166,8 +160,9 @@ class PostsController extends Controller
                 $filepath = "/media/$filename_mime";
                 // @see http://image.intervention.io/api/
                 $image = Image::make($src)// resize if required	/* ->resize(300, 200) */
-                ->encode($mimetype, 100)// encode file to the specified mimetype
-                ->save($storage_path . $filename_mime);
+                ->encode($mimetype, 100);// encode file to the specified mimetype
+                //->save($storage_path . $filename_mime);
+                Storage::put('public/uploads/media/'.$filename_mime, $image->__toString());
                 $medialibrary = new Media();
                 $medialibrary->storeMediaLibraryByPost($filename_mime, $mimetype, $filename_mime);
                 $new_src = asset($filepath);

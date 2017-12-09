@@ -24,7 +24,7 @@ class MediaController extends Controller
     public function index()
     {
         try {
-            $response = FroalaEditor_Image::getList('/storage/uploads/media/');
+            $response = FroalaEditor_Image::getList('/images/media/');
             return stripslashes(json_encode($response));
         } catch (Exception $e) {
             return http_response_code(404);

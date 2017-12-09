@@ -2,6 +2,10 @@
 
 @section('content')
     <p>@lang('users.show') : {{ link_to_route('users.show', route('users.show', $user), $user) }}</p>
+    {!! Form::model($user, ['method' => 'PATCH', 'route' => ['admin.users.update', $user]]) !!}
 
     @include('admin/users/_form')
+
+    {!! Form::close() !!}
+
 @endsection

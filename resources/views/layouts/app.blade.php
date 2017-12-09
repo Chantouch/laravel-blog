@@ -37,7 +37,7 @@
     {!! MetaTag::tag('image', asset('storage/images/default-logo.png')) !!}
 
     <link href="{!! asset('css/app.css') !!}" rel="preload"  as="style" onload="this.rel='stylesheet'">
-
+    <meta name="google-site-verification" content="czpAh0wrDqGHOiiBWborRdEMjq6S580nxv73uIuAagQ" />
     {{--<script>--}}
         {{--(function(w) {--}}
             {{--'use strict';--}}

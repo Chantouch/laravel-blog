@@ -8,6 +8,7 @@ use App\Media;
 use App\Models\Tag;
 use Illuminate\Http\Request;
 use DOMDocument;
+use Illuminate\Support\Facades\Storage;
 use Intervention\Image\ImageManagerStatic as Image;
 
 class TagController extends Controller
@@ -76,8 +77,9 @@ class TagController extends Controller
                 $filepath = "/media/$filename_mime";
                 // @see http://image.intervention.io/api/
                 $image = Image::make($src)// resize if required	/* ->resize(300, 200) */
-                ->encode($mimetype, 100)// encode file to the specified mimetype
-                ->save($storage_path . $filename_mime);
+                ->encode($mimetype, 100);// encode file to the specified mimetype
+                //->save($storage_path . $filename_mime);
+                Storage::put('public/uploads/media/'.$filename_mime, $image->__toString());
                 $medialibrary = new Media();
                 $medialibrary->storeMediaLibraryByPost($filename_mime, $mimetype, $filename_mime);
                 $new_src = asset($filepath);
@@ -155,8 +157,9 @@ class TagController extends Controller
                 $filepath = "/media/$filename_mime";
                 // @see http://image.intervention.io/api/
                 $image = Image::make($src)// resize if required	/* ->resize(300, 200) */
-                ->encode($mimetype, 100)// encode file to the specified mimetype
-                ->save($storage_path . $filename_mime);
+                ->encode($mimetype, 100);// encode file to the specified mimetype
+                //->save($storage_path . $filename_mime);
+                Storage::put('public/uploads/media/'.$filename_mime, $image->__toString());
                 $medialibrary = new Media();
                 $medialibrary->storeMediaLibraryByPost($filename_mime, $mimetype, $filename_mime);
                 $new_src = asset($filepath);

@@ -24,7 +24,7 @@ Route::prefix('admin')->middleware(['auth', 'role:admin'])->namespace('Admin')->
     Route::get('dashboard', 'ShowDashboard')->name('dashboard');
     Route::resource('posts', 'PostsController');
     Route::delete('/posts/{post}/thumbnail', 'PostsThumbnailController@destroy')->name('posts_thumbnail.destroy');
-    Route::resource('users', 'UsersController', ['only' => ['index', 'edit', 'update']]);
+    Route::resource('users', 'UsersController', ['only' => ['index', 'edit', 'update', 'create', 'store']]);
     Route::resource('comments', 'CommentsController', ['only' => ['index', 'edit', 'update', 'destroy']]);
     Route::delete('/medias', 'MediaController@destroy')->name('medias.destroy');
     Route::resource('medias', 'MediaController', ['only' => ['index', 'store']]);
